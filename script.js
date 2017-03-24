@@ -8,13 +8,6 @@ $(document).ready(function(){
   // ++++++++++++++++++++
   // Banner
   // ++++++++++++++++++++ 
-  var swiper = new Swiper('.swiper-container', {
-        pagination: '.swiper-pagination',
-        paginationClickable: true,
-        spaceBetween: 00,
-        autoplay: 2400,
-        loop: true
-    });
 
 
   // ++++++++++++++++++++ 
