@@ -8,6 +8,7 @@
 	<link rel="shortcut icon" href="compressed/images/fevicon.ico" type="image/x-icon">
 	<link rel="icon" href="compressed/images/favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Hind+Vadodara:300,400,500,600,700" rel="stylesheet">
 	<link rel="stylesheet" href="style.css" type="text/css" charset="utf-8" />
 </head>
 <body>
@@ -52,11 +53,11 @@
 			<nav>
 				<div class="menu-header-menu-container">
 					<ul>
-						<li><a href="#">Home</a></li>
-						<li><a href="#">News</a></li>
-						<li><a href="#">In Focus</a></li>
+						<li><a href="/intermedia">Home</a></li>
+						<li><a href="archive.php">Category</a></li>
+						<li><a href="archive-video.php">Video Category</a></li>
+						<li><a href="single.php">Single</a></li>
 						<li><a href="#">Management</a></li>
-						<li><a href="#">Video</a></li>
 						<li><a href="#">Directory</a></li>
 						<li><a href="#">Magazine</a></li>
 						<li><a href="#">Shop</a></li>

@@ -1,15 +1,14 @@
 // //////////////
 // Fonts
 // //////////////
- 
-$theme-font: 'SamsungSharpSans-Bold',Sans-Serif;
-$theme-font-2: 'SamsungSharpSans-Medium',Sans-Serif;
-$theme-font-3: 'SamsungSharpSans-Regular',Sans-Serif;
+
+$theme-font: 'Hind Vadodara', sans-serif;;
+
 
 // //////////////
 // Colors
 // //////////////
-$theme: #0023a4;
+$theme: #rgba(118,50,63,1);
 $light-theme: #d0d4ec;
 $light-theme-2: #7a81c0;
 
@@ -25,7 +24,7 @@ p{
 	letter-spacing: 1px;
 }
 .container{
-	max-width: 1400+30px;
+	max-width: 940+60px;
 }
 @include body-smooth($theme, transparent);
 .col-2{
@@ -49,7 +48,6 @@ p{
 // Headings
 // //////////////
 .heading-common{
-	// font-family: $sam-bold;
 	color: black;
 }
 h1{
