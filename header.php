@@ -9,7 +9,11 @@
 	<link rel="icon" href="compressed/images/favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.0/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Hind+Vadodara:300,400,500,600,700" rel="stylesheet">
+	<!--Flexslider Plugin REMOVE AFTER WORDPRESS-->
+		<link rel="stylesheet" href="flexslider/css/flexslider.css">
+	<!--End of Flexslider Plugin REMOVE AFTER WORDPRESS-->
 	<link rel="stylesheet" href="style.css" type="text/css" charset="utf-8" />
+	<script src="flexslider/js/modernizr.js"></script>
 </head>
 <body>
 <header class="top">
@@ -32,29 +36,41 @@
 		</div>
 	</div>
 </header>
-<header>
+<header class="sub-header">
 	<div class="container">
 		<div class="col-2">
 			<div class="logo">
 				<a href=""><img src="compressed/images/logo.png" alt="logo"></a>
 			</div>
-			<div class="col-2">
-				<a href="#" class="button">Subscribe</a>
-			</div>
+		</div>
+		<div class="col-2">
+			<a href="#" class="button">Subscribe</a>
 		</div>
 	</div>
 </header>
-<header>
+<header class="menu-header">
 	<div class="container">
-		<div class="top-advertise">
+		<div class="ad-block">
 			<img src="compressed/images/advertise.jpg" alt="">
 		</div>
 		<div class="menu-wrapper desktop-menu">
 			<nav>
 				<div class="menu-header-menu-container">
 					<ul>
-						<li><a href="/intermedia">Home</a></li>
-						<li><a href="archive.php">Category</a></li>
+						<li class="current-menu-item"><a href="/intermedia">Home</a></li>
+						<li class="menu-item-has-children current-menu-anchestor"><a href="archive.php">Category</a>
+							<ul class="sub-menu">
+								<li><a href="#">Item 1</a></li>
+								<li><a href="#">Item 2</a></li>
+								<li class="menu-item-has-children"><a href="#">Item 3</a>
+									<ul class="sub-menu">
+										<li><a href="#">Sub Item 1</a></li>
+										<li><a href="#">Sub Item 2</a></li>
+										<li><a href="#">Sub Item 3</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
 						<li><a href="archive-video.php">Video Category</a></li>
 						<li><a href="single.php">Single</a></li>
 						<li><a href="#">Management</a></li>
@@ -64,9 +80,11 @@
 					</ul>
 				</div>
 			</nav>
-			<div class="search">
-				<i class="fa fa-search"></i>
-				<span>Search</span>
+			<div class="search-wrapper">
+				<div class="search">
+					<i class="fa fa-search"></i>
+					<span>Search</span>
+				</div>
 			</div>
 		</div>
 	</div>
