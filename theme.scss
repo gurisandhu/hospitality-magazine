@@ -1,20 +1,40 @@
-// //////////////
-// Colors
-// //////////////
+/* //////////////*/
+
+
+/* Colors*/
+
+
+/* //////////////*/
+
 $light-grey: rgba(246, 246, 246, 1);
 $grey: rgba(155, 155, 155, 1);
 $dark-grey: #232323;
 $grey-anchor: #373737;
 $border: #979797;
+$border-light: #eee;
 $dark-marron: #640F20;
 $light-blue: #CDDFE0;
-// //////////////
-//This file includes mixins, resets etc.
-// //////////////
+$grey-tag: #565656;
+$creame: #C09F80;
+
+/* //////////////*/
+
+
+/*This file includes mixins, resets etc.*/
+
+
+/* //////////////*/
+
 @import 'editor';
-// //////////////
-//Theme Style Guide
-// //////////////
+
+/* //////////////*/
+
+
+/*Theme Style Guide*/
+
+
+/* //////////////*/
+
 @import 'styleguide';
 body,
 input,
@@ -25,9 +45,15 @@ button {
     color: $dark-grey;
 }
 
-// //////////////
-// Header
-// //////////////
+
+/* //////////////*/
+
+
+/* Header*/
+
+
+/* //////////////*/
+
 header {
     &.top {
         background-color: $light-grey;
@@ -65,6 +91,8 @@ header {
 .social-media {
     margin-top: 13px;
     margin-bottom: 13px;
+    float: left;
+    width: 100%;
     .fa {
         color: $grey;
         font-size: 22px;
@@ -144,26 +172,41 @@ header {
     }
 }
 
-.marron {
+.marron-but {
     background-color: $theme;
+    color: white;
+    border: 1px solid $dark-marron;
+    &:hover {
+        background-color: darken($theme, 10%);
+        text-decoration: none;
+    }
+}
+
+.common-button {
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 2px;
+    @include transition-ease-out(.3);
+    cursor: pointer;
 }
 
 .button {
-    color: white;
-    background-color: $theme;
-    text-transform: uppercase;
-    font-weight: 600;
     font-size: 20px;
-    border-radius: 4px;
     min-width: 249px;
-    text-align: center;
-    border: 1px solid $dark-marron;
     padding: 19px;
-    @include transition(.3);
-    cursor: pointer;
-    &:hover {
-        text-decoration: none;
-        background-color: darken($theme, 10%);
+    @extend .marron-but;
+    @extend .common-button;
+}
+
+.small-but {
+    @extend .marron-but;
+    @extend .common-button;
+    padding: 2.1px;
+    font-size: 20px;
+    font-weight: bold;
+    .fa{
+        top: -3px;
     }
 }
 
@@ -171,9 +214,15 @@ header {
     display: inline-block;
 }
 
-// //////////////
-// Desktop menu
-// //////////////
+
+/* //////////////*/
+
+
+/* Desktop menu*/
+
+
+/* //////////////*/
+
 .desktop-menu {
     display: inline-block;
     nav {
@@ -221,10 +270,16 @@ header {
         @include transition(.3);
         float: left;
         width: 100%;
+        .fa{
+            @include transition(.3);
+        }
         &:hover {
             background-color: $theme;
             color: white;
             border-color: $theme;
+            .fa{
+                color: white;
+            }
         }
     }
 }
@@ -281,7 +336,11 @@ header {
             }
         }
     }
-} //end of menu-item-has-children
+}
+
+
+/*end of menu-item-has-children*/
+
 .search-wrapper {
     float: left;
     margin-top: 13px;
@@ -294,9 +353,15 @@ header {
     }
 }
 
-// //////////////
-// Home Flex Slider
-// //////////////
+
+/* //////////////*/
+
+
+/* Home Flex Slider*/
+
+
+/* //////////////*/
+
 .home-banner {
     height: 665px;
     .full-container,
@@ -311,7 +376,7 @@ header {
     border: none;
     margin: 0;
     overflow: hidden;
-    li {
+    .slides li {
         position: relative;
         height: 100%;
         &:after {
@@ -407,9 +472,15 @@ header {
     }
 }
 
-// //////////////
-// Containers
-// //////////////
+
+/* //////////////*/
+
+
+/* Containers*/
+
+
+/* //////////////*/
+
 .heading-button {
     padding: 5px 10px;
     float: left;
@@ -439,12 +510,501 @@ header {
     }
 }
 
+.grey-tag {
+    .heading-button {
+        background-color: $grey-tag;
+        color: white;
+        &:hover {
+            background-color: darken($grey-tag, 10%);
+        }
+    }
+}
+
+.creame-tag {
+    .heading-button {
+        background-color: $creame;
+        color: white;
+        &:hover {
+            background-color: darken($creame, 10%);
+        }
+    }
+}
+
+
 .wrapper {
     padding-top: 20px;
     padding-bottom: 20px;
+    background-color: $light-grey;
 }
 
-// //////////////
-//This file link includes resonsive style and it MUST always stays at the bottom of this file. If you need to type code, please type above to this link. Don't type below of responsive file link.
-// //////////////
+.tiles {
+    .col-3 {
+        height: 200px;
+    }
+}
+.tiles-row{
+    .col-3{
+        height: 200px;
+        @include col-3(2%,0);
+    }
+    .col-2{
+        @include col-2(2%,0);
+        height: 270px;
+    }
+}
+
+.news {
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    &:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .3);
+        content: '';
+        z-index: 2;
+    }
+    &:hover {
+        .news-heading,
+        .news-text {
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+    }
+}
+
+.news-content {
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    color: white;
+    z-index: 3;
+    overflow: hidden;
+}
+
+.news-heading {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.news-text {
+    font-size: 17px;
+}
+
+.news-heading,
+.news-text {
+    @include transition-ease-out(.3);
+    -webkit-transform: translate3d(0, 105%, 0);
+    transform: translate3d(0, 105%, 0);
+}
+
+.ad-category {
+    height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+}
+
+.ad-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: $light-grey;
+    color: $dark-grey;
+    font-size: 10px;
+    padding: 3px 5px;
+}
+
+
+/* //////////////*/
+
+// Newsletter Section
+
+/* //////////////*/
+
+.newsletter-section {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    p {
+        font-size: 12px;
+        color: black;
+    }
+}
+
+.heading {
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* //////////////*/
+// Video Section
+/* //////////////*/
+
+.video-container{
+    height: 100%;
+    position: relative;
+    &:hover{
+        .play-video{
+            background-color: darken($theme, 10%);
+        }
+    }
+}
+.video {
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    .table{
+        padding-bottom: 22%;
+    }
+}
+.video-heading{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: white;
+    color: $dark-grey;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px 10px;
+    text-transform: capitalize;
+}
+.common-video-but{
+    background-color: $theme;
+    text-align: center;
+    margin: auto;
+    @include transition-ease-out(.3);
+    .fa{
+        color: white;
+        position: relative;
+        }
+    &:hover{
+        background-color: darken($theme, 10%);
+    }
+}
+.play-video-but {
+    @extend .common-video-but;
+    width: 86px;
+    height: 57px;
+    .fa{
+        font-size: 27px;
+        top: 15px;
+    }
+}
+.small-video-but{
+    @extend .common-video-but;
+    width: 36px;
+    height: 23px;
+    .fa{
+        font-size: 12px;
+        top: -3px;
+    }
+}
+.related-video-image{
+    width: 80px;
+    float: left;
+    height: 100%;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
+    background-position: center;
+}
+.related-videos{
+    max-width: 300px;
+    .each-video{
+        float: left;
+        width: 100%;
+        height: 28.23%;
+        margin-top: 5%;
+        background-color: white;
+        &:first-child{
+            margin-top: 0;
+        }
+        @include transition-ease-out(.3);
+        &:hover{
+            .small-video-but{
+                background-color: darken($theme, 15%);
+            }
+        }
+    }
+}
+.related-video-text{
+    float: left;
+    width: 220px;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 5px 15px;
+    color: $dark-grey;
+}
+.news-2 {
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    display: block;
+    @include transition(.3);
+    &:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .3);
+        content: '';
+        z-index: 2;
+        @include transition(.3);
+    }
+    &:hover {
+       &:after{
+           background-color: rgba(0,0,0,.1);
+       }
+    }
+}
+.news-content-2 {
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    color: white;
+    z-index: 3;
+    overflow: hidden;
+}
+
+.news-heading-2 {
+    font-size: 27px;
+    font-weight: 600;
+}
+
+.news-text-2 {
+    font-size: 17px;
+}
+.related-news-image{
+    width: 125px;
+    float: left;
+    height: 100%;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
+    background-position: center;
+}
+.related-content{
+    max-width: 461px;
+    height: 100%;
+    .each-related-content{
+        float: left;
+        width: 100%;
+        height: 28.83%;
+        margin-top: 4%;
+        background-color: white;
+        @include transition-ease-out(.3);
+        &:first-child{
+            margin-top: 0;
+        }
+        &:hover{
+           background-color: rgba(0,0,0,.1);
+        }
+    }
+}
+.related-news-text{
+    float: left;
+    width: 332px;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 5px 15px;
+    color: $dark-grey;
+    height: 100%;
+}
+
+.social-and-search{
+    input[type="text"]{
+        max-width: 775px;
+        float: left;
+    }
+    max-width: 816px;
+    margin: auto;
+    padding-bottom: 17px;
+    >.row{
+        &:first-child{
+            border-bottom: 2px solid $border-light;
+        }
+    }
+    .social-media{
+        margin: 17px 0;
+    }
+    .top-menu{
+        margin-bottom: 11px;
+        margin-top: 15px;
+    }
+    li{
+        float: left;
+        list-style: none;
+    }
+    &:after, &:before{
+        content: "";
+        display: block;
+        clear: both;
+    }
+    button{
+        background-color: transparent;
+        border: none;
+        color: $dark-grey;
+        float: left;
+        padding: 0;
+        min-width: inherit;
+        padding: 7px;
+        font-size: 25px;
+        @include transition(.3);
+        .fa{
+            @include transition(.3);
+        }
+        &:hover{
+            .fa{
+                color: $theme;
+            }
+        }
+    }
+}
+.search-form{
+    input{
+        background-color: transparent;
+        border: 1px solid $border-light;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        padding: 15px;
+    }
+    @include placeholder($border);
+}
+
+/* //////////////*/
+// Footer
+/* //////////////*/
+footer{
+    background-color: #3C3D41;
+    padding: 30px 0;
+    .col-3{
+        @include col-3(2%, 0);
+        border-right: 1px solid #888;
+        &:last-child{
+            border-right: none;
+        }
+    }
+
+}
+.internal-ad-image{
+    float: left;
+    width: 84px;
+    margin-right: 17px;
+}
+.internal-ad-content{
+    float: left;
+    width: 174px;
+    color: #FFF;
+    h4{
+        color: white;
+        font-size: 22px;
+        text-transform: uppercase;
+        font-weight: normal;
+        margin-bottom: 0;
+    }
+    p{
+        color: #888;
+        font-size: 14px;
+    }
+    .small-but{
+        font-size: 15px;
+        width: 100%;
+        max-width: 180px;
+        display: block;
+        padding: 4px;
+    }
+}
+.footer-menu{
+    float: left;
+    width: 100%;
+    padding: 0 20px;
+    ul{
+        float: left;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    li{
+        list-style: none;
+    }
+    a{
+        color: white;
+        font-size: 11px;
+        text-transform: uppercase;
+    }
+    h6{
+        color: #FFF;
+        font-size: 11px;
+        text-transform: uppercase;
+    }
+}
+.subscription-form{
+    .heading{
+        color: #888;
+        font-size: 12px;
+    }
+    p{
+        color: #888;
+        font-size: 9px;
+    }
+    input[type="text"]{
+        width: 75%;
+    }
+    input[type="submit"]{
+        width: 25%;
+        border: 1px solid $theme;
+    }
+    input[type="text"], input[type="submit"]{
+        float: left;
+        font-size: 12px;
+        font-weight: 500;
+        padding: 7.5px 0;
+    }
+    .checkbox-button{
+        margin-top: 20px;
+        font-size: 12px;
+        color: #bbb;
+    }
+    .new-checkbox{
+        &:before{
+            background-color: #FFF;
+        }
+    }
+}
+
+/* //////////////*/
+/*This file link includes resonsive style and it MUST always stays at the bottom of this file. If you need to type code, please type above to this link. Don't type below of responsive file link.*/
+/* //////////////*/
+
 @import 'responsive';

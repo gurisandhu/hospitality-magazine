@@ -38,13 +38,21 @@ p {
     }
 }
 
+.row {
+    width: 100%;
+    float: left;
+    &:not(:first-of-type) {
+        margin-top: 17px;
+    }
+}
+
 @include body-smooth($theme, transparent);
 .col-2 {
     @include col-2(0, 0);
 }
 
 .col-3 {
-    @include col-3(0, 0);
+    @include col-3(2%, 2%);
 }
 
 .col-4 {
@@ -276,7 +284,7 @@ figcaption {
 // //////////////
 form {
     width: 100%;
-    margin: 0 auto 20px;
+    margin: 0 auto;
     &:after {
         content: "";
         clear: both;
@@ -285,12 +293,16 @@ form {
     input {
         width: 100%;
         font-size: 18px;
-        border: 1px solid black;
+        border: 1px solid $border;
         -webkit-border-radius: 5px;
-        border-radius: 5px;
-        padding: 15px 10px;
+        border-radius: 2px;
+        padding: 3px 10px;
+        text-transform: uppercase;
         font-weight: 100;
+        background-color: $grey-tag;
+        color: white;
     }
+    @include placeholder(white);
 }
 
 .form-row {
@@ -380,8 +392,9 @@ select {
 .checkbox-button {
     position: relative;
     font-size: 18px;
-    padding-left: 35px;
-    line-height: 1.7;
+    padding-left: 41px;
+    line-height: 1.4;
+    display: inline-block;
     margin-bottom: 15px;
     &:last-child {
         margin-bottom: 0;
@@ -399,7 +412,7 @@ select {
         &:checked {
             &+.new-checkbox {
                 &:after {
-                    background-color: $theme;
+                    opacity: 1;
                 }
             }
         }
@@ -409,21 +422,25 @@ select {
 .new-checkbox {
     &:before,
     &:after {
-        content: "";
         position: absolute;
+        height: 22px;
+        widows: 22px;
     }
     &:before {
+        content: "";
         left: 0;
         top: 0;
-        width: 25px;
-        height: 25px;
-        border: 1px solid black;
+        width: 22px;
+        border: 1px solid $border;
     }
     &:after {
-        @include transition(.3);
-        left: 6px;
-        top: 6px;
-        width: 15px;
-        height: 15px;
+        content: '\f00c';
+        font-family: FontAwesome;
+        @include transition-ease-out(.3);
+        color: $theme;
+        left: -2px;
+        top: -7px;
+        font-size: 28px;
+        opacity: 0;
     }
 }

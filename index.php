@@ -12,7 +12,7 @@ Home Banner
                         <div class="table">
                             <div class="table-cell">
                                 <h2>Tentacles Abound in Our Best Jellyfish Pictures</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam fugit vero in, facilis doloremque vitae rem magni ea.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam fugit vero in, facilis doloremque vitae rem magni ea.</p>
                             </div>
                         </div>
                     </li>
@@ -21,7 +21,7 @@ Home Banner
                         <div class="table">
                             <div class="table-cell">
                                 <h2>Tentacles Abound in Our Best Jellyfish Pictures</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam fugit vero in, facilis doloremque vitae rem magni ea, itaque reprehenderit doloribus quidem rerum tenetur harum dicta necessitatibus earum illum, officia?</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam fugit vero in, facilis doloremque vitae rem magni ea.</p>
                             </div>
                         </div>
                     </li>
@@ -30,7 +30,7 @@ Home Banner
                         <div class="table">
                             <div class="table-cell">
                                 <h2>Tentacles Abound in Our Best Jellyfish Pictures</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam fugit vero in, facilis doloremque vitae rem magni ea, itaque reprehenderit doloribus quidem rerum tenetur harum dicta necessitatibus earum illum, officia?</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam fugit vero in, facilis doloremque vitae rem magni ea.</p>
                             </div>
                         </div>
                     </li>
@@ -39,7 +39,7 @@ Home Banner
                         <div class="table">
                             <div class="table-cell">
                                 <h2>Tentacles Abound in Our Best Jellyfish Pictures</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam fugit vero in, facilis doloremque vitae rem magni ea, itaque reprehenderit doloribus quidem rerum tenetur harum dicta necessitatibus earum illum, officia?</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam fugit vero in, facilis doloremque vitae rem magni ea.</p>
                             </div>
                         </div>
                     </li>
@@ -52,7 +52,7 @@ Home Banner
 <!--++++++++++++++ 
 News Square
 ++++++++++++++ -->
-<section class="marron-tag wrapper">
+<section class="marron-tag wrapper tiles">
 	<div class="container">		
         <?php include 'section-news-square.php'; ?>
 	</div>
@@ -67,17 +67,29 @@ Subscription
 <!--++++++++++++++ 
 Videos
 ++++++++++++++ -->
-<?php include 'section-video.php'; ?>
+<section class="grey-tag wrapper tiles-row">
+	<div class="container">		
+        <?php include 'section-video.php'; ?>
+	</div>
+</section>
 
 <!--++++++++++++++ 
 In focus
 ++++++++++++++ -->
-<?php include 'section-news.php'; ?>
+<section class="marron-tag wrapper tiles-row">
+    <div class="container">     
+        <?php include 'section-news.php'; ?>
+    </div>
+</section>
 
 <!--++++++++++++++ 
 Management
 ++++++++++++++ -->
-<?php include 'section-news.php'; ?>
+<section class="creame-tag wrapper tiles-row">
+    <div class="container">     
+        <?php include 'section-news.php'; ?>
+    </div>
+</section>
 
 <?php include 'sub-footer.php'; ?>
 

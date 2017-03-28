@@ -195,14 +195,6 @@ nav {
     width: 100%;
 }
 
-.row {
-    width: 100%;
-    float: left;
-    &:not(:first-of-type) {
-        margin-top: 10px;
-    }
-}
-
 .full-width {
     float: left;
     width: 100%;
@@ -494,7 +486,7 @@ h6 {
 button,
 input[type="submit"] {
     border: none;
-    font-size: inherit;
+    // font-size: initial;
     cursor: pointer;
     -webkit-appearance: none;
     -moz-appearance: none;
