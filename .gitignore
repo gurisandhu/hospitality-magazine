@@ -1,0 +1,7 @@
+*.log
+*.zip
+*.log
+.DS_Store*
+._*
+.sass-cache
+node_modules

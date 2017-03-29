@@ -12,7 +12,7 @@ Home Banner
                         <div class="table">
                             <div class="table-cell">
                                 <h2>Tentacles Abound in Our Best Jellyfish Pictures</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam fugit vero in, facilis doloremque vitae rem magni ea.</p>
+                                <p>James Gurney picks the most interesting pieces from the luxury watch fair</p>
                             </div>
                         </div>
                     </li>
@@ -21,7 +21,7 @@ Home Banner
                         <div class="table">
                             <div class="table-cell">
                                 <h2>Tentacles Abound in Our Best Jellyfish Pictures</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam fugit vero in, facilis doloremque vitae rem magni ea.</p>
+                                <p>James Gurney picks the most interesting pieces from the luxury watch fair</p>
                             </div>
                         </div>
                     </li>
@@ -30,7 +30,7 @@ Home Banner
                         <div class="table">
                             <div class="table-cell">
                                 <h2>Tentacles Abound in Our Best Jellyfish Pictures</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam fugit vero in, facilis doloremque vitae rem magni ea.</p>
+                                <p>James Gurney picks the most interesting pieces from the luxury watch fair</p>
                             </div>
                         </div>
                     </li>
@@ -39,7 +39,7 @@ Home Banner
                         <div class="table">
                             <div class="table-cell">
                                 <h2>Tentacles Abound in Our Best Jellyfish Pictures</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam fugit vero in, facilis doloremque vitae rem magni ea.</p>
+                                <p>James Gurney picks the most interesting pieces from the luxury watch fair</p>
                             </div>
                         </div>
                     </li>

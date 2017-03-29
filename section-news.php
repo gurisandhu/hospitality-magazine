@@ -1,6 +1,6 @@
 <div class="row">
 	<a href="#" class="heading-button marron">
-		In focus
+		<h3>In focus</h3>
 		<span>View All</span>
 	</a>
 </div>

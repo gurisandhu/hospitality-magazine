@@ -38,19 +38,19 @@ Section: footer
 ++++++++++++++ -->
 <footer>
 	<div class="container">
-		<div class="col-3">
-			<div class="internal-ad">
+		<div class="footer-col-3">
+			<div class="internal-ad-footer">
 				<div class="internal-ad-image">
 					<img src="compressed/images/internal-ad.png" alt="">
 				</div>
 				<div class="internal-ad-content">
 					<h4>Hosmag</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt doloremque.</p>
 					<a href="#" class="small-but">Subscribe</a>
 				</div>
 			</div>
 		</div>
-		<div class="col-3">
+		<div class="footer-col-3">
 			<div class="footer-menu">
 				<h6>Category</h6>
 				<ul>
@@ -65,7 +65,7 @@ Section: footer
 				</ul>
 			</div>
 		</div>
-		<div class="col-3">
+		<div class="footer-col-3">
 			<div class="subscription-form">
 				<form action="">
 					<div class="heading">Subscribe to our newsletter</div>
@@ -75,7 +75,7 @@ Section: footer
 					<div class="full-width">
 						<div class="checkbox-button">
 							Check to receive free digital magazine
-							<input type="checkbox" name="gender" checked value="option1"><i class="new-checkbox"></i>
+							<input type="checkbox" name="gender" value="option1"><i class="new-checkbox"></i>
 						</div>
 					</div>
 				</form>

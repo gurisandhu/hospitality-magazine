@@ -15,7 +15,6 @@ select,
 button {
     font-family: $theme-font;
     font-size: 17px;
-    letter-spacing: 0px;
 }
 
 p {
@@ -42,17 +41,17 @@ p {
     width: 100%;
     float: left;
     &:not(:first-of-type) {
-        margin-top: 17px;
+        margin-top: 20px;
     }
 }
 
-@include body-smooth($theme, transparent);
+@include body-smooth(white, transparent);
 .col-2 {
     @include col-2(0, 0);
 }
 
 .col-3 {
-    @include col-3(2%, 2%);
+    @include col-3(2.1%, 2%);
 }
 
 .col-4 {
@@ -292,11 +291,11 @@ form {
     }
     input {
         width: 100%;
-        font-size: 18px;
+        font-size: 16px;
         border: 1px solid $border;
         -webkit-border-radius: 5px;
         border-radius: 2px;
-        padding: 3px 10px;
+        padding: 4.5px 10px;
         text-transform: uppercase;
         font-weight: 100;
         background-color: $grey-tag;
@@ -392,7 +391,7 @@ select {
 .checkbox-button {
     position: relative;
     font-size: 18px;
-    padding-left: 41px;
+    padding-left: 33px;
     line-height: 1.4;
     display: inline-block;
     margin-bottom: 15px;
@@ -420,18 +419,24 @@ select {
 }
 
 .new-checkbox {
+    position: absolute;
+    left: -3px;
+    top: 0;
+    height: 22px;
+    width: 22px;
     &:before,
     &:after {
         position: absolute;
-        height: 22px;
-        widows: 22px;
+        height: 100%;
+        width: 100%;
     }
     &:before {
         content: "";
         left: 0;
         top: 0;
-        width: 22px;
+        width: 100%;
         border: 1px solid $border;
+        background-color: $light-grey;
     }
     &:after {
         content: '\f00c';
@@ -439,7 +444,7 @@ select {
         @include transition-ease-out(.3);
         color: $theme;
         left: -2px;
-        top: -7px;
+        top: -9px;
         font-size: 28px;
         opacity: 0;
     }
