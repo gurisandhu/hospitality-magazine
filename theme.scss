@@ -1,13 +1,7 @@
 /* //////////////*/
-
-
 /* Colors*/
-
-
 /* //////////////*/
-
-$light-grey: yellow;
-// $light-grey: rgba(246, 246, 246, 1);
+$light-grey: rgba(246, 246, 246, 1);
 $grey: rgba(155, 155, 155, 1);
 $dark-grey: #232323;
 $grey-anchor: #373737;
@@ -18,25 +12,17 @@ $light-blue: #CDDFE0;
 $grey-tag: #565656;
 $creame: #C09F80;
 
+
 /* //////////////*/
-
-
 /*This file includes mixins, resets etc.*/
-
-
 /* //////////////*/
-
 @import 'editor';
 
+
 /* //////////////*/
-
-
 /*Theme Style Guide*/
-
-
 /* //////////////*/
-
-@import 'styleguide';
+@import 'themeguide';
 body,
 input,
 textarea,
@@ -49,13 +35,8 @@ button {
 
 
 /* //////////////*/
-
-
 /* Header*/
-
-
 /* //////////////*/
-
 header {
     &.top {
         background-color: $light-grey;
@@ -74,9 +55,11 @@ header {
         padding-bottom: 5px;
         .logo {
             float: left;
-            min-width: 310px;
+            width: 310px;
+            height: 69px;
             img {
                 float: left;
+                width: 100%;
             }
         }
         .button {
@@ -103,7 +86,7 @@ header {
         font-size: 22px;
         float: left;
         width: 100%;
-        @include transition(.3);
+        @include transition-ease-out(.3);
     }
     a {
         float: left;
@@ -156,7 +139,7 @@ header {
             width: 0;
             display: block;
             margin: auto;
-            @include transition(.3);
+            @include transition-ease-out(.3);
         }
     }
     li {
@@ -191,16 +174,15 @@ header {
     text-transform: uppercase;
     font-weight: 600;
     text-align: center;
-    border-radius: 2px;
     @include transition-ease-out(.3);
     cursor: pointer;
-    letter-spacing: 3.2px;
 }
-
 .button {
     font-size: 20px;
     min-width: 249px;
+    letter-spacing: 3.2px;
     padding: 14px;
+    border-radius: 2px;
     @extend .marron-but;
     @extend .common-button;
 }
@@ -209,11 +191,21 @@ header {
     @extend .marron-but;
     @extend .common-button;
     padding: 2.1px;
+    border-radius: 2px;
     font-size: 20px;
     font-weight: bold;
+    letter-spacing: 3.2px;
     .fa{
         top: -3px;
     }
+}
+.medium-but{
+    @extend .marron-but;
+    @extend .common-button;
+    font-size: 24px;
+    padding: 5.5px 17px;
+    font-weight: normal;
+    
 }
 
 .ad-block {
@@ -222,13 +214,8 @@ header {
 
 
 /* //////////////*/
-
-
 /* Desktop menu*/
-
-
 /* //////////////*/
-
 .desktop-menu {
     display: inline-block;
     nav {
@@ -273,11 +260,11 @@ header {
         padding: 5px 10px;
         border: 1px solid $border;
         text-decoration: none;
-        @include transition(.3);
+        @include transition-ease-out(.3);
         float: left;
         width: 100%;
         .fa{
-            @include transition(.3);
+            @include transition-ease-out(.3);
         }
         &:hover {
             background-color: $theme;
@@ -341,11 +328,9 @@ header {
                 display: block;
             }
         }
-    }
+    }/*end of menu-item-has-children*/
 }
 
-
-/*end of menu-item-has-children*/
 
 .search-wrapper {
     float: left;
@@ -361,13 +346,8 @@ header {
 
 
 /* //////////////*/
-
-
 /* Home Flex Slider*/
-
-
 /* //////////////*/
-
 .home-banner {
     height: 665px;
     .full-container,
@@ -492,13 +472,8 @@ header {
 
 
 /* //////////////*/
-
-
 /* Containers*/
-
-
 /* //////////////*/
-
 .heading-button {
     float: left;
     width: 100%;
@@ -665,9 +640,7 @@ header {
 
 
 /* //////////////*/
-
 // Newsletter Section
-
 /* //////////////*/
 .subscription{
     max-width: 655px;
@@ -695,10 +668,10 @@ header {
     margin-bottom: 13px;
 }
 
+
 /* //////////////*/
 // Video Section
 /* //////////////*/
-
 .video-container{
     height: 100%;
     position: relative;
@@ -815,7 +788,7 @@ header {
     background-position: center;
     position: relative;
     display: block;
-    @include transition(.3);
+    @include transition-ease-out(.3);
     &:after {
         position: absolute;
         top: 0;
@@ -827,7 +800,7 @@ header {
         background-color: rgba(0, 0, 0, .3);
         content: '';
         z-index: 2;
-        @include transition(.3);
+        @include transition-ease-out(.3);
     }
     &:hover {
        &:after{
@@ -938,9 +911,9 @@ header {
         min-width: inherit;
         padding: 6.5px;
         font-size: 22px;
-        @include transition(.3);
+        @include transition-ease-out(.3);
         .fa{
-            @include transition(.3);
+            @include transition-ease-out(.3);
         }
         &:hover{
             .fa{
@@ -960,6 +933,7 @@ header {
     }
     @include placeholder($border);
 }
+
 
 /* //////////////*/
 // Footer
@@ -1030,6 +1004,11 @@ footer{
         color: white;
         font-size: 11px;
         text-transform: uppercase;
+        @include transition-ease-out(.3);
+        &:hover{
+            text-decoration: none;
+            color: $grey;
+        }
     }
     h6{
         color: #FFF;
@@ -1059,7 +1038,7 @@ footer{
         float: left;
         font-size: 12px;
         font-weight: 500;
-        padding: 7.5px 0;
+        padding: 7.5px;
         letter-spacing: 0.2px;
     }
     .checkbox-button{
@@ -1078,8 +1057,85 @@ footer{
     }
 }
 
+
+/* //////////////*/
+// Archive Page
+/* //////////////*/
+.archive-head{
+    color: #656565;
+    h2{
+        color: inherit;
+        font-size: 32px;
+        font-weight: 500;
+        text-transform: capitalize;
+    }
+    h2, p{
+        line-height: 1.2;
+    }
+    p{
+        font-size: 24px;
+    }
+}
+.col-2-archive-head{
+    float: left;
+    height: 336px;
+    &:first-child{
+        width: 53.8%;
+        -webkit-background-size: cover;
+             -o-background-size: cover;
+                background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+    }
+    &:last-child{
+        width: 100%-53.8%;
+        padding-left: 30px;
+        padding-bottom: 50px;
+        position: relative;
+        .medium-but{
+            position: absolute;
+            bottom: 0;
+            left: 30px;
+        }
+    }
+}
+.pagination-wrapper{
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    background-color: $light-grey;
+}
+.pagination{
+    list-style: none;
+    padding: 0;
+    display: inline-block;
+    margin: 0;
+    li{
+        float: left;
+        margin-right: 5px;
+        width: 39px;
+        a{
+            float: left;
+            width: 100%;
+            border: 1px solid $border;
+            text-align: center;
+            font-size: 24px;
+            font-weight: 600;
+            color: #585858;
+            @include transition-ease-out(.2);
+            &:hover{
+                text-decoration: none;
+                background-color: #d8d8d8;
+            }
+        }
+        &.active{
+            a{
+                background-color: #d8d8d8;
+            }
+        }
+    }
+}
 /* //////////////*/
 /*This file link includes resonsive style and it MUST always stays at the bottom of this file. If you need to type code, please type above to this link. Don't type below of responsive file link.*/
 /* //////////////*/
-
 @import 'responsive';

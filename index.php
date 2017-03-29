@@ -53,7 +53,13 @@ Home Banner
 News Square
 ++++++++++++++ -->
 <section class="marron-tag wrapper tiles">
-	<div class="container">		
+	<div class="container">	
+    <div class="row">
+        <a href="#" class="heading-button">
+            <h3>News</h3>
+            <span>View All</span>
+        </a>
+    </div>	
         <?php include 'section-news-square.php'; ?>
 	</div>
 </section>

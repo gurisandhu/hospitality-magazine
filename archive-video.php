@@ -3,17 +3,29 @@
 <!--++++++++++++++ 
 Videos Best Practice
 ++++++++++++++ -->
-<?php include 'section-video.php'; ?>
+<section class="grey-tag wrapper tiles-row">
+	<div class="container">		
+        <?php include 'section-video.php'; ?>
+	</div>
+</section>
 
 <!--++++++++++++++ 
 Videos Master Class
 ++++++++++++++ -->
-<?php include 'section-video.php'; ?>
+<section class="grey-tag wrapper tiles-row">
+	<div class="container">		
+        <?php include 'section-video.php'; ?>
+	</div>
+</section>
 
 <!--++++++++++++++ 
 Videos Products
 ++++++++++++++ -->
-<?php include 'section-video.php'; ?>
+<section class="grey-tag wrapper tiles-row">
+	<div class="container">		
+        <?php include 'section-video.php'; ?>
+	</div>
+</section>
 
 
 <?php include 'sub-footer.php'; ?>

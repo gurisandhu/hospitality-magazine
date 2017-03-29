@@ -1,10 +1,4 @@
 <div class="row">
-	<a href="#" class="heading-button grey">
-		<h3>News</h3>
-		<span>View All</span>
-	</a>
-</div>
-<div class="row">
 	<?php for ($x = 1; $x <= 2; $x++) { ?>
 	<a href="#" class="col-3">
 		<div class="news" style="background-image:url('compressed/images/slider<?php echo $x;?>.jpg');">

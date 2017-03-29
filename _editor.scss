@@ -58,7 +58,7 @@
 
 @mixin background-color($color) {
     background-color: $color;
-    @include transition(.3);
+    @include transition-ease-out(.3);
     &:hover {
         text-decoration: none;
         background-color: darken($color, 10%);
@@ -68,7 +68,7 @@
 
 @mixin background-color-light($color) {
     background-color: $color;
-    @include transition(.3);
+    @include transition-ease-out(.3);
     &:hover {
         text-decoration: none;
         background-color: lighten($color, 10%);
@@ -163,6 +163,7 @@
 * {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+        
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -398,7 +399,7 @@ p {
     top: 0;
     margin-top: 0;
     bottom: 0;
-    @include transition(.5s);
+    @include transition-ease-out(.5s);
 }
 
 .swiper-button-prev {
