@@ -6,9 +6,12 @@
 $(document).ready(function() {
 
     // ++++++++++++++++++++
-    // Banner
+    // Show search in top
     // ++++++++++++++++++++ 
-
+    $('.search').click(function(){
+        $('.top-search-form-wrapper').slideToggle();
+        $('.top-search-form-wrapper .search-form input').focus();
+    });
 
     // ++++++++++++++++++++ 
     // Responsive Menu
@@ -30,4 +33,33 @@ $(document).ready(function() {
             $('body').removeClass('on-scrolled');
         }
     });
+
+    $(function(){
+      SyntaxHighlighter.all();
+    });
+    $(window).load(function(){
+      $('.flexslider-home').flexslider({
+        animation: "fade",
+        start: function(slider){
+          $('body').removeClass('loading');
+        }
+      });
+
+      $('#carousel').flexslider({
+        animation: "slide",
+        controlNav: false,
+        animationLoop: false,
+        slideshow: false,
+        asNavFor: '#slider'
+      });
+     
+      $('#slider').flexslider({
+        animation: "slide",
+        controlNav: false,
+        animationLoop: false,
+        slideshow: false,
+        sync: "#carousel"
+      });
+    });
+
 }); //End of Document ready

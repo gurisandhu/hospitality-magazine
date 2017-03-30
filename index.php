@@ -5,44 +5,19 @@ Home Banner
 <section class="home-banner">
     <div class="full-container">
         <section class="slider">
-            <div class="flexslider">
+            <div class="flexslider-home">
                 <ul class="slides">
-                    <li>
-                        <img src="compressed/images/slider1.jpg" alt="">
-                        <div class="table">
-                            <div class="table-cell">
-                                <h2>Tentacles Abound in Our Best Jellyfish Pictures</h2>
-                                <p>James Gurney picks the most interesting pieces from the luxury watch fair</p>
+                    <?php for ($x = 1; $x <= 4; $x++) { ?>
+                        <li style="compressed/images/slider<?php echo $x; ?>.jpg">
+                            <img src="compressed/images/slider<?php echo $x; ?>.jpg" alt="">
+                            <div class="table">
+                                <div class="table-cell">
+                                    <h2>Tentacles Abound in Our Best Jellyfish Pictures</h2>
+                                    <p>James Gurney picks the most interesting pieces from the luxury watch fair</p>
+                                </div>
                             </div>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="compressed/images/slider2.jpg" alt="">
-                        <div class="table">
-                            <div class="table-cell">
-                                <h2>Tentacles Abound in Our Best Jellyfish Pictures</h2>
-                                <p>James Gurney picks the most interesting pieces from the luxury watch fair</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="compressed/images/slider3.jpg" alt="">
-                        <div class="table">
-                            <div class="table-cell">
-                                <h2>Tentacles Abound in Our Best Jellyfish Pictures</h2>
-                                <p>James Gurney picks the most interesting pieces from the luxury watch fair</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="compressed/images/slider4.jpg" alt="">
-                        <div class="table">
-                            <div class="table-cell">
-                                <h2>Tentacles Abound in Our Best Jellyfish Pictures</h2>
-                                <p>James Gurney picks the most interesting pieces from the luxury watch fair</p>
-                            </div>
-                        </div>
-                    </li>
+                        </li>
+                    <?php } ?>
                 </ul>
             </div>
         </section>
@@ -55,7 +30,7 @@ News Square
 <section class="marron-tag wrapper tiles">
 	<div class="container">	
     <div class="row">
-        <a href="#" class="heading-button">
+        <a href="#" class="heading-tag">
             <h3>News</h3>
             <span>View All</span>
         </a>

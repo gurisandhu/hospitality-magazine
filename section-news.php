@@ -1,5 +1,5 @@
 <div class="row">
-	<a href="#" class="heading-button marron">
+	<a href="#" class="heading-tag marron">
 		<h3>In focus</h3>
 		<span>View All</span>
 	</a>

@@ -5,9 +5,9 @@ Recent News
 <section class="marron-tag wrapper archive-head">
 	<div class="container">
 		<div class="row">
-			<a href="#" class="heading-button">
+			<div class="heading-tag">
 				<h3>News</h3>
-			</a>
+			</div>
 		</div>
 		<div class="row">
 			<div class="col-2-archive-head" style="background-image:url('compressed/images/slider1.jpg');">

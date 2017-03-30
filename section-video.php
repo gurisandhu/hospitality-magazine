@@ -1,6 +1,6 @@
 <div class="row">
-	<a href="#" class="heading-button">
-		<h3>Videos</h3>
+	<a href="#" class="heading-tag">
+		<h3>Videos - Best Practice</h3>
 		<span>View All</span>
 	</a>
 </div>

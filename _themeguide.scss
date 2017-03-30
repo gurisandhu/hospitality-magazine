@@ -22,7 +22,8 @@ button {
 }
 
 p {
-    font-size: 16px;
+    font-size: 17px;
+    font-weight: 300;
     letter-spacing: 0;
 }
 
@@ -59,7 +60,7 @@ p {
 }
 
 .col-4 {
-    @include col-4(0, 0);
+    @include col-4(2.2%, 0);
 }
 
 .center {
@@ -75,16 +76,17 @@ p {
 // Headings
 // //////////////
 .heading-common {
-    color: black;
+    color: #303030;
+    font-weight: 600;
 }
 
 h1 {
-    font-size: 59px;
+    font-size: 30px;
     @extend .heading-common;
 }
 
 h2 {
-    font-size: 44px;
+    font-size: 40px;
     @extend .heading-common;
 }
 
@@ -425,6 +427,20 @@ select {
                     opacity: 1;
                 }
             }
+            &:hover{
+                &+.new-checkbox {
+                    &:after {
+                        opacity: 1;
+                    }
+                }   
+            }
+        }
+        &:hover{
+            &+.new-checkbox {
+                &:after {
+                    opacity: .2;
+                }
+            }   
         }
     }
 }

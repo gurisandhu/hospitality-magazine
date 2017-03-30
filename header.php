@@ -74,7 +74,7 @@
 							</li>
 							<li><a href="archive-video.php">Video Category</a></li>
 							<li><a href="single.php">Single</a></li>
-							<li><a href="#">Management</a></li>
+							<li><a href="single-video.php">Video Single</a></li>
 							<li><a href="#">Directory</a></li>
 							<li><a href="#">Magazine</a></li>
 							<li><a href="#">Shop</a></li>
@@ -87,6 +87,12 @@
 						<span>Search</span>
 					</div>
 				</div>
+			</div>
+			<div class="row top-search-form-wrapper">
+				<form action="" class="row search-form">
+					<input type="text" placeholder="Enter your search term">
+					<button type="submit"><i class="fa fa-search"></i></button>
+				</form>
 			</div>
 		</div>
 	</header>

@@ -3,7 +3,7 @@
 <section class="wrapper-2">
 	<div class="container-620">
 		<div class="row">
-			<h1>Medical Care is just a click Away</h1>
+			<h1>Beat the summer heat with crock pot cooking</h1>
 		</div>
 	</div>
 </section>	
@@ -106,16 +106,20 @@ Related Stories
 <section class="wrapper">
 	<div class="container">
 		<div class="row">
-			<div class="related-stories-head"><span>Related Stories</span></div>
+			<div class="related-stories-head"><span>Related Videos</span></div>
 		</div>
 		<div class="row">
 			<?php for ($x = 1; $x <= 4; $x++) { ?>
 			<a href="#" class="col-4 related-story">
 				<div class="related-story-image" style="background-image:url('compressed/images/slider<?php echo $x; ?>.jpg');">
-					
+					<div class="table">
+						<div class="table-cell">
+							<div class="play-video-but"><i class="fa fa-play"></i></div>
+						</div>
+					</div>
 				</div>
 				<div class="related-story-content">
-					Get Around Easily With a New York Limousine Service
+					Beat the summer heat with crock pot cooking
 				</div>
 			</a>
 			<?php } ?>
