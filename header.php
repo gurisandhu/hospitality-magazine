@@ -72,9 +72,10 @@
 									</li>
 								</ul>
 							</li>
-							<li><a href="archive-video.php">Video Category</a></li>
-							<li><a href="single.php">Single</a></li>
-							<li><a href="single-video.php">Video Single</a></li>
+							<li><a href="single.php">Single news</a></li>
+							<li><a href="archive-video.php">Video All</a></li>
+							<li><a href="archive-sub-video.php">Sub Video Cat</a></li>
+							<li><a href="single-video.php">Single Video</a></li>
 							<li><a href="#">Directory</a></li>
 							<li><a href="#">Magazine</a></li>
 							<li><a href="#">Shop</a></li>
@@ -82,10 +83,10 @@
 					</div>
 				</nav>
 				<div class="search-wrapper">
-					<div class="search">
+					<button type="button" class="search">
 						<i class="fa fa-search"></i>
 						<span>Search</span>
-					</div>
+					</button>
 				</div>
 			</div>
 			<div class="row top-search-form-wrapper">

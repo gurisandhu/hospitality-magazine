@@ -6,18 +6,24 @@ Recent News
 	<div class="container">
 		<div class="row">
 			<div class="heading-tag">
-				<h3>News</h3>
+				<h3>Videos</h3>
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-2-archive-head" style="background-image:url('compressed/images/slider1.jpg');">
-				
-			</div>
-			<div class="col-2-archive-head">
-				<h2>Beat the summer heat With Crock pot cooking</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam eaque tenetur dolorem dolores animi sed ad reiciendis nam ex id facere cupiditate.</p>
-				<a href="#" class="medium-but">Read more</a>
-			</div>
+			<a href="#" class="row video-tile">
+				<div class="col-2-archive-head" style="background-image:url('http://embed.wistia.com/deliveries/5413caeac5fdf4064a2f9eab5c10a0848e42f19f.jpg?video_still_time=10');">
+					<div class="table">
+						<div class="table-cell">
+							<div class="play-video-but"><i class="fa fa-play"></i></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-2-archive-head">
+					<h2>Beat the summer heat With Crock pot cooking</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam eaque tenetur dolorem dolores animi sed ad reiciendis nam ex id facere cupiditate.</p>
+					<button class="medium-but">Read more</button>
+				</div>
+			</a>
 		</div>
 	</div>
 </section>
@@ -27,7 +33,7 @@ News Squares
 ++++++++++++++ -->
 <section class="wrapper tiles">
 	<div class="container">		
-        <?php include 'section-news-square.php'; ?>
+        <?php include 'section-sub-video.php'; ?>
 	</div>
 </section>
 
@@ -41,7 +47,7 @@ News Squares
 ++++++++++++++ -->
 <section class="wrapper tiles">
 	<div class="container">		
-        <?php include 'section-news-square.php'; ?>
+        <?php include 'section-sub-video.php'; ?>
 	</div>
 </section>
 

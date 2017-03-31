@@ -24,7 +24,7 @@ button {
 p {
     font-size: 17px;
     font-weight: 300;
-    letter-spacing: 0;
+    letter-spacing: .3px;
 }
 
 .container {
@@ -48,6 +48,9 @@ p {
     &:not(:first-of-type) {
         margin-top: 20px;
     }
+}
+a.row{
+    display: block;
 }
 
 @include body-smooth(white, transparent);
@@ -83,6 +86,7 @@ p {
 h1 {
     font-size: 30px;
     @extend .heading-common;
+    margin-bottom: 0;
 }
 
 h2 {
@@ -174,50 +178,6 @@ th {
     padding: 20px;
     text-align: left;
 }
-
-
-
-// //////////////
-// Buttons
-// //////////////
-.button-common {
-    @include transition-ease-out(.3);
-    display: inline-block;
-    border: 2px solid;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    padding: 11.5px 32px;
-    min-width: 134px;
-    text-align: center;
-    font-family: $theme-font;
-    text-transform: uppercase;
-    font-size: 21px;
-    float: left;
-    margin-right: 15px;
-    cursor: pointer;
-    &:last-child {
-        margin-right: 0;
-    }
-    &:hover {
-        text-decoration: none;
-    }
-}
-
-.button-1,
-button {
-    @extend .button-common;
-    background-color: $theme;
-    border-color: $theme;
-    color: white;
-    &:hover {
-        background-color: white;
-        color: $theme;
-    }
-    &:active {
-        color: darken($theme, 10%);
-    }
-}
-
 
 
 // //////////////
@@ -468,7 +428,7 @@ select {
     &:after {
         content: '\f00c';
         font-family: FontAwesome;
-        @include transition-ease-out(.3);
+        @include transition-ease-out(.1);
         color: $theme;
         left: -1px;
         top: -9px;

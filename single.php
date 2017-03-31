@@ -25,7 +25,7 @@ Home Banner
             <div id="carousel" class="flexslider">
             	<ul class="slides">
                     <?php for ($x = 1; $x <= 4; $x++) { ?>
-                    	<li style="background-image: url('compressed/images/slider<?php echo $x; ?>.jpg')"></li>
+                    	<li style='background-image: url("compressed/images/slider<?php echo $x; ?>.jpg");'></li>
                     <?php } ?>
                 </ul>
             </div>
@@ -37,7 +37,7 @@ Home Banner
 <section class="wrapper">
 	<div class="container-620">
 		<div class="row">
-			<!-- Go to www.addthis.com/dashboard to customize your tools --> <div class="addthis_inline_share_toolbox"></div>
+			<div class="addthis_inline_share_toolbox"></div>
 		</div>
 		<div class="row">
 			<div class="page-info">20 March, 2017 by <b>Danielle Bowling</b></div>
@@ -52,7 +52,8 @@ Home Banner
 	++++++++++++++ -->
 		<div class="row">
 			<div class="ad-on-single" style="background-image:url('compressed/images/slider1.jpg');">
-			<div class="ad-on-single-text">Advertisement</div>
+				<div class="ad-on-single-text">Advertisement</div>
+			</div>
 		</div>
 
 	<!--++++++++++++++ 

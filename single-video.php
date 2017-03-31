@@ -10,27 +10,9 @@
 <!--++++++++++++++ 
 Home Banner
 ++++++++++++++ -->
-<section class="inner-banner">
+<section class="video-banner">
     <div class="full-container">
-        <section class="slider">
-            <div id="slider" class="flexslider">
-                <ul class="slides">
-                    <?php for ($x = 1; $x <= 4; $x++) { ?>
-                        <li>
-                           	<img src="compressed/images/slider<?php echo $x; ?>.jpg" alt=""> 
-                        </li>
-                    <?php } ?>
-                </ul>
-            </div>
-            <div id="carousel" class="flexslider">
-            	<ul class="slides">
-                    <?php for ($x = 1; $x <= 4; $x++) { ?>
-                    	<li style="background-image: url('compressed/images/slider<?php echo $x; ?>.jpg')"></li>
-                    <?php } ?>
-                </ul>
-            </div>
-
-        </section>
+		<div class="wistia_embed wistia_async_j38ihh83m5" style="height:100%;width:100%;">&nbsp;</div>
     </div>
 </section>
 

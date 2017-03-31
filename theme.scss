@@ -1,13 +1,13 @@
 /* //////////////*/
 /* Colors*/
 /* //////////////*/
-$light-grey: rgba(246, 246, 246, 1);
+$light-grey: #f6f6f6;
 $grey: rgba(155, 155, 155, 1);
 $dark-grey: #232323;
 $grey-anchor: #373737;
 $border: #979797;
 $border-light: #eee;
-$dark-marron: #640F20;
+$dark-theme: #640F20;
 $light-blue: #CDDFE0;
 $grey-tag: #565656;
 $creame: #C09F80;
@@ -163,7 +163,7 @@ header {
 .marron-but {
     background-color: $theme;
     color: white;
-    border: 1px solid $dark-marron;
+    border: 1px solid $dark-theme;
     &:hover {
         background-color: darken($theme, 10%);
         text-decoration: none;
@@ -182,7 +182,8 @@ header {
     min-width: 249px;
     letter-spacing: 3.2px;
     padding: 14px;
-    border-radius: 1px;
+    -webkit-border-radius: 3px;
+            border-radius: 3px;
     @extend .marron-but;
     @extend .common-button;
 }
@@ -195,6 +196,7 @@ header {
     font-size: 20px;
     font-weight: bold;
     letter-spacing: 3.2px;
+    max-height: 34px;
     .fa{
         top: -3px;
     }
@@ -257,7 +259,9 @@ header {
         font-size: 12px;
         font-weight: 600;
         text-transform: uppercase;
-        padding: 5px 10px;
+        padding: 6px 10px;
+        background-color: transparent;
+        line-height: 1.1;
         border: 1px solid $border;
         text-decoration: none;
         @include transition-ease-out(.3);
@@ -350,6 +354,7 @@ header {
 /* //////////////*/
 .home-banner, .inner-banner {
     height: 665px;
+    background-color: $light-grey;
     .full-container,
     .slider,
     .flexslider-home,
@@ -359,8 +364,20 @@ header {
         width: 100%;
     }
 }
+.video-banner{
+    height: 573px;
+    background-color: $light-grey;
+    position: relative;
+    .full-container{
+        height: 100%;
+        width: 100%;
+    }
+}
 .flexslider-home, #slider{
     float: left;
+}
+.flexslider{
+    border: none;
 }
 #slider{
     overflow: hidden;
@@ -538,8 +555,10 @@ header {
         border: none;
     }
     .slides{
-        padding: 26px 0 26px 26px;
-        display: inline;
+        padding: 26px 0;
+        display: block;
+        float: left;
+        width: 100%!important;
         li{
             border: 3px solid white;
             width: 80px!important;
@@ -816,6 +835,11 @@ header {
         .play-video-but{
             background-color: darken($theme, 10%);
         }
+        .sub-video{
+            &:after{
+                background-color: rgba(0,0,0,.6);
+            }
+        }
     }
 }
 a.full-width{
@@ -829,6 +853,30 @@ a.full-width{
     position: relative;
     .table{
         padding-bottom: 22%;
+    }
+}
+.sub-video {
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    &:after{
+        position: absolute;
+        @include transition (.3);
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.4);
+        content: '';
+        z-index: 2;
+    }
+    .play-video-but{
+        position: relative;
+        z-index: 3;
     }
 }
 .video-heading{
@@ -845,6 +893,21 @@ a.full-width{
     text-transform: capitalize;
     line-height: 1.1;
     letter-spacing: .5px;
+}
+.sub-video-heading{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 8px 10px;
+    text-transform: capitalize;
+    line-height: 1.1;
+    letter-spacing: .5px;
+    z-index: 3;
 }
 .common-video-but{
     background-color: $theme;
@@ -917,6 +980,20 @@ a.full-width{
     border-bottom: 1px solid #E3E3E3;
     background-color: #FFF;
     @include transition-ease-out(.3);
+}
+.video-tile{
+    color: inherit;
+    &:hover{
+        .play-video-but{
+            background-color: darken($theme, 10%);
+        }
+        .medium-but{
+            background-color: darken($theme, 10%);   
+        }
+        h2{
+            color: darken(#303030, 5%);
+        }
+    }
 }
 .news-2 {
     height: 100%;
@@ -1109,6 +1186,10 @@ footer{
     float: left;
     width: 84px;
     margin-right: 17px;
+    img{
+        float: left;
+        
+    }
 }
 .internal-ad-content{
     float: left;
@@ -1154,7 +1235,7 @@ footer{
         color: white;
         font-size: 11px;
         text-transform: uppercase;
-        @include transition-ease-out(.3);
+        @include transition-ease-out(.1);
         &:hover{
             text-decoration: none;
             color: $grey;
@@ -1218,6 +1299,7 @@ footer{
         font-size: 32px;
         font-weight: 500;
         text-transform: capitalize;
+        @include transition (.3);
     }
     h2, p{
         line-height: 1.2;
@@ -1229,6 +1311,7 @@ footer{
 .col-2-archive-head{
     float: left;
     height: 336px;
+    @include transition (.3);
     &:first-child{
         width: 53.8%;
         -webkit-background-size: cover;

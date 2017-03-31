@@ -21,19 +21,6 @@ $(document).ready(function() {
         $('.responsive-menu').addClass('show');
     });
 
-    // ++++++++++++++++++++
-    // Header fixed, reduce size
-    // ++++++++++++++++++++
-    $(window).scroll(function() {
-        var scroll = $(window).scrollTop();
-
-        if (scroll >= 33) {
-            $('body').addClass('on-scrolled');
-        } else {
-            $('body').removeClass('on-scrolled');
-        }
-    });
-
     $(function(){
       SyntaxHighlighter.all();
     });
