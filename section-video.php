@@ -13,9 +13,9 @@
 						<div class="play-video-but"><i class="fa fa-play"></i></div>
 					</div>
 				</div>
-				<div class="video-heading">
-					Beat the summer heat with Crock Pot cooking
-				</div>
+			</div>
+			<div class="video-heading">
+				Beat the summer heat with Crock Pot cooking
 			</div>
 		</a>
 	</div>
@@ -37,9 +37,9 @@
 	</div>
 	<div class="col-3">
 		<a href="#" class="full-width">
-			<div class="ad-category" style="background-image:url('compressed/images/slider3.jpg');">
-				<div class="ad-text">Advertisement</div>
+			<div class="ad-category" style="background-image:url('compressed/images/slider<?php echo $x;?>.jpg');">
 			</div>
+			<div class="ad-text">Advertisement</div>
 		</a>
 	</div>
 </div>

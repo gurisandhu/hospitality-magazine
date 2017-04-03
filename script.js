@@ -11,6 +11,7 @@ $(document).ready(function() {
     $('.search').click(function(){
         $('.top-search-form-wrapper').slideToggle();
         $('.top-search-form-wrapper .search-form input').focus();
+        $(this).toggleClass('show');
     });
 
     // ++++++++++++++++++++ 

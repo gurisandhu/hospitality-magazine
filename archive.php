@@ -41,7 +41,7 @@ News Squares
 ++++++++++++++ -->
 <section class="wrapper tiles">
 	<div class="container">		
-        <?php include 'section-news-square.php'; ?>
+        <?php include 'section-news-square-2ad.php'; ?>
 	</div>
 </section>
 

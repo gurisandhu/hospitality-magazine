@@ -1,46 +1,37 @@
 <?php include 'header.php'; ?>
 
-<section class="wrapper-2">
-	<div class="container-620">
-		<div class="row">
-			<h1>Medical Care is just a click Away</h1>
-		</div>
-	</div>
-</section>	
-<!--++++++++++++++ 
-Home Banner
-++++++++++++++ -->
-<section class="inner-banner">
-    <div class="full-container">
-        <section class="slider">
-            <div id="slider" class="flexslider">
-                <ul class="slides">
-                    <?php for ($x = 1; $x <= 4; $x++) { ?>
-                        <li>
-                           	<img src="compressed/images/slider<?php echo $x; ?>.jpg" alt=""> 
-                        </li>
-                    <?php } ?>
-                </ul>
-            </div>
-            <div id="carousel" class="flexslider">
-            	<ul class="slides">
-                    <?php for ($x = 1; $x <= 4; $x++) { ?>
-                    	<li style='background-image: url("compressed/images/slider<?php echo $x; ?>.jpg");'></li>
-                    <?php } ?>
-                </ul>
-            </div>
-
-        </section>
-    </div>
-</section>
 
 <section class="wrapper">
 	<div class="container-620">
 		<div class="row">
-			<div class="addthis_inline_share_toolbox"></div>
+			<h1>Medical Care is just a click Away</h1>
+		</div>
+		<div class="full-width">
+			<div class="page-info">20 March, 2017 by <b>Danielle Bowling</b></div>
+		</div>
+		<div class="row inner-banner">
+			<section class="slider">
+	            <div id="slider" class="flexslider">
+	                <ul class="slides">
+	                    <?php for ($x = 1; $x <= 4; $x++) { ?>
+	                        <li>
+	                           	<img src="compressed/images/slider<?php echo $x; ?>.jpg" alt=""> 
+	                        </li>
+	                    <?php } ?>
+	                </ul>
+	            </div>
+	            <div id="carousel" class="flexslider">
+	            	<ul class="slides">
+	                    <?php for ($x = 1; $x <= 4; $x++) { ?>
+	                    	<li style='background-image: url("compressed/images/slider<?php echo $x; ?>.jpg");'></li>
+	                    <?php } ?>
+	                </ul>
+	            </div>
+
+	        </section>
 		</div>
 		<div class="row">
-			<div class="page-info">20 March, 2017 by <b>Danielle Bowling</b></div>
+			<div class="addthis_inline_share_toolbox"></div>
 		</div>
 		<div class="row">
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci sapiente laborum illo vel natus error delectus, eius asperiores repellat quibusdam iste soluta quidem omnis impedit possimus animi amet, sit nisi.</p>
@@ -51,7 +42,9 @@ Home Banner
 	Advertisement
 	++++++++++++++ -->
 		<div class="row">
-			<div class="ad-on-single" style="background-image:url('compressed/images/slider1.jpg');">
+			<div class="ad-on-single-wrapper">
+				<div class="ad-on-single" style="background-image:url('compressed/images/slider1.jpg');">
+				</div>
 				<div class="ad-on-single-text">Advertisement</div>
 			</div>
 		</div>
@@ -68,8 +61,11 @@ Home Banner
 	Advertisement
 	++++++++++++++ -->
 		<div class="row">
-			<div class="ad-on-single" style="background-image:url('compressed/images/slider1.jpg');">
-			<div class="ad-on-single-text">Advertisement</div>
+			<div class="ad-on-single-wrapper">
+				<div class="ad-on-single" style="background-image:url('compressed/images/slider2.jpg');">
+				</div>
+				<div class="ad-on-single-text">Advertisement</div>
+			</div>
 		</div>
 
 	<!--++++++++++++++ 
@@ -87,9 +83,9 @@ Home Banner
 		<div class="row news-tags">
 			<ul>
 				<li><label>Read more about:</label></li>
-				<li><a href="#">Asian</a></li>
-				<li><a href="#">Restaurants</a></li>
-				<li><a href="#">Food Service</a></li>
+				<li><a href="#">Asian, </a></li>
+				<li><a href="#">Restaurants, </a></li>
+				<li><a href="#">Food Service, </a></li>
 				<li><a href="#">Pubs &nbsp; Bars</a></li>
 			</ul>
 		</div>

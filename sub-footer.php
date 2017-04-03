@@ -62,6 +62,7 @@ Section: footer
 					<li class="col-2"><a href="#">Directory</a></li>
 					<li class="col-2"><a href="#">Magazine</a></li>
 					<li class="col-2"><a href="#">Shop</a></li>
+					<li class="col-2"><a target="_blank" href="http://www.intermedia.com.au/privacy-copyright">Privacy &amp; Policy</a></li>
 				</ul>
 			</div>
 		</div>

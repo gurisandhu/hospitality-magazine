@@ -5,7 +5,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
 	<title>hospitality | Magazine</title>
-	<link rel="shortcut icon" href="compressed/images/fevicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="compressed/images/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="compressed/images/favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.0/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Hind+Vadodara:300,400,500,600,700" rel="stylesheet">
@@ -31,8 +31,7 @@
 			<div class="col-2">
 				<ul class="top-menu">
 					<li><a href="#">About Us</a></li>
-					<li><a href="#">Advertise with us</a></li>
-					<li><a href="#">Contact us</a></li>
+					<li><a href="template-contact.php">Contact us</a></li>
 				</ul>
 			</div>
 		</div>

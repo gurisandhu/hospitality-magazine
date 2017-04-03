@@ -47,7 +47,7 @@ News Squares
 ++++++++++++++ -->
 <section class="wrapper tiles">
 	<div class="container">		
-        <?php include 'section-sub-video.php'; ?>
+        <?php include 'section-sub-video-2ad.php'; ?>
 	</div>
 </section>
 

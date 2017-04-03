@@ -5,6 +5,9 @@
 		<div class="row">
 			<h1>Beat the summer heat with crock pot cooking</h1>
 		</div>
+		<div class="full-width">
+			<div class="page-info">20 March, 2017 by <b>Danielle Bowling</b></div>
+		</div>
 	</div>
 </section>	
 <!--++++++++++++++ 
@@ -12,17 +15,14 @@ Home Banner
 ++++++++++++++ -->
 <section class="video-banner">
     <div class="full-container">
-		<div class="wistia_embed wistia_async_j38ihh83m5" style="height:100%;width:100%;">&nbsp;</div>
+		<div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><span class="wistia_embed wistia_async_rpimbe7fkt playerColor=640F20" style="display:inline-block;height:100%;width:100%">&nbsp;</span></div></div>
     </div>
 </section>
 
 <section class="wrapper">
 	<div class="container-620">
 		<div class="row">
-			<!-- Go to www.addthis.com/dashboard to customize your tools --> <div class="addthis_inline_share_toolbox"></div>
-		</div>
-		<div class="row">
-			<div class="page-info">20 March, 2017 by <b>Danielle Bowling</b></div>
+			<div class="addthis_inline_share_toolbox"></div>
 		</div>
 		<div class="row">
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci sapiente laborum illo vel natus error delectus, eius asperiores repellat quibusdam iste soluta quidem omnis impedit possimus animi amet, sit nisi.</p>
@@ -33,8 +33,11 @@ Home Banner
 	Advertisement
 	++++++++++++++ -->
 		<div class="row">
-			<div class="ad-on-single" style="background-image:url('compressed/images/slider1.jpg');">
-			<div class="ad-on-single-text">Advertisement</div>
+			<div class="ad-on-single-wrapper">
+				<div class="ad-on-single" style="background-image:url('compressed/images/slider1.jpg');">
+				</div>
+				<div class="ad-on-single-text">Advertisement</div>
+			</div>
 		</div>
 
 	<!--++++++++++++++ 
@@ -49,8 +52,11 @@ Home Banner
 	Advertisement
 	++++++++++++++ -->
 		<div class="row">
-			<div class="ad-on-single" style="background-image:url('compressed/images/slider1.jpg');">
-			<div class="ad-on-single-text">Advertisement</div>
+			<div class="ad-on-single-wrapper">
+				<div class="ad-on-single" style="background-image:url('compressed/images/slider3.jpg');">
+				</div>
+				<div class="ad-on-single-text">Advertisement</div>
+			</div>
 		</div>
 
 	<!--++++++++++++++ 

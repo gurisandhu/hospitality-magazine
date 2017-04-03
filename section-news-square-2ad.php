@@ -10,14 +10,14 @@
 		</div>
 	</a>
 	<?php } ?>
-	<?php for ($x = 1; $x <= 1; $x++) { ?>
+	<?php for ($x = 1; $x <= 2; $x++) { ?>
 	<a href="#" class="col-3">
 		<div class="ad-category" style="background-image:url('compressed/images/slider<?php echo $x;?>.jpg');">
 		</div>
 		<div class="ad-text">Advertisement</div>
 	</a>
 	<?php } ?>
-	<?php for ($x = 1; $x <= 3; $x++) { ?>
+	<?php for ($x = 1; $x <= 2; $x++) { ?>
 	<a href="#" class="col-3">
 		<div class="news" style="background-image:url('compressed/images/slider<?php echo $x;?>.jpg');">
 		</div>
