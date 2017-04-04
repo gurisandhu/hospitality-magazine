@@ -1,0 +1,109 @@
+@media screen and (max-width: 720px){
+	.top, .social-and-search{
+		.col-2{
+			@include reset-col-2(0,0);
+			text-align: center;
+		}
+		.social-media, .top-menu{
+			width: auto;
+			// margin: 0;
+		}
+		.top-menu{
+			float: left;
+		}
+	}
+	header{
+		&.top{
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+	}
+	.social-and-search{
+		padding-top: 17px;
+	}
+	.menu-button-wrapper{
+		position: absolute;
+		width: auto;
+		right: 0;
+		top: 45px;
+		background-color: transparent;
+	}
+}
+
+@media screen and (max-width: 650px){
+	header.sub-header{
+		text-align: center;
+		.col-2{
+			@include reset-col-2(0,0);
+		}
+		.logo, .button{
+			display: inline-block;
+			float: none;
+			margin: 0;
+		}
+		.logo{
+			width: auto;
+			height: auto;
+		}
+		.button{
+			min-width: auto;
+			width: 100%;
+			max-width: 249px;
+		}
+
+	}
+}
+
+@media screen and (max-width: 1000px){
+	.container{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.desktop-menu{
+		display: none;
+	}
+	.responsive-menu{
+		// display: block;
+	}
+	.menu-button-wrapper{
+		display: block;
+	}
+	header{
+		&.menu-header{
+			padding-bottom: 13px;
+		}
+	}
+}
+
+@media screen and (max-width: 500px){
+	.responsive-menu{
+		nav{
+			div{
+				a{
+					font-size: 30px;
+				}
+			}
+		}
+	}
+	.has-details{
+		top: 0;
+		// right: 15px;
+	}
+}
+
+
+@media screen and (max-width: 1170px){
+	
+}
+
+@media screen and (max-width: 1170px){
+	
+}
+
+@media screen and (max-width: 1170px){
+	
+}
+
+@media screen and (max-width: 1170px){
+	
+}

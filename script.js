@@ -14,12 +14,20 @@ $(document).ready(function() {
         $(this).toggleClass('show');
     });
 
+
     // ++++++++++++++++++++ 
     // Responsive Menu
     // ++++++++++++++++++++ 
     $('.menu-button-wrapper').click(function() {
         $(this).toggleClass('show');
-        $('.responsive-menu').addClass('show');
+        $('.responsive-menu').slideToggle();
+    });
+
+    $(".responsive-menu .menu-item-has-children").append("<span class='has-details'></span>");
+
+    $('.has-details').click(function() {
+        $(this).toggleClass('show');
+        $(this).parent('.menu-item-has-children').find('> .sub-menu').slideToggle();
     });
 
     $(function(){

@@ -91,6 +91,9 @@ header {
     a {
         float: left;
         width: 100%;
+        &:hover{
+            text-decoration: none;
+        }
     }
     li {
         margin-right: 12px;
@@ -118,6 +121,7 @@ header {
     float: right;
     margin-bottom: 11px;
     margin-top: 9px;
+    padding-left: 0;
     a {
         color: $dark-grey;
         font-size: 11px;
@@ -126,12 +130,12 @@ header {
         text-decoration: none;
         &:hover {
             color: black;
-            &:after {
+            &::after {
                 background-color: $theme;
                 width: 75%;
             }
         }
-        &:after {
+        &::after {
             content: '';
             bottom: -5px;
             height: 3px;
@@ -193,10 +197,10 @@ header {
     @extend .common-button;
     padding: 2.1px;
     border-radius: 2px;
-    font-size: 20px;
+    font-size: 19px;
     font-weight: bold;
     letter-spacing: 3.2px;
-    max-height: 34px;
+    height: 32px;
     .fa{
         top: -3px;
     }
@@ -287,69 +291,69 @@ header {
             }   
         }
     }
-}
 
-.sub-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 5;
-    padding: 0;
-    min-width: 195px;
-    text-align: left;
-    border-right: 1px solid $grey;
-    li {
-        width: 100%;
-        background-color: $light-grey;
-        &.current-menu-item,
-        &.current-menu-parent {
-            a {
-                background-color: $theme;
-                color: white;
-                border-color: $theme;
+    .sub-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 5;
+        padding: 0;
+        min-width: 195px;
+        text-align: left;
+        border-right: 1px solid $grey;
+        li {
+            width: 100%;
+            background-color: $light-grey;
+            &.current-menu-item,
+            &.current-menu-parent {
+                a {
+                    background-color: $theme;
+                    color: white;
+                    border-color: $theme;
+                }
             }
-        }
-        a {
-            border-top: none;
-            text-transform: inherit;
-        }
-        &:last-child {
             a {
-                border-right: none!important;
+                border-top: none;
+                text-transform: inherit;
+            }
+            &:last-child {
+                a {
+                    border-right: none!important;
+                }
             }
         }
     }
-}
 
-.menu-item-has-children {
-    position: relative;
-    &:hover {
-        >.sub-menu {
-            display: block;
-        }
-    }
     .menu-item-has-children {
-        >.sub-menu {
-            left: 100%;
-            top: 0;
-            border-top: 1px solid $grey;
-        }
+        position: relative;
         &:hover {
             >.sub-menu {
                 display: block;
             }
         }
-    }/*end of menu-item-has-children*/
-}
-
+        .menu-item-has-children {
+            >.sub-menu {
+                left: 100%;
+                top: 0;
+                border-top: 1px solid $grey;
+            }
+            &:hover {
+                >.sub-menu {
+                    display: block;
+                }
+            }
+        }/*end of menu-item-has-children*/
+    }
+}/*end of desktop-menu*/
 
 .search-wrapper {
     float: left;
-    margin-top: 9px;
+    position: relative;
     cursor: pointer;
     .search {
         border-left: none;
+        margin-top: 9px;
         .fa {
             color: black;
         }
@@ -361,7 +365,7 @@ header {
 /* Home Flex Slider*/
 /* //////////////*/
 .home-banner{
-    height: 665px;
+    height: 499px;
     background-color: $light-grey;
     .full-container,
     .slider,
@@ -385,7 +389,7 @@ header {
     }
 }
 .video-banner{
-    height: 573px;
+    // height: 573px;
     background-color: $light-grey;
     position: relative;
     .full-container{
@@ -398,6 +402,8 @@ header {
 }
 .flexslider{
     border: none;
+    -webkit-border-radius: 0;
+            border-radius: 0;
 }
 #slider{
     overflow: hidden;
@@ -479,11 +485,13 @@ header {
         right: 0;
         width: 100%;
         height: 100%;
-        max-width: 620px;
         margin: auto;
         z-index: 3;
         text-align: center;
-        padding: 30px 0;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding-left: 15%;
+        padding-right: 15%;
     }
     &:hover{
         .flex-direction-nav{
@@ -542,6 +550,10 @@ header {
             height: 16px;
             width: 16px;
             @include transition-ease-out(.3);
+            -webkit-box-shadow: none;
+                    box-shadow: none;
+            -webkit-border-radius: 50%;
+                    border-radius: 50%;
             &.flex-active {
                 background-color: $theme;
             }
@@ -676,8 +688,8 @@ header {
     background-color: $light-grey;
 }
 .wrapper-2 {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 1px;
+    padding-bottom: 20px;
     background-color: $light-grey;
 }
 .container-620{
@@ -704,7 +716,6 @@ header {
 }
 
 .news {
-    height: 100%;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -714,13 +725,17 @@ header {
 .news-content {
     width: 100%;
     color: $dark-grey;
-    z-index: 3;
     line-height: 1.1;
     letter-spacing: .5px;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    border-color: $border-light;
+    padding: 8px;
+    background-color: lighten($light-grey,3%);
 }
 
 .news-heading {
-    padding: 17px 10px 0 0;
     font-size: 20px;
     font-weight: 600;
     text-transform: capitalize;
@@ -728,7 +743,6 @@ header {
 
 
 .ad-category {
-    height: 100%;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -838,7 +852,6 @@ a.full-width{
     }
 }
 .sub-video {
-    height: 100%;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -858,16 +871,27 @@ a.full-width{
     text-transform: capitalize;
     line-height: 1.1;
     letter-spacing: .5px;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    border-color: $border-light;
+    padding: 8px;
+    background-color: lighten($light-grey,3%);
 }
 .sub-video-heading{
     width: 100%;
     color: $dark-grey;
     font-size: 20px;
     font-weight: 600;
-    padding: 8px 10px 0 0;
     text-transform: capitalize;
     line-height: 1.1;
     letter-spacing: .5px;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    border-color: $border-light;
+    padding: 8px;
+    background-color: lighten($light-grey,3%);
 }
 .common-video-but{
     background-color: $theme;
@@ -946,6 +970,7 @@ a.full-width{
 .video-tile{
     color: inherit;
     &:hover{
+        text-decoration: none;
         .play-video-but{
             background-color: darken($theme, 10%);
         }
@@ -958,7 +983,6 @@ a.full-width{
     }
 }
 .news-2 {
-    height: 100%;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -968,19 +992,24 @@ a.full-width{
     height: 272px;
 }
 .news-content-2 {
-    padding: 10px 0 0;
     width: 100%;
     color: $dark-grey;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    border-color: $border-light;
+    padding: 8px;
+    background-color: lighten($light-grey,3%);
 }
 
 .news-heading-2 {
-    font-size: 27px;
+    font-size: 24px;
     font-weight: 600;
     text-transform: capitalize;
     line-height: 1;
 }
 .related-news{
-    height: 336px;
+    height: 337px;
 }
 .related-news-image{
     width: 125px;
@@ -1203,6 +1232,7 @@ footer{
         width: 100%-67%;
         border: 1px solid $theme;
         max-width: 80px;
+        height: 100%;
     }
     input[type="text"], input[type="submit"]{
         float: left;
@@ -1431,17 +1461,44 @@ footer{
         @include col-2(4%, 0);
     }
     h2{
-        font-size: 30px;
+        font-size: 22px;
         line-height: 1;
         margin-bottom: 5px;
+        font-weight: 600;
     }
 }
 .each-contact-details {
     list-style: none;
     padding: 0;
     margin-bottom: 0;
+    &:first-child{
+        margin-top: 0;
+    }
+}
+.at-share-tbx-element .at-share-btn{
+    margin-bottom: 0!important;
 }
 
+.responsive-menu{
+    text-align: center;
+    .search-wrapper{
+        display: inline-block;
+        width: 100%;
+        float: none;
+        max-width: 500px;
+        input[type="text"]{
+            width: 88%;
+            float: left;
+            background-color: white;
+        }
+        button{
+            width: 12%;
+            .fa{
+                color: #FFF;
+            }
+        }
+    }
+}
 /* //////////////*/
 /*This file link includes resonsive style and it MUST always stays at the bottom of this file. If you need to type code, please type above to this link. Don't type below of responsive file link.*/
 /* //////////////*/

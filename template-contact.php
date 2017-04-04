@@ -25,11 +25,13 @@
 						<input type="text" name="phone" placeholder="Phone">
 					</div>
 					<div class="form-row">
-						<select name="" id="">
-							<option value="">Type of inquery</option>
-							<option value="advertise_with_us">Advertise with us</option>
-							<option value="general_info">General Information</option>
-						</select>
+						<div class="new-select full-width">
+							<select name="" id="">
+								<option value="">Type of inquiry</option>
+								<option value="advertise_with_us">Advertise with us</option>
+								<option value="general_info">General Information</option>
+							</select>
+						</div>
 					</div>
 					<div class="form-row">
 						<textarea class="full-width" name="message" rows="5" placeholder="Comments"></textarea>
@@ -46,21 +48,21 @@
 			<ul class="each-contact-details row">
 				<li><h2>Magazine &amp; Online Advertising</h2></li>
 				<li><strong>Name Title</strong></li>
-				<li><a href="mailto:email@google.com.au"><strong>email@google.com.au</strong></a></li>
+				<li><a href="mailto:email@gmail.com.au"><strong>email@gmail.com.au</strong></a></li>
 				<li>Office: 02 9898 9898</li>
 				<li>Mobile: <a href="tel:+61432444333">0432 444 333</a></li>
 			</ul>
 			<ul class="each-contact-details row">
 				<li><h2>Editor</h2></li>
 				<li><strong>Name Title</strong></li>
-				<li><a href="mailto:email@google.com.au"><strong>email@google.com.au</strong></a></li>
+				<li><a href="mailto:email@gmail.com.au"><strong>email@gmail.com.au</strong></a></li>
 				<li>Office: 02 9898 9898</li>
 				<li>Mobile: <a href="tel:+61432444333">0432 444 333</a></li>
 			</ul>
 			<ul class="each-contact-details row">
 				<li><h2>Journalist</h2></li>
 				<li><strong>Name Title</strong></li>
-				<li><a href="mailto:email@google.com.au"><strong>email@google.com.au</strong></a></li>
+				<li><a href="mailto:email@gmail.com.au"><strong>email@gmail.com.au</strong></a></li>
 				<li>Office: 02 9898 9898</li>
 				<li>Mobile: <a href="tel:+61432444333">0432 444 333</a></li>
 			</ul>

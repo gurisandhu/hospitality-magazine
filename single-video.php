@@ -1,12 +1,15 @@
 <?php include 'header.php'; ?>
 
-<section class="wrapper-2">
+<section class="wrapper">
 	<div class="container-620">
 		<div class="row">
 			<h1>Beat the summer heat with crock pot cooking</h1>
 		</div>
 		<div class="full-width">
 			<div class="page-info">20 March, 2017 by <b>Danielle Bowling</b></div>
+		</div>
+		<div class="row">
+			<div class="addthis_inline_share_toolbox"></div>
 		</div>
 	</div>
 </section>	
@@ -21,9 +24,6 @@ Home Banner
 
 <section class="wrapper">
 	<div class="container-620">
-		<div class="row">
-			<div class="addthis_inline_share_toolbox"></div>
-		</div>
 		<div class="row">
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci sapiente laborum illo vel natus error delectus, eius asperiores repellat quibusdam iste soluta quidem omnis impedit possimus animi amet, sit nisi.</p>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aliquid reiciendis, tenetur explicabo exercitationem, quibusdam vitae sequi, quaerat voluptatem libero delectus excepturi hic quis ducimus omnis saepe odio dolores provident.</p>
@@ -74,9 +74,9 @@ Home Banner
 		<div class="row news-tags">
 			<ul>
 				<li><label>Read more about:</label></li>
-				<li><a href="#">Asian</a></li>
-				<li><a href="#">Restaurants</a></li>
-				<li><a href="#">Food Service</a></li>
+				<li><a href="#">Asian, </a></li>
+				<li><a href="#">Restaurants, </a></li>
+				<li><a href="#">Food Service, </a></li>
 				<li><a href="#">Pubs &nbsp; Bars</a></li>
 			</ul>
 		</div>

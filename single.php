@@ -9,6 +9,9 @@
 		<div class="full-width">
 			<div class="page-info">20 March, 2017 by <b>Danielle Bowling</b></div>
 		</div>
+		<div class="row">
+			<div class="addthis_inline_share_toolbox"></div>
+		</div>
 		<div class="row inner-banner">
 			<section class="slider">
 	            <div id="slider" class="flexslider">
@@ -29,9 +32,6 @@
 	            </div>
 
 	        </section>
-		</div>
-		<div class="row">
-			<div class="addthis_inline_share_toolbox"></div>
 		</div>
 		<div class="row">
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci sapiente laborum illo vel natus error delectus, eius asperiores repellat quibusdam iste soluta quidem omnis impedit possimus animi amet, sit nisi.</p>

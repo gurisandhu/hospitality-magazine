@@ -7,9 +7,8 @@ Home Banner
         <section class="slider">
             <div class="flexslider-home">
                 <ul class="slides">
-                    <?php for ($x = 1; $x <= 4; $x++) { ?>
-                        <li style="compressed/images/slider<?php echo $x; ?>.jpg">
-                            <img src="compressed/images/slider<?php echo $x; ?>.jpg" alt="">
+                    <?php for ($x = 1; $x <= 8; $x++) { ?>
+                        <li style="background-image: url('compressed/images/slider<?php echo $x; ?>.jpg');">
                             <div class="table">
                                 <div class="table-cell">
                                     <h2>Tentacles Abound in Our Best Jellyfish Pictures</h2>
