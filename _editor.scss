@@ -275,13 +275,18 @@ nav {
     }
 }
 
-@mixin reset-col-3($margin) {
+@mixin reset-col-3($margin, $margin2) {
     &:nth-of-type(3n+3) {
         margin-right: $margin;
     }
     &:nth-of-type(3n+4) {
         float: left;
         clear: none;
+    }
+    &:nth-last-of-type(1),
+    &:nth-last-of-type(2),
+    &:nth-last-of-type(3) {
+        margin-bottom: $margin2;
     }
 }
 
@@ -300,7 +305,21 @@ nav {
         clear: left;
     }
 }
-
+@mixin reset-col-4($margin, $margin2) {
+    float: left;
+    width: 100%;
+    margin-right: $margin;
+    margin-bottom: $margin2;
+    &:first-child {
+        clear: left;
+    }
+    &:nth-of-type(4n+4) {
+        margin-right: $margin;
+    }
+    &:nth-of-type(4n+5) {
+        float: left;
+    }
+}
 @mixin one-twoThird($one-third, $margin-right) {
     .one-third {
         width: $one-third;

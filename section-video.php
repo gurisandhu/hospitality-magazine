@@ -1,7 +1,13 @@
 <div class="row">
 	<a href="#" class="heading-tag">
 		<h3>Videos - Best Practice</h3>
-		<span>View All</span>
+		<span>
+			<div class="table">
+				<div class="table-cell">
+					View All
+				</div>
+			</div>
+		</span>
 	</a>
 </div>
 <div class="row">

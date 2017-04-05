@@ -20,7 +20,7 @@
 				<div class="row">
 					<div class="checkbox-button">
 						Check to receive free digital magazine
-						<input type="checkbox" name="gender" value="option1"><i class="new-checkbox"></i>
+						<input type="checkbox" checked name="gender" value="option1"><i class="new-checkbox"></i>
 					</div>
 				</div>
 			</form>

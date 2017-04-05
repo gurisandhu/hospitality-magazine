@@ -17,7 +17,6 @@ Social media and Search
 				<div class="col-2">
 					<ul class="top-menu">
 						<li><a href="#">About Us</a></li>
-						<li><a href="#">Advertise with us</a></li>
 						<li><a href="#">Contact us</a></li>
 					</ul>
 				</div>
@@ -71,12 +70,14 @@ Section: footer
 				<form action="">
 					<div class="heading">Subscribe to our newsletter</div>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-					<input type="text" placeholder="E-mail">
-					<input type="submit" value="Yes Please" class="small-but">
+					<div class="full-width">
+						<input type="text" placeholder="E-mail">
+						<input type="submit" value="Yes Please" class="small-but">
+					</div>
 					<div class="full-width">
 						<div class="checkbox-button">
 							Check to receive free digital magazine
-							<input type="checkbox" name="gender" value="option1"><i class="new-checkbox"></i>
+							<input type="checkbox" checked name="gender" value="option1"><i class="new-checkbox"></i>
 						</div>
 					</div>
 				</form>

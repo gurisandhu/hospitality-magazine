@@ -633,18 +633,23 @@ header {
         float: right;
         font-size: 12px;
         position: absolute;
-        top: 8px;
+        top: 0;
+        height: 100%;
         right: 15px;
+        .table-cell{
+            padding: 4px 0;
+        }
     }
     h3{
         color: white;
-        padding: 5.5px 15px;
+        padding: 5.5px 85px 5.5px 15px;
         font-size: 20px;
         margin: 0;
         float: left;
         width: 100%;
         position: relative;
         top: -1px;
+        text-align: left;
     }
 }
 
@@ -693,8 +698,10 @@ header {
     background-color: $light-grey;
 }
 .container-620{
-    max-width: 620px;
+    max-width: 620+60px;
     margin: auto;
+    padding-left: 30px;
+    padding-right: 30px;
     position: relative;
     &:after{
         display: block;
@@ -758,13 +765,16 @@ header {
     padding: 2px 0 0 0;
     position: relative;
     line-height: .9;
+    text-align: left;
 }
 .advertisement-container{
     float: left;
     width: 100%;
 }
 .ad-on-single-wrapper{
-    width: 300px;
+    max-width: 300px;
+    width: 100%;
+    overflow: hidden;
     height: 250px+18px;
     margin: auto;
     padding-bottom: 18px;
@@ -1480,7 +1490,7 @@ footer{
 }
 
 .responsive-menu{
-    text-align: center;
+    text-align: left;
     .search-wrapper{
         display: inline-block;
         width: 100%;
