@@ -9,7 +9,10 @@
 	<link rel="shortcut icon" href="compressed/images/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="compressed/images/favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.0/css/font-awesome.min.css">
-	<link href="https://fonts.googleapis.com/css?family=Hind+Vadodara:300,400,500,600,700" rel="stylesheet">
+	<!-- fonts	 -->
+		<link href="https://fonts.googleapis.com/css?family=Hind+Vadodara:300,400,500,600,700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+	<!-- End of fonts	 -->
 	<!--Flexslider Plugin REMOVE AFTER WORDPRESS-->
 		<link rel="stylesheet" href="flexslider/css/flexslider.css">
 	<!--End of Flexslider Plugin REMOVE AFTER WORDPRESS-->
@@ -79,7 +82,7 @@
 							<li><a href="archive-video.php">Video All</a></li>
 							<li><a href="archive-sub-video.php">Sub Video Cat</a></li>
 							<li><a href="single-video.php">Single Video</a></li>
-							<li><a href="#">Directory</a></li>
+							<li><a href="theme-guide.php">Guide</a></li>
 							<li><a href="#">Magazine</a></li>
 							<li><a href="#">Shop</a></li>
 						</ul>
@@ -121,7 +124,7 @@
 							<li><a href="archive-video.php">Video All</a></li>
 							<li><a href="archive-sub-video.php">Sub Video Cat</a></li>
 							<li><a href="single-video.php">Single Video</a></li>
-							<li><a href="#">Directory</a></li>
+							<li><a href="theme-guide.php">Guide</a></li>
 							<li><a href="#">Magazine</a></li>
 							<li><a href="#">Shop</a></li>
 						</ul>

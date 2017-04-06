@@ -1,6 +1,7 @@
 /* //////////////*/
 /* Colors*/
 /* //////////////*/
+$theme: rgba(118, 50, 63, 1);
 $light-grey: #f6f6f6;
 $grey: rgba(155, 155, 155, 1);
 $dark-grey: #232323;
@@ -12,6 +13,13 @@ $light-blue: #CDDFE0;
 $grey-tag: #565656;
 $creame: #C09F80;
 
+// //////////////
+// Fonts
+// //////////////
+$theme-font: 'Hind Vadodara', sans-serif;
+$blockquote: 'Lobster', cursive;
+
+
 
 /* //////////////*/
 /*This file includes mixins, resets etc.*/
@@ -20,19 +28,14 @@ $creame: #C09F80;
 
 
 /* //////////////*/
-/*Theme Style Guide*/
+/*Theme Style Guide: Styles that works overall*/
 /* //////////////*/
 @import 'themeguide';
-body,
-input,
-textarea,
-keygen,
-select,
-button {
-    color: $dark-grey;
-    letter-spacing: .8px;
-}
 
+
+/* //////////////*/
+/* Styles in Theme.scss are for each section
+/* //////////////*/
 
 /* //////////////*/
 /* Header*/
@@ -72,48 +75,6 @@ header {
         padding-top: 20px;
         padding-bottom: 9px;
         text-align: center;
-    }
-}
-
-.social-media {
-    margin-top: 13px;
-    margin-bottom: 13px;
-    float: left;
-    width: 100%;
-    padding: 0;
-    .fa {
-        color: $grey;
-        font-size: 22px;
-        float: left;
-        width: 100%;
-        @include transition-ease-out(.3);
-    }
-    a {
-        float: left;
-        width: 100%;
-        &:hover{
-            text-decoration: none;
-        }
-    }
-    li {
-        margin-right: 12px;
-        &:last-child {
-            margin-right: 0;
-        }
-        &:hover {
-            .fa {
-                color: black;
-            }
-        }
-    }
-    label {
-        font-size: 13px;
-        text-transform: uppercase;
-        font-weight: 600;
-        position: relative;
-        top: 2px;
-        float: left;
-        width: 100%;
     }
 }
 
@@ -220,148 +181,6 @@ header {
 
 
 /* //////////////*/
-/* Desktop menu*/
-/* //////////////*/
-.desktop-menu {
-    display: inline-block;
-    nav {
-        width: auto;
-        >div {
-            float: left;
-            width: auto;
-            >ul {
-                margin-top: 9px;
-                margin-bottom: 0;
-                padding: 0;
-                >li {
-                    text-align: center;
-                }
-                li {
-                    a {
-                        border-right: none;
-                    }
-                    &:last-child {
-                        a {
-                            border-right: 1px solid $border;
-                        }
-                    }
-                    &.current-menu-item,
-                    &.current-menu-ancestor {
-                        a {
-                            background-color: $theme;
-                            color: white;
-                            border-color: $theme;
-                        }
-                    }
-                }
-            }
-        }
-    }
-    a,
-    .search {
-        color: $grey-anchor;
-        font-size: 12px;
-        font-weight: 600;
-        text-transform: uppercase;
-        padding: 6px 10px;
-        background-color: transparent;
-        line-height: 1.1;
-        border: 1px solid $border;
-        text-decoration: none;
-        @include transition-ease-out(.3);
-        float: left;
-        width: 100%;
-        .fa{
-            @include transition-ease-out(.3);
-        }
-        &:hover {
-            background-color: $theme;
-            color: white;
-            border-color: $theme;
-            .fa{
-                color: white;
-            }
-        }
-        &.show{
-            background-color: $theme;
-            color: white;
-            border-color: $theme;
-            .fa{
-                color: white;
-            }   
-        }
-    }
-
-    .sub-menu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        z-index: 5;
-        padding: 0;
-        min-width: 195px;
-        text-align: left;
-        border-right: 1px solid $grey;
-        li {
-            width: 100%;
-            background-color: $light-grey;
-            &.current-menu-item,
-            &.current-menu-parent {
-                a {
-                    background-color: $theme;
-                    color: white;
-                    border-color: $theme;
-                }
-            }
-            a {
-                border-top: none;
-                text-transform: inherit;
-            }
-            &:last-child {
-                a {
-                    border-right: none!important;
-                }
-            }
-        }
-    }
-
-    .menu-item-has-children {
-        position: relative;
-        &:hover {
-            >.sub-menu {
-                display: block;
-            }
-        }
-        .menu-item-has-children {
-            >.sub-menu {
-                left: 100%;
-                top: 0;
-                border-top: 1px solid $grey;
-            }
-            &:hover {
-                >.sub-menu {
-                    display: block;
-                }
-            }
-        }/*end of menu-item-has-children*/
-    }
-}/*end of desktop-menu*/
-
-.search-wrapper {
-    float: left;
-    position: relative;
-    cursor: pointer;
-    .search {
-        border-left: none;
-        margin-top: 9px;
-        .fa {
-            color: black;
-        }
-    }
-}
-
-
-/* //////////////*/
 /* Home Flex Slider*/
 /* //////////////*/
 .home-banner{
@@ -412,11 +231,7 @@ header {
         li{
             width: 100%;
             height: 100%;
-            background-position: center;
-            background-repeat: no-repeat;
-            -webkit-background-size: cover;
-                 -o-background-size: cover;
-                    background-size: cover;
+            @extend .bg;
         }
     }
     .flex-control-thumbs{
@@ -445,11 +260,7 @@ header {
     .slides li {
         position: relative;
         height: 100%;
-        background-position: center;
-        background-repeat: no-repeat;
-        -webkit-background-size: cover;
-             -o-background-size: cover;
-                background-size: cover;
+        @extend .bg;
         img{
             width: 100%;
         }
@@ -595,11 +406,7 @@ header {
             border: 3px solid white;
             width: 80px!important;
             margin-right: 15px!important;
-            background-repeat: no-repeat;
-            -webkit-background-size: cover;
-                 -o-background-size: cover;
-                    background-size: cover;
-            background-position: center;
+            @extend .bg;
             cursor: pointer;
             height: 80px;
             -webkit-box-shadow: 4px 4px 9px 0 rgba(0,0,0,0.5);
@@ -687,29 +494,6 @@ header {
 }
 
 
-.wrapper {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background-color: $light-grey;
-}
-.wrapper-2 {
-    padding-top: 1px;
-    padding-bottom: 20px;
-    background-color: $light-grey;
-}
-.container-620{
-    max-width: 620+60px;
-    margin: auto;
-    padding-left: 30px;
-    padding-right: 30px;
-    position: relative;
-    &:after{
-        display: block;
-        content: "";
-        clear: both;
-    }
-}
-
 .tiles-row{
     .col-3{
         @include col-3(2.1%,0);
@@ -723,9 +507,7 @@ header {
 }
 
 .news {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    @extend .bg;
     height: 200px;
 }
 
@@ -748,11 +530,8 @@ header {
     text-transform: capitalize;
 }
 
-
 .ad-category {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    @extend .bg;
     position: relative;
     height: 250px;
 }
@@ -780,10 +559,8 @@ header {
     padding-bottom: 18px;
 }
 .ad-on-single {
+    @extend .bg;
     text-align: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
     position: relative;
     width: 100%;
     height: 100%;
@@ -852,9 +629,7 @@ a.full-width{
     height: 100%;
 }
 .video {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    @extend .bg;
     position: relative;
     height: 200px;
     .table{
@@ -862,9 +637,7 @@ a.full-width{
     }
 }
 .sub-video {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    @extend .bg;
     position: relative;
     height: 200px;
     .play-video-but{
@@ -935,11 +708,7 @@ a.full-width{
     width: 80px;
     float: left;
     height: 100%;
-    background-repeat: no-repeat;
-    -webkit-background-size: cover;
-         -o-background-size: cover;
-            background-size: cover;
-    background-position: center;
+    @extend .bg;
 }
 .related-videos{
     max-width: 300px;
@@ -993,9 +762,7 @@ a.full-width{
     }
 }
 .news-2 {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    @extend .bg;
     position: relative;
     display: block;
     @include transition-ease-out(.3);
@@ -1025,11 +792,7 @@ a.full-width{
     width: 125px;
     float: left;
     height: 100%;
-    background-repeat: no-repeat;
-    -webkit-background-size: cover;
-         -o-background-size: cover;
-            background-size: cover;
-    background-position: center;
+    @extend .bg;
 }
 .related-content{
     max-width: 461px;
@@ -1143,23 +906,6 @@ a.full-width{
 /* //////////////*/
 // Footer
 /* //////////////*/
-footer{
-    background-color: #3C3D41;
-    padding: 20px 0;
-    .footer-col-3{
-        float: left;
-        margin-left: 2.8%;
-        width: (100%-(2.8*2))/3;
-        border-left: 1px solid #888888;
-        padding-left: 2.7%;
-        &:first-child{
-            margin-left: 0;
-            padding-left: 0;
-            border-left: none;
-        }
-    }
-
-}
 .internal-ad-image{
     float: left;
     width: 84px;
@@ -1196,35 +942,7 @@ footer{
         letter-spacing: inherit;
     }
 }
-.footer-menu{
-    float: left;
-    width: 100%;
-    ul{
-        float: left;
-        width: 100%;
-        padding: 0;
-        margin: 0;
-    }
-    li{
-        list-style: none;
-        line-height: 1.2;
-    }
-    a{
-        color: white;
-        font-size: 11px;
-        text-transform: uppercase;
-        @include transition-ease-out(.1);
-        &:hover{
-            text-decoration: none;
-            color: $grey;
-        }
-    }
-    h6{
-        color: #FFF;
-        font-size: 11px;
-        text-transform: uppercase;
-    }
-}
+
 .subscription-form{
     .heading{
         color: #888;
@@ -1293,11 +1011,7 @@ footer{
     @include transition (.3);
     &:first-child{
         width: 53.8%;
-        -webkit-background-size: cover;
-             -o-background-size: cover;
-                background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+        @extend .bg;
     }
     &:last-child{
         width: 100%-53.8%;
@@ -1308,45 +1022,6 @@ footer{
             position: absolute;
             bottom: 0;
             left: 30px;
-        }
-    }
-}
-.pagination-wrapper{
-    text-align: center;
-    padding-bottom: 20px;
-    padding-top: 10px;
-    background-color: $light-grey;
-}
-.pagination{
-    list-style: none;
-    padding: 0;
-    display: inline-block;
-    margin: 0;
-    li{
-        float: left;
-        margin-right: 5px;
-        width: 39px;
-        &:last-child{
-            margin-right: 0;
-        }
-        a{
-            float: left;
-            width: 100%;
-            border: 1px solid $border;
-            text-align: center;
-            font-size: 24px;
-            font-weight: 600;
-            color: #585858;
-            @include transition-ease-out(.2);
-            &:hover{
-                text-decoration: none;
-                background-color: #d8d8d8;
-            }
-        }
-        &.active{
-            a{
-                background-color: #d8d8d8;
-            }
         }
     }
 }
@@ -1439,11 +1114,7 @@ footer{
     width: 100%;
     height: 144px;
     float: left;
-    background-repeat: no-repeat;
-    -webkit-background-size: cover;
-         -o-background-size: cover;
-            background-size: cover;
-    background-position: center;
+    @extend .bg;
 }
 .related-story-content{
     background-color: #FFF;
@@ -1489,26 +1160,6 @@ footer{
     margin-bottom: 0!important;
 }
 
-.responsive-menu{
-    text-align: left;
-    .search-wrapper{
-        display: inline-block;
-        width: 100%;
-        float: none;
-        max-width: 500px;
-        input[type="text"]{
-            width: 88%;
-            float: left;
-            background-color: white;
-        }
-        button{
-            width: 12%;
-            .fa{
-                color: #FFF;
-            }
-        }
-    }
-}
 /* //////////////*/
 /*This file link includes resonsive style and it MUST always stays at the bottom of this file. If you need to type code, please type above to this link. Don't type below of responsive file link.*/
 /* //////////////*/

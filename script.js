@@ -14,6 +14,14 @@ $(document).ready(function() {
         $(this).toggleClass('show');
     });
 
+    // ++++++++++++++++++++
+    // On Touch screen no hover effect
+    // ++++++++++++++++++++
+      $('a').on('click', function(e) {
+        var el = $(this);
+        var link = el.attr('href');
+        window.location = link;
+      });
 
     // ++++++++++++++++++++ 
     // Responsive Menu
@@ -29,6 +37,9 @@ $(document).ready(function() {
         $(this).toggleClass('show');
         $(this).parent('.menu-item-has-children').find('> .sub-menu').slideToggle();
     });
+    // ++++++++++++++++++++ 
+    // END of Responsive Menu
+    // ++++++++++++++++++++ 
 
     $(function(){
       SyntaxHighlighter.all();
@@ -36,6 +47,7 @@ $(document).ready(function() {
     $(window).load(function(){
       $('.flexslider-home').flexslider({
         animation: "fade",
+        slideshowSpeed: 3000,
         start: function(slider){
           $('body').removeClass('loading');
         }
@@ -45,15 +57,13 @@ $(document).ready(function() {
         animation: "slide",
         controlNav: false,
         animationLoop: false,
-        slideshow: false,
         asNavFor: '#slider'
       });
      
       $('#slider').flexslider({
         animation: "slide",
         controlNav: false,
-        animationLoop: false,
-        slideshow: false,
+        slideshowSpeed: 3000,
         sync: "#carousel"
       });
     });

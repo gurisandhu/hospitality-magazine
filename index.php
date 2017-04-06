@@ -1,4 +1,5 @@
 <?php include 'header.php'; ?>
+
 <!--++++++++++++++ 
 Home Banner
 ++++++++++++++ -->
@@ -28,18 +29,18 @@ News Square
 ++++++++++++++ -->
 <section class="marron-tag wrapper tiles">
 	<div class="container">	
-    <div class="row">
-        <a href="#" class="heading-tag">
-            <h3>News</h3>
-            <span>
-                <div class="table">
-                    <div class="table-cell">
-                        View All
+        <div class="row">
+            <a href="#" class="heading-tag">
+                <h3>News</h3>
+                <span>
+                    <div class="table">
+                        <div class="table-cell">
+                            View All
+                        </div>
                     </div>
-                </div>
-            </span>
-        </a>
-    </div>	
+                </span>
+            </a>
+        </div>	
         <?php include 'section-news-square.php'; ?>
 	</div>
 </section>
