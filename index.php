@@ -1,83 +1,29 @@
-<?php include 'header.php'; ?>
+<?php get_header(); ?>
 
-<!--++++++++++++++ 
-Home Banner
-++++++++++++++ -->
-<section class="home-banner">
-    <div class="full-container">
-        <section class="slider">
-            <div class="flexslider-home">
-                <ul class="slides">
-                    <?php for ($x = 1; $x <= 8; $x++) { ?>
-                        <li style="background-image: url('compressed/images/slider<?php echo $x; ?>.jpg');">
-                            <div class="table">
-                                <div class="table-cell">
-                                    <h2>Tentacles Abound in Our Best Jellyfish Pictures</h2>
-                                    <p>James Gurney picks the most interesting pieces from the luxury watch fair</p>
-                                </div>
-                            </div>
-                        </li>
-                    <?php } ?>
-                </ul>
+
+<section class="wrapper">
+    <div class="container-620">
+        <h2><?php echo get_the_title(); ?></h2>
+        <?php $thumbnail_id = get_post_thumbnail_id( $post->ID );
+                        $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
+                         ?>
+        <?php if($thumbnail_id) {?>
+            <div class="custom-row">
+                <figure>
+                    <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo $alt; ?>">
+                    <figcaption><?php the_post_thumbnail_caption(); ?></figcaption>
+                </figure>
             </div>
-        </section>
+        <?php } ?>
+        <?php if (have_posts()) {?> 
+            <div class="custom-row">
+                <?php while(have_posts()) { the_post();  ?>
+                <?php the_content(); } ?>
+            </div>
+        <?php } ?>
     </div>
 </section>
 
-<!--++++++++++++++ 
-News Square
-++++++++++++++ -->
-<section class="marron-tag wrapper tiles">
-	<div class="container">	
-        <div class="row">
-            <a href="#" class="heading-tag">
-                <h3>News</h3>
-                <span>
-                    <div class="table">
-                        <div class="table-cell">
-                            View All
-                        </div>
-                    </div>
-                </span>
-            </a>
-        </div>	
-        <?php include 'section-news-square.php'; ?>
-	</div>
-</section>
+<?php include (TEMPLATEPATH . '/sub-footer.php'); ?>
 
-
-<!--++++++++++++++ 
-Subscription
-++++++++++++++ -->
-<?php include 'section-newsletter.php'; ?>
-
-<!--++++++++++++++ 
-Videos
-++++++++++++++ -->
-<section class="grey-tag wrapper tiles-row">
-	<div class="container">		
-        <?php include 'section-video.php'; ?>
-	</div>
-</section>
-
-<!--++++++++++++++ 
-In focus
-++++++++++++++ -->
-<section class="marron-tag wrapper tiles-row">
-    <div class="container">     
-        <?php include 'section-news.php'; ?>
-    </div>
-</section>
-
-<!--++++++++++++++ 
-Management
-++++++++++++++ -->
-<section class="creame-tag wrapper tiles-row">
-    <div class="container">     
-        <?php include 'section-news.php'; ?>
-    </div>
-</section>
-
-<?php include 'sub-footer.php'; ?>
-
-<?php include 'footer.php'; ?>
+<?php get_footer(); ?>

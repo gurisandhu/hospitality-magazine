@@ -28,7 +28,7 @@
 	<div class="col-3 related-videos">
 		<?php for ($x = 1; $x <= 3; $x++) { ?>
 			<a href="#" class="each-video">
-				<div class="related-video-image" style="background-image: url('compressed/images/slider<?php echo $x; ?>.jpg');">
+				<div class="related-video-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/compressed/images/slider<?php echo $x; ?>.jpg');">
 					<div class="table">
 						<div class="table-cell">
 							<div class="small-video-but"><i class="fa fa-play"></i></div>
@@ -43,7 +43,7 @@
 	</div>
 	<div class="col-3">
 		<a href="#" class="full-width">
-			<div class="ad-category" style="background-image:url('compressed/images/slider<?php echo $x;?>.jpg');">
+			<div class="ad-category" style="background-image:url('<?php echo get_template_directory_uri(); ?>/compressed/images/slider<?php echo $x;?>.jpg');">
 			</div>
 			<div class="ad-text">Advertisement</div>
 		</a>

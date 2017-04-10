@@ -13,7 +13,7 @@
 <div class="row">
 	<div class="col-2">
 		<a href="#" class="full-width">
-			<div class="news-2" style="background-image:url('compressed/images/slider1.jpg');">
+			<div class="news-2" style="background-image:url('<?php echo get_template_directory_uri(); ?>/compressed/images/slider1.jpg');">
 			</div>
 			<div class="news-content-2 full-width">
 				<div class="news-heading-2 full-width">
@@ -26,7 +26,7 @@
 		<div class="related-content">
 			<?php for ($x = 1; $x <= 3; $x++) { ?>
 				<a href="#" class="each-related-content row">
-					<div class="related-news-image" style="background-image: url('compressed/images/slider<?php echo $x; ?>.jpg');">
+					<div class="related-news-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/compressed/images/slider<?php echo $x; ?>.jpg');">
 					</div>
 					<div class="related-news-text">
 						<div class="table">

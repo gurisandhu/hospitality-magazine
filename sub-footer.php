@@ -5,21 +5,7 @@ Social media and Search
 	<div class="container">
 		<div class="social-and-search">
 			<div class="row">
-				<div class="col-2">
-					<ul class="social-media">
-						<li><label>Follow us</label></li>
-						<li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
-						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-						<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-						<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-					</ul>
-				</div>
-				<div class="col-2">
-					<ul class="top-menu">
-						<li><a href="#">About Us</a></li>
-						<li><a href="#">Contact us</a></li>
-					</ul>
-				</div>
+				<?php include (TEMPLATEPATH . '/section-social-and-links.php'); ?>
 			</div>
 			<div class="row">
 				<form action="" class="row search-form">
@@ -40,7 +26,7 @@ Section: footer
 		<div class="footer-col-3">
 			<div class="internal-ad-footer">
 				<div class="internal-ad-image">
-					<img src="compressed/images/internal-ad.png" alt="">
+					<img src="<?php echo get_template_directory_uri(); ?>/compressed/images/internal-ad.png" alt="">
 				</div>
 				<div class="internal-ad-content">
 					<h4>Hosmag</h4>

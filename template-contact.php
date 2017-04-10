@@ -1,4 +1,6 @@
-<?php include 'header.php'; ?>
+<?php 
+
+get_header(); ?>
 
 
 <section class="wrapper">
@@ -70,6 +72,6 @@
 	</div>
 </section>
 
-<?php include 'sub-footer.php'; ?>
+<?php include (TEMPLATEPATH . '/sub-footer.php'); ?>
 
-<?php include 'footer.php'; ?>
+<?php get_footer(); ?>

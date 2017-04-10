@@ -1,4 +1,4 @@
-<?php include 'header.php'; ?>
+<?php get_header(); ?>
 
 
 <section class="wrapper">
@@ -18,7 +18,7 @@
 	                <ul class="slides">
 	                    <?php for ($x = 1; $x <= 4; $x++) { ?>
 	                        <li>
-	                           	<img src="compressed/images/slider<?php echo $x; ?>.jpg" alt=""> 
+	                           	<img src="<?php echo get_template_directory_uri(); ?>/compressed/images/slider<?php echo $x; ?>.jpg" alt=""> 
 	                        </li>
 	                    <?php } ?>
 	                </ul>
@@ -26,7 +26,7 @@
 	            <div id="carousel" class="flexslider">
 	            	<ul class="slides">
 	                    <?php for ($x = 1; $x <= 4; $x++) { ?>
-	                    	<li style='background-image: url("compressed/images/slider<?php echo $x; ?>.jpg");'></li>
+	                    	<li style='background-image: url("<?php echo get_template_directory_uri(); ?>/compressed/images/slider<?php echo $x; ?>.jpg");'></li>
 	                    <?php } ?>
 	                </ul>
 	            </div>
@@ -43,7 +43,7 @@
 	++++++++++++++ -->
 		<div class="row">
 			<div class="ad-on-single-wrapper">
-				<div class="ad-on-single" style="background-image:url('compressed/images/slider1.jpg');">
+				<div class="ad-on-single" style="background-image:url('<?php echo get_template_directory_uri(); ?>/compressed/images/slider1.jpg');">
 				</div>
 				<div class="ad-on-single-text">Advertisement</div>
 			</div>
@@ -62,7 +62,7 @@
 	++++++++++++++ -->
 		<div class="row">
 			<div class="ad-on-single-wrapper">
-				<div class="ad-on-single" style="background-image:url('compressed/images/slider2.jpg');">
+				<div class="ad-on-single" style="background-image:url('<?php echo get_template_directory_uri(); ?>/compressed/images/slider2.jpg');">
 				</div>
 				<div class="ad-on-single-text">Advertisement</div>
 			</div>
@@ -95,7 +95,7 @@
 <!--++++++++++++++ 
 Subscription
 ++++++++++++++ -->
-<?php include 'section-newsletter.php'; ?>
+<?php include (TEMPLATEPATH . '/section-newsletter.php'); ?>
 
 <!--++++++++++++++ 
 Related Stories
@@ -108,7 +108,7 @@ Related Stories
 		<div class="row">
 			<?php for ($x = 1; $x <= 4; $x++) { ?>
 			<a href="#" class="col-4 related-story">
-				<div class="related-story-image" style="background-image:url('compressed/images/slider<?php echo $x; ?>.jpg');">
+				<div class="related-story-image" style="background-image:url('<?php echo get_template_directory_uri(); ?>/compressed/images/slider<?php echo $x; ?>.jpg');">
 					
 				</div>
 				<div class="related-story-content">
@@ -144,6 +144,6 @@ Related Stories
 </section>
 
 
-<?php include 'sub-footer.php'; ?>
+<?php include (TEMPLATEPATH . '/sub-footer.php'); ?>
 
-<?php include 'footer.php'; ?>
+<?php get_footer(); ?>

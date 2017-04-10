@@ -12,7 +12,7 @@ function errorLog(error) {
 }
 gulp.task('serve', ['styles'], function(){
 	browserSync.init({
-		proxy: "http://localhost:8888/intermedia/"
+		proxy: "http://localhost:8888/hospitality/"
 	});
 	gulp.watch('compressed/*.css').on('change', browserSync.reload);
 	gulp.watch('compressed/*.js').on('change', browserSync.reload);

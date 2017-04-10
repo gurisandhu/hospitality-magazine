@@ -1,4 +1,4 @@
-<?php include 'header.php'; ?>
+<?php get_header(); ?>
 
 <!--++++++++++++++ 
 Section: 
@@ -151,7 +151,7 @@ Section:
 		<div class="row">
 			<h2>Image Style</h2>
 			<figure>
-				<img src="compressed/images/slider6.jpg" alt="">
+				<img src="<?php echo get_template_directory_uri(); ?>/compressed/images/slider6.jpg" alt="">
 				<figcaption><strong>Caption:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</figcaption>
 			</figure>
 		</div>
@@ -175,5 +175,6 @@ Section:
 	</div> <!-- container -->
 </section>		
 
-<?php include 'sub-footer.php'; ?>
-<?php include 'footer.php'; ?>
+<?php include (TEMPLATEPATH . '/sub-footer.php'); ?>
+
+<?php get_footer(); ?>

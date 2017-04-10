@@ -1,4 +1,4 @@
-<?php include 'header.php'; ?>
+<?php get_header(); ?>
 <!--++++++++++++++ 
 Recent News
 ++++++++++++++ -->
@@ -33,21 +33,21 @@ News Squares
 ++++++++++++++ -->
 <section class="wrapper tiles">
 	<div class="container">		
-        <?php include 'section-sub-video.php'; ?>
+        <?php include (TEMPLATEPATH . '/section-sub-video.php'); ?>
 	</div>
 </section>
 
 <!--++++++++++++++ 
 Subscription
 ++++++++++++++ -->
-<?php include 'section-newsletter.php'; ?>
+<?php include (TEMPLATEPATH . '/section-newsletter.php'); ?>
 
 <!--++++++++++++++ 
 News Squares
 ++++++++++++++ -->
 <section class="wrapper tiles">
 	<div class="container">		
-        <?php include 'section-sub-video-2ad.php'; ?>
+        <?php include (TEMPLATEPATH . '/section-sub-video-2ad.php'); ?>
 	</div>
 </section>
 
@@ -67,6 +67,6 @@ Pagination
 	</div>
 </section>
 
-<?php include 'sub-footer.php'; ?>
+<?php include (TEMPLATEPATH . '/sub-footer.php'); ?>
 
-<?php include 'footer.php'; ?>
+<?php get_footer(); ?>
