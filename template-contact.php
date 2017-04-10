@@ -46,29 +46,29 @@ get_header(); ?>
 				</div>
 			</form>
 		</div>
+		<?php if (have_rows('advertise_with_us_options', 'option')) { ?>
 		<div class="col-2">
-			<ul class="each-contact-details row">
-				<li><h2>Magazine &amp; Online Advertising</h2></li>
-				<li><strong>Name Title</strong></li>
-				<li><a href="mailto:email@gmail.com.au"><strong>email@gmail.com.au</strong></a></li>
-				<li>Office: 02 9898 9898</li>
-				<li>Mobile: <a href="tel:0432444333">0432 444 333</a></li>
-			</ul>
-			<ul class="each-contact-details row">
-				<li><h2>Editor</h2></li>
-				<li><strong>Name Title</strong></li>
-				<li><a href="mailto:email@gmail.com.au"><strong>email@gmail.com.au</strong></a></li>
-				<li>Office: 02 9898 9898</li>
-				<li>Mobile: <a href="tel:0432444333">0432 444 333</a></li>
-			</ul>
-			<ul class="each-contact-details row">
-				<li><h2>Journalist</h2></li>
-				<li><strong>Name Title</strong></li>
-				<li><a href="mailto:email@gmail.com.au"><strong>email@gmail.com.au</strong></a></li>
-				<li>Office: 02 9898 9898</li>
-				<li>Mobile: <a href="tel:0432444333">0432 444 333</a></li>
-			</ul>
+			<?php while(have_rows('advertise_with_us_options', 'option')) { the_row(); ?>
+				<ul class="each-contact-details row">
+					<?php if (get_sub_field('advertise_with_us_type', 'option')) { ?>
+						<li><h2><?php echo get_sub_field('advertise_with_us_type', 'option'); ?></h2></li>
+					<?php } ?>
+					<?php if (get_sub_field('advertise_with_us_contact_person', 'option')) { ?>
+						<li><strong><?php echo get_sub_field('advertise_with_us_contact_person', 'option'); ?></strong></li>
+					<?php } ?>
+					<?php if (get_sub_field('advertise_with_us_email', 'option')) { ?>
+						<li><a href="mailto:<?php echo get_sub_field('advertise_with_us_email', 'option'); ?>"><strong><?php echo get_sub_field('advertise_with_us_email', 'option'); ?></strong></a></li>
+					<?php } ?>
+					<?php if (get_sub_field('advertise_with_us_office_number', 'option')) { ?>
+						<li><a href="tel:<?php echo get_sub_field('advertise_with_us_office_number', 'option'); ?>">Office: <?php echo get_sub_field('advertise_with_us_office_number', 'option'); ?></a></li>
+					<?php } ?>
+					<?php if (get_sub_field('advertise_with_us_mobile_number', 'option')) { ?>
+						<li><a href="tel:<?php echo get_sub_field('advertise_with_us_mobile_number', 'option'); ?>">Mobile: <?php echo get_sub_field('advertise_with_us_mobile_number', 'option'); ?></a></li>
+					<?php } ?>
+				</ul>
+			<?php } ?>
 		</div>
+		<?php } ?>
 	</div>
 </section>
 
