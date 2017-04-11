@@ -351,7 +351,7 @@ h5,
 h6 {
     display: block;
     margin-top: 0;
-    margin-bottom: 15px;
+    margin-bottom: 0;
     line-height: 1.2;
 }
 .show-loader-wrapper{
@@ -463,7 +463,7 @@ form {
     width: 100%;
     margin: 0;
     display: none;
-    @include transition-ease-out(.3);
+    @include transition(.6);
     li{
         float: left;
         width: 100%;
@@ -473,10 +473,11 @@ form {
 .new-select{
     position: relative;
     &:after{
+        @include transition(.3);
         position: absolute;
         content: "\f107";
         right: 11px;
-        top: 0px;
+        top: 4px;
         font-family: FontAwesome;
         font-size: 32px;
         z-index: 1;

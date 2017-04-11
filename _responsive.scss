@@ -21,9 +21,7 @@
 			padding-bottom: 10px;
 		}
 	}
-	.social-and-search{
-		padding-top: 17px;
-	}
+	
 	.menu-button-wrapper{
 		position: absolute;
 		width: auto;
@@ -59,11 +57,24 @@
 
 	}
 }
-
+@media screen and (max-width: 782px){
+	html[lang="en-AU"]{
+		margin-top: 0px!important;
+	}
+	body.customize-support{
+		padding-top: 32px;
+	}
+	html #wpadminbar{
+		top: -32px;
+	}
+}
 @media screen and (max-width: 1000px){
 	.container, .container-620{
 		padding-left: 15px;
 		padding-right: 15px;
+	}
+	.full-container{
+		position: relative;
 	}
 	.desktop-menu{
 		display: none;
@@ -245,7 +256,7 @@
 				bottom: 2px;
 			}
 		}
-		.top-menu, .social-media{
+		.top-menu .social-media{
 			margin-top: 0;
 		}
 	}

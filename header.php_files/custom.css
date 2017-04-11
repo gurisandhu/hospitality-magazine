@@ -1,0 +1,376 @@
+/* 
+WOO CUSTOM STYLESHEET
+---------------------
+
+Instructions:
+
+Add your custom styles at the end of this file instead 
+of style.css so it is easier to update the theme. 
+Simply copy an existing style from style.css to this file, 
+and modify it to your liking.
+*/
+/* Directory CSS */
+
+
+/* -------------------------------------------------- */
+/* 	Changes made by Curtis to fix responsiveness  */
+/* -------------------------------------------------- */
+
+#top-nav{float:right;}
+
+#wrapper {
+	position:relative;
+}
+
+@media (max-width: 987px) {
+
+	#main {
+		border-right: none;
+		max-width: 100% !important;
+	}
+
+	#main .tagline {
+		text-align: center;
+	}
+
+	#loopedSlider { 
+		max-width: 630px;
+	}
+
+	/* #main-sidebar-container {
+		width: 100%;
+	} */
+
+	.two-col-left-1000 #main-sidebar-container #main { width: 100%; }
+
+}
+
+@media screen and (max-width: 700px) {
+        /* grid3 */
+	.grid3 .col {
+		width: 48.4%;
+	}
+	.grid3 .col:nth-of-type(3n+1) {
+		margin-left: 3.2%;
+		clear: none;
+	}
+	.grid3 .col:nth-of-type(2n+1) {
+		margin-left: 0;
+		clear: left;
+	}
+    /*#headerAd { display: none;}*/
+    .grid2 .excerpt {
+		text-align: center;
+	}
+}
+
+@media screen and (max-width: 653px) {
+	/* grid4 */
+	.grid2 .col {
+		margin-top: 20px;
+		width: 100% !important;
+		clear: none !important;
+		margin-left: 0px !important;
+	}
+	.grid2 .col img {
+		border: none;
+		padding: 0;
+		margin: 0 auto;
+	}
+	.grid2 .col a {
+		text-align: center;
+	}
+	/*#headerAd { display: none;}*/
+}
+
+@media screen and (max-width: 500px) {
+	/* grid4 */
+	.grid3 .col {
+		margin-top: 20px;
+		width: 100% !important;
+		clear: none !important;
+		margin-left: 0px !important;
+	}
+	.grid3 .col img {
+       border: none;
+       padding: 0;
+       margin: 0 auto;
+	}
+	/*#headerAd {display: none;}*/
+	#main p.btyb {float: none; text-align: center;}
+	.cooltools .featured-header { margin-top: 15px;}
+
+	.col img {
+		width: 100%;
+	}
+
+	li .excerpt {
+		text-align: left;
+	}
+
+	.excerpt {
+		text-align: center;
+	}
+
+	.grid3 .col a {
+		text-align: center;
+	}
+
+	.featured-header {
+		width: 100%;
+		text-align: center;
+	}
+
+}
+
+@media (max-width: 700px) {
+
+	.display-posts-listing .listing-item {
+		width: 50%;
+	}
+
+}
+
+@media (max-width: 500px) {
+
+	.category-list .display-posts-listing .listing-item {
+		height: 270px;
+	}
+
+	.display-posts-listing .listing-item {
+		width: 100%;
+	}
+
+	.display-posts-listing .listing-item a {
+		text-align: center;
+	}
+
+	.display-posts-listing .listing-item .excerpt {
+		text-align: center;
+		padding-right: 0px;
+	}
+
+	.display-posts-listing .listing-item img {
+		margin: 0 auto !important;
+	}
+
+}
+
+@media (max-width: 687px) {
+
+	body.page ul.lcp_catlist li {
+		margin-left: 5%;
+		width: 35%;
+	}
+
+	.entry a {
+		float: left;
+	}
+
+	.entry .lcp_catlist a {
+		float: none;
+	}
+
+}
+
+@media (max-width: 540px) {
+
+	body.page ul.lcp_catlist li {
+		margin-left: 0;
+		width: 100%;
+		text-align: center;
+		margin-right: 20px;
+		min-height: 270px;
+	}
+
+	body.page ul.lcp_catlist a {
+		left: 0;
+		right: 0;
+		margin: auto;
+	}
+
+	.entry ul {
+		padding: 0px 30px 0px 30px;
+	}
+
+	body.page ul.lcp_catlist li a:first-child {
+		width: 100%;
+	}
+
+}
+
+@media (max-width: 540px) {
+
+	.widget {
+		width: 90%;
+	}
+
+	#footer-widgets .widget {
+		width: 100%;
+	}
+
+	.searchform {
+		width: 85%;
+	}
+
+	.textwidget iframe img {
+		width: 250px;
+	}
+
+}
+
+
+@media (max-width: 766px) {
+	/*#headerAd { display: none;}	*/
+}
+
+.grid2 .col img {
+	height: 100%;
+}
+
+.grid3 .col:nth-of-type(3n+1), .grid2 .col:nth-of-type(2n+1) {
+    clear: left;
+    margin-left: 0;
+}
+
+.widget-social-icon {
+	float: left;
+	width: 50%;
+	margin-bottom: 10px;
+}
+
+.widget-social-icon img {
+	margin-right: 10px !important;
+}
+
+@media all and (min-width: 767px) and (max-width: 965px) {
+  .widget-social-icon {
+    float: none;
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 330px) {
+	.widget-social-icon {
+		float: none;
+		width: 100%;
+	}
+}
+
+#footer-widgets {
+	background-color: #ffffff;
+	border-color: #e6e6e6;
+}
+
+@media only screen and (min-width: 768px) {
+	/* Desktop styles go below this line */
+
+	.footer-widget-1 {
+		width:20% !important;	
+	}
+	
+	#footer-widgets .block {
+		margin-right:2% !important;	
+	}
+	
+	.footer-widget-2 {
+		width:18% !important;	
+	}
+	
+	.footer-widget-3 {
+		width:24% !important;
+	}
+	
+	.footer-widget-4 {
+		width:30% !important;
+	}
+}
+
+.job_list {
+	width: 100% !important;
+}
+
+#job_list {
+	width: 70% !important;
+}
+
+.job_box_featured {
+	width: 100% !important;
+}
+
+.job_box {
+	width: 100% !important;
+}
+
+#job_side_bar {
+	width: 20% !important;
+}
+
+@media (min-width:629px) and (max-width: 916px) {
+	#job_list {
+		width: 60% !important;
+	}
+	#job_side_bar {
+		width: 25% !important;
+	}
+	.job_box_featured div:first-child {
+		width: 100% !important;
+	}
+	.job_box div:first-child {
+		width: 100% !important;
+	}
+}
+
+@media (max-width: 629px) {
+	#job_list {
+		width: 89% !important;
+		border: none;
+	}
+	#job_side_bar {
+		width: 89% !important;
+		float: none;
+		margin: 0 auto;	
+	}
+
+	.side_bar_box ul li {
+		background-repeat: no-repeat;
+	}
+	.job_box_featured div:first-child {
+		width: 100% !important;
+	}
+	.job_box div:first-child {
+		width: 100% !important;
+	}
+}
+
+@media (max-width: 500px) {
+	#job_list {
+		width: 85% !important;
+		border: none;
+	}
+}
+
+@media (max-width: 400px) {
+	#job_list {
+		width: 80% !important;
+		border: none;
+	}
+}
+
+#main .entry img {
+	max-width: 95%;
+	margin-bottom: 10px;
+}
+
+@media (max-width: 622px) {
+	#main .entry iframe {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+/* @media (max-width: 400px) {
+	[id^=a] {
+		display: none;
+	} */
+}

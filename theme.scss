@@ -12,6 +12,8 @@ $dark-theme: #640F20;
 $light-blue: #CDDFE0;
 $grey-tag: #565656;
 $creame: #C09F80;
+$error: #f13333;
+$success: #5cb85c;
 
 // //////////////
 // Fonts
@@ -1139,6 +1141,7 @@ a.full-width{
 /* //////////////*/
 .contact-page{
     .col-2{
+        position: relative;
         @include col-2(4%, 0);
     }
     h2{

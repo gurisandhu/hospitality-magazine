@@ -5,7 +5,7 @@ Social media and Search
 	<div class="container">
 		<div class="social-and-search">
 			<div class="row">
-				<?php include (TEMPLATEPATH . '/section-social-and-links.php'); ?>
+				<?php include (get_stylesheet_directory() . '/section-social-and-links.php'); ?>
 			</div>
 			<div class="row">
 				<form action="" class="row search-form">
@@ -26,7 +26,7 @@ Section: footer
 		<div class="footer-col-3">
 			<div class="internal-ad-footer">
 				<div class="internal-ad-image">
-					<img src="<?php echo get_template_directory_uri(); ?>/compressed/images/internal-ad.png" alt="">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/compressed/images/internal-ad.png" alt="">
 				</div>
 				<div class="internal-ad-content">
 					<h4>Hosmag</h4>

@@ -18,15 +18,15 @@
         }
         </style>
     <![endif]-->
-    <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/compressed/images/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/compressed/images/favicon.ico" type="image/x-icon">
-    <?php wp_head(); ?>
+    <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/compressed/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="<?php echo get_stylesheet_directory_uri(); ?>/compressed/images/favicon.ico" type="image/x-icon">
+<?php wp_head(); ?>
 </head>
 <body>
 <div class="full-container">
     <header class="top">
         <div class="container">
-            <?php include (TEMPLATEPATH . '/section-social-and-links.php'); ?>
+            <?php include (get_stylesheet_directory() . '/section-social-and-links.php'); ?>
         </div>
     </header>
     <div class="menu-button-wrapper">
@@ -36,7 +36,7 @@
         <div class="container">
             <div class="col-2">
                 <div class="logo">
-                    <a href="<?php echo esc_url( home_url('/')); ?>"><img src="<?php echo get_template_directory_uri(); ?>/compressed/images/logo.svg" alt="logo"></a>
+                    <a href="<?php echo esc_url( home_url('/')); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/compressed/images/logo.svg" alt="logo"></a>
                 </div>
             </div>
             <div class="col-2">
@@ -48,7 +48,7 @@
         <div class="container">
             <div class="full-width">
                 <div class="ad-block">
-                    <img src="<?php echo get_template_directory_uri(); ?>/compressed/images/advertise.jpg" alt="">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/compressed/images/advertise.jpg" alt="">
                 </div>
             </div>
             <div class="full-width">

@@ -17,7 +17,7 @@
 	<?php } ?>
 	<?php for ($x = 1; $x <= 1; $x++) { ?>
 	<a href="#" class="col-3">
-		<div class="ad-category" style="background-image:url('<?php echo get_template_directory_uri(); ?>/compressed/images/slider<?php echo $x;?>.jpg');">
+		<div class="ad-category" style="background-image:url('<?php echo get_stylesheet_directory_uri(); ?>/compressed/images/slider<?php echo $x;?>.jpg');">
 			</div>
 		<div class="ad-text">Advertisement</div>
 	</a>

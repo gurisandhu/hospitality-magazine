@@ -8,6 +8,6 @@
 	</div>
 </section>
 
-<?php include (TEMPLATEPATH . '/sub-footer.php'); ?>
+<?php include (get_stylesheet_directory() . '/sub-footer.php'); ?>
 
 <?php get_footer(); ?>

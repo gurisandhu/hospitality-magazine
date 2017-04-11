@@ -186,29 +186,65 @@ form {
     input, textarea, select {
         font-size: 14px;
         padding: 4.5px 10px;
-        text-transform: uppercase;
         font-weight: 100;
         text-align: left;
         color: white;
         -webkit-border-radius: 5px;
         border-radius: 2px;
+        border: 1px solid;
     }
     input, textarea{
         background-color: $grey-tag;
-        border: 1px solid $border;
+        border-color: $border;
     }
     select{
         background-color: transparent;
-        border: none;
+        border-color: transparent;
     }
     @include placeholder(white);
 }
 
-.error-input, input.error-input{
-    border-color: #ff8e8e;
+.error{
+    background-color: $error;
+    p{
+        &:after{
+            content: "\f06a";
+        }
+    }
 }
+.success{
+    background-color: $success;
+    p{
+        &:after{
+            content: "\f00c";
+        }
+    }
+}
+.error-input{
+    @include transition-ease-out(.5);
+    input, select, textarea{
+        border-color: $error;
+    }
+    position: relative;
+    &:after{
+        @include transition-ease-out(.5);
+        position: absolute;
+        right: 8px;
+        top: 3.8px;
+        content: "\f06a";
+        font-family: FontAwesome;
+        color: $error;
+        font-size: 20px;
+    }
+    .new-select{
+        &:after{
+            right: 30px;
+        }
+    }
+}
+   
 .error-text{
-    color: $theme;
+    color: $error;
 }
 .form-row {
     float: left;
@@ -225,19 +261,42 @@ form {
     }
 }
 .form-validation{
-    background-color: $light-grey;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    color: #FFF;
+    padding: 5px;
+    -webkit-border-radius: 2px;
+            border-radius: 2px;
+    width: 100%;
+    -webkit-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.67);
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.67);
+    p{
+        position: relative;
+        font-weight: 500;
+        font-size: 14px;
+        padding-left: 30px;
+        color: #FFF;
+        font-family: $theme-font;
+        &:after{
+            position: absolute;
+            left: 2px;
+            top: 01px;
+            font-family: FontAwesome;
+            color: white;
+            font-size: 20px;
+        }
+    }
     li{
         padding: 0 10px;
-        margin-top: 7px;
+        margin-top: 2px;
         font-size: 14px;
         letter-spacing: 2px;
-        color: black;
+        color: white;
         font-family: $theme-font;
-        &:last-child{
-            margin-bottom: 20px;
-        }
         &:first-child{
-            margin-top: 20px;
+            margin-top: 0;
         }
     }
 }

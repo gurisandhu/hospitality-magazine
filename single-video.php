@@ -34,7 +34,7 @@ Home Banner
 	++++++++++++++ -->
 		<div class="row">
 			<div class="ad-on-single-wrapper">
-				<div class="ad-on-single" style="background-image:url('<?php echo get_template_directory_uri(); ?>/compressed/images/slider1.jpg');">
+				<div class="ad-on-single" style="background-image:url('<?php echo get_stylesheet_directory_uri(); ?>/compressed/images/slider1.jpg');">
 				</div>
 				<div class="ad-on-single-text">Advertisement</div>
 			</div>
@@ -53,7 +53,7 @@ Home Banner
 	++++++++++++++ -->
 		<div class="row">
 			<div class="ad-on-single-wrapper">
-				<div class="ad-on-single" style="background-image:url('<?php echo get_template_directory_uri(); ?>/compressed/images/slider3.jpg');">
+				<div class="ad-on-single" style="background-image:url('<?php echo get_stylesheet_directory_uri(); ?>/compressed/images/slider3.jpg');">
 				</div>
 				<div class="ad-on-single-text">Advertisement</div>
 			</div>
@@ -86,7 +86,7 @@ Home Banner
 <!--++++++++++++++ 
 Subscription
 ++++++++++++++ -->
-<?php include (TEMPLATEPATH . '/section-newsletter.php'); ?>
+<?php include (get_stylesheet_directory() . '/section-newsletter.php'); ?>
 
 <!--++++++++++++++ 
 Related Stories
@@ -99,7 +99,7 @@ Related Stories
 		<div class="row">
 			<?php for ($x = 1; $x <= 4; $x++) { ?>
 			<a href="#" class="col-4 related-story">
-				<div class="related-story-image" style="background-image:url('<?php echo get_template_directory_uri(); ?>/compressed/images/slider<?php echo $x; ?>.jpg');">
+				<div class="related-story-image" style="background-image:url('<?php echo get_stylesheet_directory_uri(); ?>/compressed/images/slider<?php echo $x; ?>.jpg');">
 					<div class="table">
 						<div class="table-cell">
 							<div class="play-video-but"><i class="fa fa-play"></i></div>
@@ -139,6 +139,6 @@ Related Stories
 </section>
 
 
-<?php include (TEMPLATEPATH . '/sub-footer.php'); ?>
+<?php include (get_stylesheet_directory() . '/sub-footer.php'); ?>
 
 <?php get_footer(); ?>

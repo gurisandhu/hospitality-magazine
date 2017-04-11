@@ -10,7 +10,7 @@ Recent News
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-2-archive-head" style="background-image:url('<?php echo get_template_directory_uri(); ?>/compressed/images/slider1.jpg');">
+			<div class="col-2-archive-head" style="background-image:url('<?php echo get_stylesheet_directory_uri(); ?>/compressed/images/slider1.jpg');">
 				
 			</div>
 			<div class="col-2-archive-head">
@@ -27,21 +27,21 @@ News Squares
 ++++++++++++++ -->
 <section class="wrapper tiles">
 	<div class="container">		
-        <?php include (TEMPLATEPATH . '/section-news-square.php'); ?>
+        <?php include (get_stylesheet_directory() . '/section-news-square.php'); ?>
 	</div>
 </section>
 
 <!--++++++++++++++ 
 Subscription
 ++++++++++++++ -->
-<?php include (TEMPLATEPATH . '/section-newsletter.php'); ?>
+<?php include (get_stylesheet_directory() . '/section-newsletter.php'); ?>
 
 <!--++++++++++++++ 
 News Squares
 ++++++++++++++ -->
 <section class="wrapper tiles">
 	<div class="container">		
-        <?php include (TEMPLATEPATH . '/section-news-square-2ad.php'); ?>
+        <?php include (get_stylesheet_directory() . '/section-news-square-2ad.php'); ?>
 	</div>
 </section>
 
@@ -61,6 +61,6 @@ Pagination
 	</div>
 </section>
 
-<?php include (TEMPLATEPATH . '/sub-footer.php'); ?>
+<?php include (get_stylesheet_directory() . '/sub-footer.php'); ?>
 
 <?php get_footer(); ?>

@@ -33,21 +33,21 @@ News Squares
 ++++++++++++++ -->
 <section class="wrapper tiles">
 	<div class="container">		
-        <?php include (TEMPLATEPATH . '/section-sub-video.php'); ?>
+        <?php include (get_stylesheet_directory() . '/section-sub-video.php'); ?>
 	</div>
 </section>
 
 <!--++++++++++++++ 
 Subscription
 ++++++++++++++ -->
-<?php include (TEMPLATEPATH . '/section-newsletter.php'); ?>
+<?php include (get_stylesheet_directory() . '/section-newsletter.php'); ?>
 
 <!--++++++++++++++ 
 News Squares
 ++++++++++++++ -->
 <section class="wrapper tiles">
 	<div class="container">		
-        <?php include (TEMPLATEPATH . '/section-sub-video-2ad.php'); ?>
+        <?php include (get_stylesheet_directory() . '/section-sub-video-2ad.php'); ?>
 	</div>
 </section>
 
@@ -67,6 +67,6 @@ Pagination
 	</div>
 </section>
 
-<?php include (TEMPLATEPATH . '/sub-footer.php'); ?>
+<?php include (get_stylesheet_directory() . '/sub-footer.php'); ?>
 
 <?php get_footer(); ?>
