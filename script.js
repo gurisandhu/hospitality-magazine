@@ -3,22 +3,22 @@
 //to edit this file, you must run Gulp. Because it will compresses the code into new file in compressed folder called script.js. And this file (compressed/script.js) is linked the site. If unable to use gulp or anyother task runner. You can do it manually from online "script minified tools".
 // 
 //
-$(document).ready(function() {
+jQuery(document).ready(function() {
 
     // ++++++++++++++++++++
     // Show search in top
     // ++++++++++++++++++++ 
-    $('.search').click(function(){
-        $('.top-search-form-wrapper').slideToggle();
-        $('.top-search-form-wrapper .search-form input').focus();
-        $(this).toggleClass('show');
+    jQuery('.search').click(function(){
+        jQuery('.top-search-form-wrapper').slideToggle();
+        jQuery('.top-search-form-wrapper .search-form input').focus();
+        jQuery(this).toggleClass('show');
     });
 
     // ++++++++++++++++++++
     // On Touch screen no hover effect
     // ++++++++++++++++++++
-      $('a').on('click', function(e) {
-        var el = $(this);
+      jQuery('a').on('click', function(e) {
+        var el = jQuery(this);
         var link = el.attr('href');
         window.location = link;
       });
@@ -26,41 +26,41 @@ $(document).ready(function() {
     // ++++++++++++++++++++ 
     // Responsive Menu
     // ++++++++++++++++++++ 
-    $('.menu-button-wrapper').click(function() {
-        $(this).toggleClass('show');
-        $('.responsive-menu').slideToggle();
+    jQuery('.menu-button-wrapper').click(function() {
+        jQuery(this).toggleClass('show');
+        jQuery('.responsive-menu').slideToggle();
     });
 
-    $(".responsive-menu .menu-item-has-children").append("<span class='has-details'></span>");
+    jQuery(".responsive-menu .menu-item-has-children").append("<span class='has-details'></span>");
 
-    $('.has-details').click(function() {
-        $(this).toggleClass('show');
-        $(this).parent('.menu-item-has-children').find('> .sub-menu').slideToggle();
+    jQuery('.has-details').click(function() {
+        jQuery(this).toggleClass('show');
+        jQuery(this).parent('.menu-item-has-children').find('> .sub-menu').slideToggle();
     });
     // ++++++++++++++++++++ 
     // END of Responsive Menu
     // ++++++++++++++++++++ 
 
-    $(function(){
+    jQuery(function(){
       SyntaxHighlighter.all();
     });
-    $(window).load(function(){
-      $('.flexslider-home').flexslider({
+    jQuery(window).load(function(){
+      jQuery('.flexslider-home').flexslider({
         animation: "fade",
         slideshowSpeed: 3000,
         start: function(slider){
-          $('body').removeClass('loading');
+          jQuery('body').removeClass('loading');
         }
       });
 
-      $('#carousel').flexslider({
+      jQuery('#carousel').flexslider({
         animation: "slide",
         controlNav: false,
         animationLoop: false,
         asNavFor: '#slider'
       });
      
-      $('#slider').flexslider({
+      jQuery('#slider').flexslider({
         animation: "slide",
         controlNav: false,
         slideshowSpeed: 3000,
@@ -105,7 +105,7 @@ $(document).ready(function() {
     }
   });
 
-  var mailformat = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  var mailformat = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))jQuery/;
   if (email.value == null || email.value ==""){
     email_error = "<li>Email required</li>";
     jQuery(email).parent('.form-row').addClass('error-input');
@@ -178,14 +178,13 @@ $(document).ready(function() {
   });
 
   var validation_report = document.getElementById('form-validation');
-  var error_heading = "<p>Please check following errors</p>";
   validation_report.innerHTML = '';
 
   var success_message = "<p>Thank you for your inquiry <b>" + flname.value + "</b>, hospitality magazine staff member will contact you shortly.</p>";
 
   if (totalError > 0){
     jQuery('.form-validation').show().delay(4000).queue( function(next){
-            $(this).hide();
+            jQuery(this).hide();
             next();
         });
     jQuery('.form-validation').addClass('error');
@@ -195,7 +194,11 @@ $(document).ready(function() {
     }, 1000);
     
     // validation_report.innerHTML += flname_error +  email_error + inquiry_type_error + message_error;
-    validation_report.innerHTML += error_heading;
+    if (totalError == 1){
+      validation_report.innerHTML += '<p>Please check following 1 error</p>';
+    } else {
+      validation_report.innerHTML += '<p>Please check following ' + totalError + ' errors</p>'; 
+    }
     return false;
   }
     
@@ -206,7 +209,7 @@ $(document).ready(function() {
     data: jQuery('form').serialize(),
     success: function(){
       jQuery('.form-validation').show().delay(4000).queue( function(next){
-            $(this).hide();
+            jQuery(this).hide();
             next();
         });
       validation_report.innerHTML += success_message;

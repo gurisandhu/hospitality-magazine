@@ -4,61 +4,54 @@
 <section class="wrapper">
 	<div class="container-620">
 		<div class="row">
-			<h1>Medical Care is just a click Away</h1>
+			<h1><?php echo get_the_title(); ?></h1>
 		</div>
 		<div class="full-width">
-			<div class="page-info">20 March, 2017 by <b>Danielle Bowling</b></div>
+			<div class="page-info"><?php echo get_the_date('d F, Y'); ?> by <b><?php echo $current_user->display_name; ?></b></div>
 		</div>
 		<div class="row">
 			<div class="addthis_inline_share_toolbox"></div>
 		</div>
 		<div class="row inner-banner">
 			<section class="slider">
-	            <div id="slider" class="flexslider">
-	                <ul class="slides">
-	                    <?php for ($x = 1; $x <= 4; $x++) { ?>
-	                        <li>
-	                           	<img src="<?php echo get_stylesheet_directory_uri(); ?>/compressed/images/slider<?php echo $x; ?>.jpg" alt=""> 
+				<?php 
+                	$images = get_field('post_images_slider');
+                	if($images) { ?>
+		            <div id="slider" class="flexslider">
+		                <ul class="slides">
+		                	<li>
+	                           	<img src="<?php the_post_thumbnail_url("medium");?>" alt="" title=""> 
 	                        </li>
-	                    <?php } ?>
-	                </ul>
-	            </div>
-	            <div id="carousel" class="flexslider">
-	            	<ul class="slides">
-	                    <?php for ($x = 1; $x <= 4; $x++) { ?>
-	                    	<li style='background-image: url("<?php echo get_stylesheet_directory_uri(); ?>/compressed/images/slider<?php echo $x; ?>.jpg");'></li>
-	                    <?php } ?>
-	                </ul>
-	            </div>
-
+							<?php foreach($images as $image) { ?>
+	                        <li>
+	                           	<img src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt']; ?>" title="<?php echo $image['title']; ?>"> 
+	                        </li>
+	                        <?php } ?>
+		                </ul>
+		            </div>
+		            <div id="carousel" class="flexslider">
+		            	<ul class="slides">
+		            		<li style='background-image: url("<?php the_post_thumbnail_url("medium");?>");'></li>
+		                    <?php foreach($images as $image) { ?>
+		                    	<li style='background-image: url("<?php echo $image['sizes']['thumbnail']; ?>");'></li>
+		                    <?php } ?>
+		                </ul>
+		            </div>
+				<?php } else { ?> 
+					<div class="no-slider" style="background-image: url('<?php the_post_thumbnail_url("medium");?>');">
+					</div>
+				<?php } ?>
 	        </section>
 		</div>
-		<div class="row">
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci sapiente laborum illo vel natus error delectus, eius asperiores repellat quibusdam iste soluta quidem omnis impedit possimus animi amet, sit nisi.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aliquid reiciendis, tenetur explicabo exercitationem, quibusdam vitae sequi, quaerat voluptatem libero delectus excepturi hic quis ducimus omnis saepe odio dolores provident.</p>
-		</div>
-
-	<!--++++++++++++++ 
-	Advertisement
-	++++++++++++++ -->
-		<div class="row">
-			<div class="ad-on-single-wrapper">
-				<div class="ad-on-single" style="background-image:url('<?php echo get_stylesheet_directory_uri(); ?>/compressed/images/slider1.jpg');">
-				</div>
-				<div class="ad-on-single-text">Advertisement</div>
+		<?php if (have_posts()) {?> 
+			<div class="row">
+				<?php while(have_posts()) { the_post();  ?>
+				<?php the_content(); } ?>
 			</div>
-		</div>
+		<?php } ?>
 
 	<!--++++++++++++++ 
-	Page content: Text
-	++++++++++++++ -->
-		<div class="row">
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci sapiente laborum illo vel natus error delectus, eius asperiores repellat quibusdam iste soluta quidem omnis impedit possimus animi amet, sit nisi.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aliquid reiciendis, tenetur explicabo exercitationem, quibusdam vitae sequi, quaerat voluptatem libero delectus excepturi hic quis ducimus omnis saepe odio dolores provident.</p>
-		</div>
-
-	<!--++++++++++++++ 
-	Advertisement
+	DUMMY NEEDS TO REMOVE and require to use same code in backend: Advertisement
 	++++++++++++++ -->
 		<div class="row">
 			<div class="ad-on-single-wrapper">
@@ -68,27 +61,27 @@
 			</div>
 		</div>
 
-	<!--++++++++++++++ 
-	Page content: Text
-	++++++++++++++ -->
-		<div class="row">
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci sapiente laborum illo vel natus error delectus, eius asperiores repellat quibusdam iste soluta quidem omnis impedit possimus animi amet, sit nisi.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aliquid reiciendis, tenetur explicabo exercitationem, quibusdam vitae sequi, quaerat voluptatem libero delectus excepturi hic quis ducimus omnis saepe odio dolores provident.</p>
-		</div>
-
-
-	<!--++++++++++++++ 
-	News Tags
-	++++++++++++++ -->
-		<div class="row news-tags">
-			<ul>
-				<li><label>Read more about:</label></li>
-				<li><a href="#">Asian, </a></li>
-				<li><a href="#">Restaurants, </a></li>
-				<li><a href="#">Food Service, </a></li>
-				<li><a href="#">Pubs &nbsp; Bars</a></li>
-			</ul>
-		</div>
+		<?php $posttags = get_the_tags();
+			if ($posttags) { 
+		 ?>
+			<!--++++++++++++++ 
+			News Tags
+			++++++++++++++ -->
+			<div class="row news-tags">
+				<ul>
+					<li><label>Read more about:</label></li>
+					<?php 	$x = 1; 
+							$total_tags = count($posttags);	
+							foreach($posttags as $posttag) { ?>
+								<?php if($total_tags !== $x) { ?>
+									<li><a href="<?php echo get_tag_link($posttag->term_id); ?>"><?php echo $posttag->name; ?>, </a></li>
+								<?php } else { ?>
+									<li><a href="<?php echo get_tag_link($posttag->term_id); ?>"><?php echo $posttag->name; ?></a></li>
+								<?php } ?>
+					<?php $x++; } ?>
+				</ul>
+			</div>
+		<?php } ?>
 	</div>	
 </section>
 

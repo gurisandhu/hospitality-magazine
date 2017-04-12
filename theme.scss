@@ -226,6 +226,12 @@ header {
     -webkit-border-radius: 0;
             border-radius: 0;
 }
+.no-slider {
+    @extend .bg;
+    width: 100%;
+    float: left;
+    height: 100%;
+}
 #slider{
     overflow: hidden;
     position: relative;
@@ -254,18 +260,8 @@ header {
         }
     }
 }
-.flexslider-home {
-    border: none;
-    position: relative;
-    margin: 0;
-    overflow: hidden;
-    .slides li {
-        position: relative;
-        height: 100%;
-        @extend .bg;
-        img{
-            width: 100%;
-        }
+.flexslider-active-slide{
+    .slides li{
         &:after {
             position: absolute;
             top: 0;
@@ -278,14 +274,30 @@ header {
             content: '';
             z-index: 2;
         }
+    }
+}
+.flexslider-home {
+    border: none;
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    .slides li {
+        position: relative;
+        height: 100%;
+        @extend .bg;
+        img{
+            width: 100%;
+        }
         * {
             color: white;
         }
         h2 {
-            font-size: 52px;
-            font-weight: 600;
+            // font-size: 52px!important;
+            // font-weight: 600;
+            font: 600 52px/inherit "Hind Vadodara", sans-serif!important;
         }
         p {
+            font: inherit!important;
             color: $light-blue;
             font-size: 27px;
         }
@@ -336,7 +348,6 @@ header {
         right: 10px;
     }
     a {
-        height: 50px;
         &:before {
             font-family: FontAwesome;
             color: white;
@@ -575,6 +586,7 @@ header {
     color: $dark-grey;
     font-size: 10px;
     padding: 3px 5px 0 0;
+    line-height: 1;
 }
 
 

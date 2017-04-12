@@ -1,12 +1,15 @@
-<?php get_header(); ?>
+<?php get_header();
+	$video_post = array( 'post_type' => 'video_posts');
+	$each_video_post = new WP_Query( $video_posts );
+ ?>
 
 <section class="wrapper">
 	<div class="container-620">
 		<div class="row">
-			<h1>Beat the summer heat with crock pot cooking</h1>
+			<h1><?php the_title(); ?></h1>
 		</div>
 		<div class="full-width">
-			<div class="page-info">20 March, 2017 by <b>Danielle Bowling</b></div>
+			<div class="page-info"><?php echo get_the_date('d F, Y'); ?> by <b><?php echo $current_user->display_name; ?></b></div>
 		</div>
 		<div class="row">
 			<div class="addthis_inline_share_toolbox"></div>
@@ -24,62 +27,50 @@ Home Banner
 
 <section class="wrapper">
 	<div class="container-620">
-		<div class="row">
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci sapiente laborum illo vel natus error delectus, eius asperiores repellat quibusdam iste soluta quidem omnis impedit possimus animi amet, sit nisi.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aliquid reiciendis, tenetur explicabo exercitationem, quibusdam vitae sequi, quaerat voluptatem libero delectus excepturi hic quis ducimus omnis saepe odio dolores provident.</p>
-		</div>
+		
+		<?php if (have_posts()) {?> 
+			<div class="row">
+				<?php while(have_posts()) { the_post();  ?>
+				<?php the_content(); } ?>
+			</div>
+		<?php } ?>
 
 	<!--++++++++++++++ 
-	Advertisement
+	DUMMY NEEDS TO REMOVE and require to use same code in backend: Advertisement
 	++++++++++++++ -->
 		<div class="row">
 			<div class="ad-on-single-wrapper">
-				<div class="ad-on-single" style="background-image:url('<?php echo get_stylesheet_directory_uri(); ?>/compressed/images/slider1.jpg');">
+				<div class="ad-on-single" style="background-image:url('<?php echo get_stylesheet_directory_uri(); ?>/compressed/images/slider2.jpg');">
 				</div>
 				<div class="ad-on-single-text">Advertisement</div>
 			</div>
 		</div>
-
-	<!--++++++++++++++ 
-	Page content: Text
-	++++++++++++++ -->
-		<div class="row">
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci sapiente laborum illo vel natus error delectus, eius asperiores repellat quibusdam iste soluta quidem omnis impedit possimus animi amet, sit nisi.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aliquid reiciendis, tenetur explicabo exercitationem, quibusdam vitae sequi, quaerat voluptatem libero delectus excepturi hic quis ducimus omnis saepe odio dolores provident.</p>
-		</div>
-
-	<!--++++++++++++++ 
-	Advertisement
-	++++++++++++++ -->
-		<div class="row">
-			<div class="ad-on-single-wrapper">
-				<div class="ad-on-single" style="background-image:url('<?php echo get_stylesheet_directory_uri(); ?>/compressed/images/slider3.jpg');">
-				</div>
-				<div class="ad-on-single-text">Advertisement</div>
+		
+	<div class="row dummy">
+		<pre><?php var_dump(get_the_tags()); ?></pre>
+	</div>
+		
+	<?php $posttags = get_the_tags();
+			if ($posttags) { 
+		 ?>
+			<!--++++++++++++++ 
+			News Tags
+			++++++++++++++ -->
+			<div class="row news-tags">
+				<ul>
+					<li><label>Read more about:</label></li>
+					<?php 	$x = 1; 
+							$total_tags = count($posttags);	
+							foreach($posttags as $posttag) { ?>
+								<?php if($total_tags !== $x) { ?>
+									<li><a href="<?php echo get_tag_link($posttag->term_id); ?>"><?php echo $posttag->name; ?>, </a></li>
+								<?php } else { ?>
+									<li><a href="<?php echo get_tag_link($posttag->term_id); ?>"><?php echo $posttag->name; ?></a></li>
+								<?php } ?>
+					<?php $x++; } ?>
+				</ul>
 			</div>
-		</div>
-
-	<!--++++++++++++++ 
-	Page content: Text
-	++++++++++++++ -->
-		<div class="row">
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci sapiente laborum illo vel natus error delectus, eius asperiores repellat quibusdam iste soluta quidem omnis impedit possimus animi amet, sit nisi.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aliquid reiciendis, tenetur explicabo exercitationem, quibusdam vitae sequi, quaerat voluptatem libero delectus excepturi hic quis ducimus omnis saepe odio dolores provident.</p>
-		</div>
-
-
-	<!--++++++++++++++ 
-	News Tags
-	++++++++++++++ -->
-		<div class="row news-tags">
-			<ul>
-				<li><label>Read more about:</label></li>
-				<li><a href="#">Asian, </a></li>
-				<li><a href="#">Restaurants, </a></li>
-				<li><a href="#">Food Service, </a></li>
-				<li><a href="#">Pubs &nbsp; Bars</a></li>
-			</ul>
-		</div>
+		<?php } ?>
 	</div>	
 </section>
 
