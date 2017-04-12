@@ -48,6 +48,8 @@ function my_styles_scripts(){
     wp_enqueue_script( 'hospitality-script', get_stylesheet_directory_uri()  . '/compressed/script.js', array(), '2.0.0', true, 'all');
 
     wp_enqueue_script( 'hospitality-adthis', 'https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58dc3a2c46c34fc1', array(), true, 'all');
+
+     wp_enqueue_script( 'hospitality-wistia', 'https://fast.wistia.net/assets/external/E-v1.js', array(), true, 'all');
 }
 add_action('template_redirect', 'my_styles_scripts');
 //end of styles scripts
@@ -112,17 +114,16 @@ if (function_exists('acf_add_options_page')){
             'not_found_in_trash'    =>  'No Video Post found in Trash',
             'parent'                =>  'Parent Story'
         ),
-            // 'public'            =>  true,
-            'menu_position'     =>  4,
-            // 'supports'          =>  array( 'title', 'editor', 'comments', 'thumbnail'),
-            'taxonomies'        =>  array( 'create_video_post_taxonomies', 'post_tag'),
-            'menu_icon'         =>  'dashicons-video-alt3',
-            'update_count_callback' => '_update_post_term_count',
-            'query_var'             => true,
-            // 'has_archive'       => true,
-            // 'hierarchical'      => true,
-            'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'page-attributes', ),
-
+        // 'public'            =>  true,
+        'menu_position'     =>  4,
+        // 'supports'          =>  array( 'title', 'editor', 'comments', 'thumbnail'),
+        'taxonomies'        =>  array( 'create_video_post_taxonomies', 'post_tag'),
+        'menu_icon'         =>  'dashicons-video-alt3',
+        'update_count_callback' => '_update_post_term_count',
+        'query_var'             => true,
+        // 'has_archive'       => true,
+        // 'hierarchical'      => true,
+        'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'page-attributes', ),
         // 'taxonomies'            => array('hire_taxonomies'),
         'hierarchical'          => true,
         'public'                => true,
@@ -141,7 +142,7 @@ if (function_exists('acf_add_options_page')){
 
   }
 
-  add_action( 'init', 'create_video_post_taxonomies', 1);
+  add_action( 'init', 'create_video_post_taxonomies');
 
 function create_video_post_taxonomies() {
     register_taxonomy(
@@ -173,46 +174,6 @@ function create_video_post_taxonomies() {
         );
 
  }
-
- add_action( 'init', 'create_tag_taxonomies', 2 );
-
-//create two taxonomies, genres and tags for the post type "tag"
-function create_tag_taxonomies() 
-{
-  // Add new taxonomy, NOT hierarchical (like tags)
-  $labels = array(
-    'name' => _x( 'Video Tags', 'taxonomy general name' ),
-    'singular_name' => _x( 'Video Tag', 'taxonomy singular name' ),
-    'search_items' =>  __( 'Search Video Tags' ),
-    'popular_items' => __( 'Popular Video Tags' ),
-    'all_items' => __( 'All Video Tags' ),
-    'parent_item' => null,
-    'parent_item_colon' => null,
-    'edit_item' => __( 'Edit Video Tag' ), 
-    'update_item' => __( 'Update Video Tag' ),
-    'add_new_item' => __( 'Add New Video Tag' ),
-    'new_item_name' => __( 'New Video Tag Name' ),
-    'separate_items_with_commas' => __( 'Separate Video tags with commas' ),
-    'add_or_remove_items' => __( 'Add or remove Video tags' ),
-    'choose_from_most_used' => __( 'Choose from the most used Video tags' ),
-    'menu_name' => __( 'Video Tags' ),
-  ); 
-
-  register_taxonomy('tag','video_posts',array(
-    'labels' => $labels,
-    'show_ui' => true,
-    'update_count_callback' => '_update_post_term_count',
-    'query_var' => true,
-    'rewrite' => array( 'slug' => 'video-tag' ),
-    'show_in_quick_edit'    => true,
-    'hierarchical'              => false, 
-    'query_var'                 => 'tag',
-    'public'                    => true,
-    'show_admin_column'         => true,
-    '_builtin'                  => true,
-    'show_tagcloud'              => true,
-  ));
-}
 
 
 

@@ -16,17 +16,9 @@
 		</div>
 	</div>
 </section>	
-<!--++++++++++++++ 
-Home Banner
-++++++++++++++ -->
-<section class="video-banner">
-    <div class="full-container">
-		<div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><span class="wistia_embed wistia_async_rpimbe7fkt playerColor=640F20" style="display:inline-block;height:100%;width:100%">&nbsp;</span></div></div>
-    </div>
-</section>
 
 <section class="wrapper">
-	<div class="container-620">
+	<div class="container-620 single_video_post">
 		
 		<?php if (have_posts()) {?> 
 			<div class="row">
@@ -45,10 +37,7 @@ Home Banner
 				<div class="ad-on-single-text">Advertisement</div>
 			</div>
 		</div>
-		
-	<div class="row dummy">
-		<pre><?php var_dump(get_the_tags()); ?></pre>
-	</div>
+
 		
 	<?php $posttags = get_the_tags();
 			if ($posttags) { 

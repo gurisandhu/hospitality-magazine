@@ -218,6 +218,12 @@ header {
         width: 100%;
     }
 }
+.single_video_post{
+    .wp-embedded-content{
+        height: 414px;
+        width: 100%;
+    }
+}
 .flexslider-home, #slider{
     float: left;
 }
