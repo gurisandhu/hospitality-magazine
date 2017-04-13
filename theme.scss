@@ -21,11 +21,12 @@ $success: #5cb85c;
 $theme-font: 'Hind Vadodara', sans-serif;
 $blockquote: 'Lobster', cursive;
 
-
-
 /* //////////////*/
 /*This file includes mixins, resets etc.*/
 /* //////////////*/
+h1,h2,h3,h4,h5,h6, body,p{
+    font: inherit;
+}
 @import 'editor';
 
 
@@ -218,12 +219,12 @@ header {
         width: 100%;
     }
 }
-.single_video_post{
+// .single_video_post{
     .wp-embedded-content{
         height: 414px;
         width: 100%;
     }
-}
+// }
 .flexslider-home, #slider{
     float: left;
 }
@@ -298,12 +299,10 @@ header {
             color: white;
         }
         h2 {
-            // font-size: 52px!important;
-            // font-weight: 600;
-            font: 600 52px/inherit "Hind Vadodara", sans-serif!important;
+            font-size: 52px!important;
+            font-weight: 600;
         }
         p {
-            font: inherit!important;
             color: $light-blue;
             font-size: 27px;
         }
@@ -354,6 +353,9 @@ header {
         right: 10px;
     }
     a {
+        text-shadow: none;
+        color: transparent;
+        height: 50px;
         &:before {
             font-family: FontAwesome;
             color: white;
@@ -533,13 +535,15 @@ header {
 .news-content {
     width: 100%;
     color: $dark-grey;
-    line-height: 1.1;
+    line-height: 1.2;
     letter-spacing: .5px;
     border-left: 1px solid;
     border-right: 1px solid;
     border-bottom: 1px solid;
     border-color: $border-light;
     padding: 8px;
+    height: 61px;
+    overflow: hidden;
     background-color: lighten($light-grey,3%);
 }
 
@@ -1036,7 +1040,8 @@ a.full-width{
     &:last-child{
         width: 100%-53.8%;
         padding-left: 30px;
-        padding-bottom: 50px;
+        padding-bottom: 70px;
+        overflow: hidden;
         position: relative;
         .medium-but{
             position: absolute;

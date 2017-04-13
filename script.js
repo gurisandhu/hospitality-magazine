@@ -77,9 +77,10 @@ jQuery(document).ready(function() {
     var email         = document.forms["contactForm"]["email"];
     var phone         = document.forms["contactForm"]["phone"];
     var message       = document.forms["contactForm"]["message"];
-    var inquiry_type = document.forms["contactForm"]["inquiry_type"];
+    var inquiry_type  = document.forms["contactForm"]["inquiry_type"];
     var siteUrl       = document.forms["contactForm"]["siteurl"];
     var formUrl       = siteUrl.value + "/mailform.php";
+
 
     //Error Variables
     var flname_error = "";
@@ -105,7 +106,7 @@ jQuery(document).ready(function() {
     }
   });
 
-  var mailformat = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))jQuery/;
+  var mailformat = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   if (email.value == null || email.value ==""){
     email_error = "<li>Email required</li>";
     jQuery(email).parent('.form-row').addClass('error-input');

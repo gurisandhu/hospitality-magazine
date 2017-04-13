@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php get_header(); 
+
+$video_posts     =   array( 'post_type' => 'video_posts');
+$each_video_post  =   new WP_Query( $video_posts );
+?>
 <!--++++++++++++++ 
 Recent News
 ++++++++++++++ -->

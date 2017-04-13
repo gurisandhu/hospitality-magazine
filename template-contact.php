@@ -39,7 +39,7 @@ get_header(); ?>
 					</div>
 				</div>
 				<div class="row">
-					<input type="hidden" name="siteurl" value="<?php bloginfo('template_url'); ?>">
+					<input type="hidden" name="siteurl" value="<?php echo get_stylesheet_directory(); ?>">
 					<input type="submit" class="small-but" value="Send">
 				</div>
 			</form>

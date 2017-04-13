@@ -1,0 +1,3 @@
+<div class="row dum">
+	<pre><?php var_dump(the_post_thumbnail_url()); ?></pre>
+</div> <!-- dum -->

@@ -114,22 +114,19 @@ if (function_exists('acf_add_options_page')){
             'not_found_in_trash'    =>  'No Video Post found in Trash',
             'parent'                =>  'Parent Story'
         ),
-        // 'public'            =>  true,
+        'public'            =>  true,
         'menu_position'     =>  4,
-        // 'supports'          =>  array( 'title', 'editor', 'comments', 'thumbnail'),
-        'taxonomies'        =>  array( 'create_video_post_taxonomies', 'post_tag'),
+        'taxonomies'        =>  array('post_tag'),
         'menu_icon'         =>  'dashicons-video-alt3',
         'update_count_callback' => '_update_post_term_count',
         'query_var'             => true,
         // 'has_archive'       => true,
         // 'hierarchical'      => true,
         'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'page-attributes', ),
-        // 'taxonomies'            => array('hire_taxonomies'),
         'hierarchical'          => true,
         'public'                => true,
         'show_ui'               => true,
         'show_in_menu'          => true,
-        // 'menu_position'         => 5,
         'show_in_admin_bar'     => true,
         'show_in_nav_menus'     => true,
         'can_export'            => true,
@@ -142,7 +139,7 @@ if (function_exists('acf_add_options_page')){
 
   }
 
-  add_action( 'init', 'create_video_post_taxonomies');
+add_action( 'init', 'create_video_post_taxonomies');
 
 function create_video_post_taxonomies() {
     register_taxonomy(
@@ -243,5 +240,14 @@ function mrw_get_item_ancestors( $item ) {
     return $active_anc_item_ids;
 }
 
+
+// *************************
+// Customise Category Name
+// *************************
+
+add_filter( 'get_the_archive_title', function ( $title ) {
+        $title = single_cat_title( '', false );
+    return $title;
+});
 
  ?>
