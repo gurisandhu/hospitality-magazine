@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php get_header(); 
+
+$post_categories = get_queried_object();
+$current_cat = $post_categories->term_id;
+?>
 
 
 <section class="wrapper">
@@ -95,22 +99,30 @@ Related Stories
 ++++++++++++++ -->
 <section class="wrapper">
 	<div class="container">
+	<?php 
+		$related_post = new WP_Query( array(
+			'posts_per_page' => 5,
+			'cat'			=> $current_cat,
+		));
+		$total_related_post = 1;
+	if ($related_post->have_posts()) { ?>
 		<div class="row">
 			<div class="related-stories-head"><span>Related Stories</span></div>
 		</div>
 		<div class="row">
-			<?php for ($x = 1; $x <= 4; $x++) { ?>
-			<a href="#" class="col-4 related-story">
-				<div class="related-story-image" style="background-image:url('<?php echo get_stylesheet_directory_uri(); ?>/compressed/images/slider<?php echo $x; ?>.jpg');">
-					
-				</div>
-				<div class="related-story-content">
-					Get Around Easily With a New York Limousine Service
-				</div>
-			</a>
-			<?php } ?>
+			<?php while($related_post->have_posts()) { $related_post->the_post(); ?>
+				<?php if ($total_related_post !== 1) { ?>
+					<a href="<?php the_permalink(); ?>" class="col-4 related-story">
+						<div class="related-story-image" style="background-image:url('<?php the_post_thumbnail_url("medium", $total_related_post->ID); ?>');">
+							
+						</div>
+						<div class="related-story-content">
+							<?php echo trimText(get_the_title(), '', 45); ?>
+						</div>
+					</a>
+			<?php } $total_related_post++; } ?>
 		</div>
-
+	<?php } wp_reset_postdata(); ?>
 	<!--++++++++++++++ 
 	Comments and Form
 	++++++++++++++ -->

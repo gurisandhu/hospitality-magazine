@@ -1,1 +1,0 @@
-<h1>Post taxonomy</h1>

@@ -65,7 +65,7 @@
                 </div>
             </div>
             <div class="full-width top-search-form-wrapper">
-                <form action="" class="row search-form">
+                <form action="<?php echo esc_url( home_url( '/' )); ?>" class="row search-form">
                     <input type="text" value="" name="s" id="s" placeholder="Enter your search term" />
                     <button type="submit"><i class="fa fa-search"></i></button>
                 </form>
@@ -76,7 +76,7 @@
                     <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
                 </nav>
                 <div class="search-wrapper">
-                    <form action="" class="row search-form">
+                    <form action="<?php echo esc_url( home_url( '/' )); ?>" class="row search-form">
                         <input type="text" value="" name="s" id="s" placeholder="Enter your search term" />
                         <button type="submit"><i class="fa fa-search"></i></button>
                     </form>

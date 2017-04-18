@@ -137,14 +137,7 @@ Pagination
 ++++++++++++++ -->
 <section class="pagination-wrapper">
 	<div class="container">
-		<ul class="pagination">
-			<li><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
-			<li><a href="#">1</a></li>
-			<li class="active"><a href="#">2</a></li>
-			<li><a href="#">3</a></li>
-			<li><a href="#">4</a></li>
-			<li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
-		</ul>
+		<?php wpbeginner_numeric_posts_nav(); ?>
 	</div>
 </section>
 

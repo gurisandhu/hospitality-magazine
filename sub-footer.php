@@ -8,9 +8,9 @@ Social media and Search
 				<?php include (get_stylesheet_directory() . '/section-social-and-links.php'); ?>
 			</div>
 			<div class="row">
-				<form action="" class="row search-form">
+				<form action="<?php echo esc_url( home_url( '/' )); ?>" class="row search-form">
 					<div class="row">
-						<input type="text" placeholder="Enter your search term">
+						<input type="text" value="" name="s" id="s" placeholder="Enter your search term" />
 						<button type="submit"><i class="fa fa-search"></i></button>
 					</div>
 				</form>
@@ -53,11 +53,11 @@ Section: footer
 		</div>
 		<div class="footer-col-3">
 			<div class="subscription-form">
-				<form action="">
+				<form action="https://intermediagroup.createsend.com/t/j/s/mokyd/" method="post" id="subForm">
 					<div class="heading">Subscribe to our newsletter</div>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
 					<div class="full-width">
-						<input type="text" placeholder="E-mail">
+						<input placeholder="E-mail" id="fieldEmail" name="cm-mokyd-mokyd" type="email" required>
 						<input type="submit" value="Yes Please" class="small-but">
 					</div>
 					<div class="full-width">

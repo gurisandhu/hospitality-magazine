@@ -1,5 +1,12 @@
 <?php get_header();
-	$video_post = array( 'post_type' => 'video_posts');
+	$post_categories = get_queried_object();
+	$current_cat = $post_categories->term_id;
+	$video_posts = array( 
+		'post_type' => 'video_posts',
+		'cat'		=> $current_cat,
+		'posts_per_page' => 5, 
+		'post__not_in'	=>	array($post->ID)
+		);
 	$each_video_post = new WP_Query( $video_posts );
  ?>
 
@@ -37,29 +44,6 @@
 				<div class="ad-on-single-text">Advertisement</div>
 			</div>
 		</div>
-
-		
-	<?php $posttags = get_the_tags();
-			if ($posttags) { 
-		 ?>
-			<!--++++++++++++++ 
-			News Tags
-			++++++++++++++ -->
-			<div class="row news-tags">
-				<ul>
-					<li><label>Read more about:</label></li>
-					<?php 	$x = 1; 
-							$total_tags = count($posttags);	
-							foreach($posttags as $posttag) { ?>
-								<?php if($total_tags !== $x) { ?>
-									<li><a href="<?php echo get_tag_link($posttag->term_id); ?>"><?php echo $posttag->name; ?>, </a></li>
-								<?php } else { ?>
-									<li><a href="<?php echo get_tag_link($posttag->term_id); ?>"><?php echo $posttag->name; ?></a></li>
-								<?php } ?>
-					<?php $x++; } ?>
-				</ul>
-			</div>
-		<?php } ?>
 	</div>	
 </section>
 
@@ -73,13 +57,18 @@ Related Stories
 ++++++++++++++ -->
 <section class="wrapper">
 	<div class="container">
+		<?php 
+
+		$total_each_video_post = 1;
+	if ($each_video_post->have_posts()) { ?>
 		<div class="row">
 			<div class="related-stories-head"><span>Related Videos</span></div>
 		</div>
 		<div class="row">
-			<?php for ($x = 1; $x <= 4; $x++) { ?>
-			<a href="#" class="col-4 related-story">
-				<div class="related-story-image" style="background-image:url('<?php echo get_stylesheet_directory_uri(); ?>/compressed/images/slider<?php echo $x; ?>.jpg');">
+			<?php while($each_video_post->have_posts()) { $each_video_post->the_post(); ?>
+				<?php if ($total_each_video_post !== 1) { ?>
+			<a href="<?php the_permalink(); ?>" class="col-4 related-story">
+				<div class="related-story-image" style="background-image:url('<?php the_post_thumbnail_url("medium"); ?>');">
 					<div class="table">
 						<div class="table-cell">
 							<div class="play-video-but"><i class="fa fa-play"></i></div>
@@ -87,12 +76,12 @@ Related Stories
 					</div>
 				</div>
 				<div class="related-story-content">
-					Beat the summer heat with crock pot cooking
+					<?php echo trimText(get_the_title(), '', 45); ?>
 				</div>
 			</a>
-			<?php } ?>
+			<?php } $total_each_video_post++; } ?>
 		</div>
-
+	<?php } wp_reset_postdata(); ?>
 	<!--++++++++++++++ 
 	Comments and Form
 	++++++++++++++ -->
