@@ -602,12 +602,14 @@ footer{
 }
 
 blockquote{
-    color: $theme;
-    font-family: $blockquote;
-    font-size: 35px;
-    position: relative;
-    margin-left: 0;
     padding-left: 50px;
+    margin-left: 0;
+    margin-right: 0;
+    &, & p{
+        font-family: $blockquote;
+        font-size: 27px;
+        position: relative;
+    }
     &:before{
         position: absolute;
         content: "";

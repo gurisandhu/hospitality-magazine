@@ -25,15 +25,22 @@
 </section>	
 
 <section class="wrapper">
+	<div class="container">
+		<?php 
+		$video_url = get_field('video_post_video_url');
+		if($video_url) { ?>
+			<div class="row">
+				<?php echo $video_url; ?>
+			</div>
+		<?php } ?>
+	</div>
 	<div class="container-620 single_video_post">
-		
 		<?php if (have_posts()) {?> 
 			<div class="row">
 				<?php while(have_posts()) { the_post();  ?>
 				<?php the_content(); } ?>
 			</div>
 		<?php } ?>
-
 	<!--++++++++++++++ 
 	DUMMY NEEDS TO REMOVE and require to use same code in backend: Advertisement
 	++++++++++++++ -->

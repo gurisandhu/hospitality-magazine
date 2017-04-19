@@ -2,7 +2,7 @@
 
 
 <section class="wrapper">
-	<div class="container-620">
+	<div class="container-620 search-page">
 		<?php
 		$s=get_search_query();
 		$args = array(
@@ -21,8 +21,8 @@
 		                 ?>	
 		                 <div class="row">
 	                 		<h5><?php the_title(); ?></h5>
-		                 	<div class="rown no-bold">
-		                 		<?php echo trimText(get_the_content(), '...', 300) ?>
+		                 	<div class="row">
+		                 		<?php echo trimText(get_the_content(), '...', 150) ?>
 		                 	</div>
 
 							<div class="row">

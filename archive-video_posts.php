@@ -5,7 +5,16 @@
 	$terms_total = count($all_terms);
 
 	for ($x = 0; $x < $terms_total; $x++){
+
+		$video_posts_[$x] = array(
+			'post_type' => 'video_posts',
+			'terms'		=> $all_terms[$x]->term_id
+			);
  ?>
+		
+
+	
+        
 		
 
  <?php } ?> <!-- end of for -->

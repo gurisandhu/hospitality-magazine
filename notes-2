@@ -1,6 +1,5 @@
-	
-        
-		<div class="row">
+
+<div class="row">
 			<?php while($repeat_video_post->have_posts()) { $repeat_video_post->the_post();
 				if ($count_video_post == 1) {
 			 ?>

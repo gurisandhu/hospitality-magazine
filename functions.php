@@ -122,7 +122,7 @@ if (function_exists('acf_add_options_page')){
         'query_var'             => true,
         // 'has_archive'       => true,
         // 'hierarchical'      => true,
-        'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'page-attributes', ),
+        'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'page-attributes' ),
         'hierarchical'          => true,
         'public'                => true,
         'show_ui'               => true,

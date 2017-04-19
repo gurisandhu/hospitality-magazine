@@ -1185,10 +1185,23 @@ a.full-width{
 .at-share-tbx-element .at-share-btn{
     margin-bottom: 0!important;
 }
-.no-bold{
+.search-page{
     font-weight: normal;
     strong{
         font-weight: normal;
+    }
+    .small-but{
+        padding: 2px 10px;
+        font-size: 14px;
+        font-weight: normal;
+        height: auto;
+    }
+    .row{
+        h1,h2,h3,h4,h5,h6{
+            font-size: 17px;
+            font-weight: normal;
+            margin-top: 10px;
+        }
     }
 }
 
