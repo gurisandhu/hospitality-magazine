@@ -37,7 +37,7 @@ function my_styles_scripts(){
 
     wp_enqueue_style('hospitality-font-hind', 'https://fonts.googleapis.com/css?family=Hind+Vadodara:300,400,500,600,700');
 
-    wp_enqueue_style('hospitality-font-Lobster', 'https://fonts.googleapis.com/css?family=Lobster');
+    wp_enqueue_style('hospitality-font-Lobster', 'https://fonts.googleapis.com/css?family=Merriweather+Sans:700');
 
     wp_enqueue_style( 'flexslider-style' , get_stylesheet_directory_uri() . '/flexslider/css/flexslider.css', array(), '2.0.0', false, 'all');
 

@@ -19,7 +19,7 @@ $success: #5cb85c;
 // Fonts
 // //////////////
 $theme-font: 'Hind Vadodara', sans-serif;
-$blockquote: 'Lobster', cursive;
+$blockquote: 'Merriweather Sans', sans-serif;
 
 /* //////////////*/
 /*This file includes mixins, resets etc.*/
@@ -211,20 +211,24 @@ header {
     }
 }
 .video-banner{
-    // height: 573px;
+    height: 573px;
     background-color: $light-grey;
     position: relative;
-    .full-container{
+    .full-container, p{
+        height: 100%;
+        width: 100%;
+    }
+    .wp-embedded-content{
         height: 100%;
         width: 100%;
     }
 }
-// .single_video_post{
+.single_video_post{
     .wp-embedded-content{
-        height: 414px;
+        height: 100%;
         width: 100%;
     }
-// }
+}
 .flexslider-home, #slider{
     float: left;
 }

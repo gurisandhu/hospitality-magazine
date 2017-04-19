@@ -24,16 +24,16 @@
 	</div>
 </section>	
 
+<?php $video_url = get_field('video_post_video_url');
+	if($video_url) { ?>
+	<section class="video-banner">
+		<div class="full-container">
+			<?php echo $video_url; ?>
+		</div>
+	</section>
+<?php } ?>
+
 <section class="wrapper">
-	<div class="container">
-		<?php 
-		$video_url = get_field('video_post_video_url');
-		if($video_url) { ?>
-			<div class="row">
-				<?php echo $video_url; ?>
-			</div>
-		<?php } ?>
-	</div>
 	<div class="container-620 single_video_post">
 		<?php if (have_posts()) {?> 
 			<div class="row">

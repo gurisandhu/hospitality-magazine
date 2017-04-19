@@ -14,8 +14,6 @@
 		        _e("<h4>Search Results for: ".get_query_var('s')."</h4><br />");
 		    ?>
 		    <div class="row">
-		    	
-		    
 		        <?php while ( $the_query->have_posts() ):
 		           $the_query->the_post();
 		                 ?>	
