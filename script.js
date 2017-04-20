@@ -181,7 +181,7 @@ jQuery(document).ready(function() {
   var validation_report = document.getElementById('form-validation');
   validation_report.innerHTML = '';
 
-  var success_message = "<p>Thank you for your inquiry <b>" + flname.value + "</b>, hospitality magazine staff member will contact you shortly.</p>";
+  var success_message = "<p>Thank you for your inquiry <b>" + flname.value + "</b>, hospitality magazine staff member will contact you soon.</p>";
 
   if (totalError > 0){
     jQuery('.form-validation').show().delay(4000).queue( function(next){

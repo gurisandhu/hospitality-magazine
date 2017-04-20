@@ -51,6 +51,27 @@
 				<div class="ad-on-single-text">Advertisement</div>
 			</div>
 		</div>
+		<?php $posttags = get_the_tags();
+			if ($posttags) { 
+		 ?>
+			<!--++++++++++++++ 
+			News Tags
+			++++++++++++++ -->
+			<div class="row news-tags">
+				<ul>
+					<li><label>Read more about:</label></li>
+					<?php 	$x = 1; 
+							$total_tags = count($posttags);	
+							foreach($posttags as $posttag) { ?>
+								<?php if($total_tags !== $x) { ?>
+									<li><a href="<?php echo get_tag_link($posttag->term_id); ?>"><?php echo $posttag->name; ?>, </a></li>
+								<?php } else { ?>
+									<li><a href="<?php echo get_tag_link($posttag->term_id); ?>"><?php echo $posttag->name; ?></a></li>
+								<?php } ?>
+					<?php $x++; } ?>
+				</ul>
+			</div>
+		<?php } ?>
 	</div>	
 </section>
 
