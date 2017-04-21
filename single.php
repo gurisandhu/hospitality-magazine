@@ -5,7 +5,7 @@ $current_cat = $post_categories->term_id;
 ?>
 
 
-<section class="wrapper">
+<section class="wrapper single-post">
 	<div class="container-620">
 		<div class="row">
 			<h1><?php echo get_the_title(); ?></h1>

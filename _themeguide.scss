@@ -230,11 +230,22 @@ form {
         @include transition-ease-out(.5);
         position: absolute;
         right: 8px;
-        top: 3.8px;
+        top: 5.8px;
         content: "\f06a";
         font-family: FontAwesome;
         color: $error;
         font-size: 20px;
+        z-index: 2;
+    }
+    &:before{
+        position: absolute;
+        right: 15px;
+        top: 8.8px;
+        content: "";
+        height: 14px;
+        width: 5px;
+        background-color: white;
+        z-index: 1;
     }
     .new-select{
         &:after{
@@ -380,7 +391,8 @@ form {
                         }
                     }
                     &.current-menu-item,
-                    &.current-menu-ancestor {
+                    &.current-menu-ancestor,
+                    &.current-post-parent {
                         a {
                             background-color: $theme;
                             color: white;
@@ -523,6 +535,8 @@ footer{
     li{
         list-style: none;
         line-height: 1.2;
+        float: left;
+        width: 50%;
     }
     a{
         color: white;

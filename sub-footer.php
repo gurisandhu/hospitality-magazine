@@ -25,12 +25,14 @@ Section: footer
 	<div class="container">
 		<div class="footer-col-3">
 			<div class="internal-ad-footer">
-				<div class="internal-ad-image">
+				<!-- <div class="internal-ad-image">
+					
+				</div> -->
+				<!-- <div class="internal-ad-content"> -->
+				<div class="row">
+					<h4>Hospitality Magazine</h4>
 					<img src="<?php echo get_stylesheet_directory_uri(); ?>/compressed/images/internal-ad.png" alt="">
-				</div>
-				<div class="internal-ad-content">
-					<h4>Hosmag</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt doloremque.</p>
+					<p>The leading source of news and business insights for Australia’s foodservice industry, Hospitality magazine brings you news, in-depth feature articles, management pointers and advice on how you can improve your business’ profitability.</p>
 					<a href="#" class="small-but">Subscribe</a>
 				</div>
 			</div>
@@ -38,24 +40,14 @@ Section: footer
 		<div class="footer-col-3">
 			<div class="footer-menu">
 				<h6>Category</h6>
-				<ul>
-					<li class="col-2"><a href="#">Home</a></li>
-					<li class="col-2"><a href="#">News</a></li>
-					<li class="col-2"><a href="#">Infocus</a></li>
-					<li class="col-2"><a href="#">Management</a></li>
-					<li class="col-2"><a href="#">Video</a></li>
-					<li class="col-2"><a href="#">Directory</a></li>
-					<li class="col-2"><a href="#">Magazine</a></li>
-					<li class="col-2"><a href="#">Shop</a></li>
-					<li class="col-2"><a target="_blank" href="http://www.intermedia.com.au/privacy-copyright">Privacy &amp; Policy</a></li>
-				</ul>
+				<?php wp_nav_menu( array( 'theme_location' => 'footer-menu' ) ); ?>
 			</div>
 		</div>
 		<div class="footer-col-3">
 			<div class="subscription-form">
 				<form action="https://intermediagroup.createsend.com/t/j/s/mokyd/" method="post" id="subForm">
 					<div class="heading">Subscribe to our newsletter</div>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+					<p>Join over 30,000 subscribers and get all the latest industry news and business tips.</p>
 					<div class="full-width">
 						<input placeholder="E-mail" id="fieldEmail" name="cm-mokyd-mokyd" type="email" required>
 						<input type="submit" value="Yes Please" class="small-but">

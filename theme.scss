@@ -229,6 +229,11 @@ header {
         width: 100%;
     }
 }
+.single-post{
+    .wp-embedded-content{
+        height: 360px;
+    }
+}
 .flexslider-home, #slider{
     float: left;
 }
@@ -934,6 +939,7 @@ a.full-width{
 /* //////////////*/
 // Footer
 /* //////////////*/
+
 .internal-ad-image{
     float: left;
     width: 84px;
@@ -943,16 +949,19 @@ a.full-width{
         
     }
 }
-.internal-ad-content{
-    float: left;
-    width: 174px;
+.internal-ad-footer{
+    img{
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 8px;
+    }
     color: #FFF;
     h4{
         color: white;
         font-size: 22px;
         text-transform: uppercase;
         font-weight: normal;
-        margin-bottom: 5px;
+        margin-bottom: 10px;
         line-height: .8;
     }
     p{

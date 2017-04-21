@@ -22,7 +22,7 @@
     <link rel="icon" href="<?php echo get_stylesheet_directory_uri(); ?>/compressed/images/favicon.ico" type="image/x-icon">
 <?php wp_head(); ?>
 </head>
-<body>
+<body class="on-load">
 <div class="full-container">
     <header class="top">
         <div class="container">

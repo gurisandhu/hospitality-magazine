@@ -27,7 +27,7 @@ if ($the_latest_post->have_posts()) {
 						
 					</div>
 					<div class="col-2-archive-head">
-						<?php echo trimText("<h2>" . get_the_title() . "</h2><br><p>" . get_the_excerpt() . "</p>", '', 198); ?>
+						<?php echo trimText("<h2>" . get_the_title() . "</h2><br><p>" . get_the_excerpt() . "</p>", '', 178); ?>
 							
 						<a href="<?php the_permalink(); ?>" class="medium-but">Read more</a>
 					</div>

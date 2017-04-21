@@ -4,7 +4,7 @@
 			<div class="heading">
 				Subscribe to our newsletter
 			</div>
-			<p>Subscribe to our newsletter today to receive updates on the latest offers, and more!</p>
+			<p>Join over 30,000 subscribers and get all the latest industry news and business tips.</p>
 			<form action="https://intermediagroup.createsend.com/t/j/s/mokyd/" method="post" id="subForm" class="subscription">
 				<div class="row">
 					<div class="col-3">

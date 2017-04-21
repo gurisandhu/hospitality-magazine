@@ -47,7 +47,7 @@ jQuery(document).ready(function() {
     jQuery(window).load(function(){
       jQuery('.flexslider-home').flexslider({
         animation: "fade",
-        slideshowSpeed: 3000,
+        slideshowSpeed: 1500,
         start: function(slider){
           jQuery('body').removeClass('loading');
         }
@@ -63,7 +63,7 @@ jQuery(document).ready(function() {
       jQuery('#slider').flexslider({
         animation: "slide",
         controlNav: false,
-        slideshowSpeed: 3000,
+        slideshowSpeed: 1500,
         sync: "#carousel"
       });
     });
@@ -209,7 +209,7 @@ jQuery(document).ready(function() {
     url: formUrl,
     data: jQuery('form').serialize(),
     success: function(){
-      jQuery('.form-validation').show().delay(4000).queue( function(next){
+      jQuery('.form-validation').show().delay(6000).queue( function(next){
             jQuery(this).hide();
             next();
         });
@@ -220,3 +220,10 @@ jQuery(document).ready(function() {
   });
   return false;
   }//end of contactForm
+
+  // ++++++++++++++++++++
+  // Show loader and remove after load
+  // ++++++++++++++++++++
+  jQuery(window).bind("load", function(){
+    jQuery('body.on-load').removeClass('on-load');
+  });

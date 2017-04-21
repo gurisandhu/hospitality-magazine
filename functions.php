@@ -61,7 +61,8 @@ add_action('template_redirect', 'my_styles_scripts');
 function register_my_menus() {
   register_nav_menus(
     array(
-      'header-menu' => __( 'Header Menu' )
+      'header-menu' => __( 'Header Menu' ),
+      'footer-menu' => __( 'Footer Menu' ),
     )
   );
 }
@@ -180,52 +181,52 @@ function create_video_post_taxonomies() {
 // *************************
 // Get menus to play nicely with the submenu script
 
-function mrw_tax_archive_current( $items ) {
-    foreach ( $items as $item ) {
-        if ( 'taxonomy' !== $item->type )
-            continue;
+// function mrw_tax_archive_current( $items ) {
+//     foreach ( $items as $item ) {
+//         if ( 'taxonomy' !== $item->type )
+//             continue;
 
-        global $post;
+//         global $post;
 
-        if( !$post )
-            continue;
+//         if( !$post )
+//             continue;
 
-        $taxonomy = $item->object;
-        $taxonomy_term = $item->object_id;
-        if (
-            ! is_tax( $taxonomy, $taxonomy_term )
-            AND ! has_term( $taxonomy_term, $taxonomy, $post->ID )
-        )
-            continue;
+//         $taxonomy = $item->object;
+//         $taxonomy_term = $item->object_id;
+//         if (
+//             ! is_tax( $taxonomy, $taxonomy_term )
+//             AND ! has_term( $taxonomy_term, $taxonomy, $post->ID )
+//         )
+//             continue;
 
-        // Make item current
-        $item->current = true;
-        $item->classes[] = 'current-menu-item';
+//         // Make item current
+//         $item->current = true;
+//         $item->classes[] = 'current-menu-item';
 
-        // Loop through ancestors and give them 'parent' or 'ancestor' class
-        $active_anc_item_ids = mrw_get_item_ancestors( $item );
-        foreach ( $items as $key => $parent_item ) {
-            $classes = (array) $parent_item->classes;
+//         // Loop through ancestors and give them 'parent' or 'ancestor' class
+//         $active_anc_item_ids = mrw_get_item_ancestors( $item );
+//         foreach ( $items as $key => $parent_item ) {
+//             $classes = (array) $parent_item->classes;
 
-            // If menu item is the parent
-            if ( $parent_item->db_id == $item->menu_item_parent ) {
-                $classes[] = 'current-menu-parent';
-                $items[ $key ]->current_item_parent = true;
-            }
+//             // If menu item is the parent
+//             if ( $parent_item->db_id == $item->menu_item_parent ) {
+//                 $classes[] = 'current-menu-parent';
+//                 $items[ $key ]->current_item_parent = true;
+//             }
 
-            // If menu item is an ancestor
-            if ( in_array( intval( $parent_item->db_id ), $active_anc_item_ids ) ) {
-                $classes[] = 'current-menu-ancestor';
-                $items[ $key ]->current_item_ancestor = true;
-            }
+//             // If menu item is an ancestor
+//             if ( in_array( intval( $parent_item->db_id ), $active_anc_item_ids ) ) {
+//                 $classes[] = 'current-menu-ancestor';
+//                 $items[ $key ]->current_item_ancestor = true;
+//             }
 
-            $items[ $key ]->classes = array_unique( $classes );
-        }
-    }
+//             $items[ $key ]->classes = array_unique( $classes );
+//         }
+//     }
 
-    return $items;
-}
-add_filter('wp_nav_menu_objects','mrw_tax_archive_current');
+//     return $items;
+// }
+// add_filter('wp_nav_menu_objects','mrw_tax_archive_current');
 
 function mrw_get_item_ancestors( $item ) {
     $anc_id = absint( $item->db_id );
