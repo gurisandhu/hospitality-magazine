@@ -5,16 +5,10 @@ $current_cat = $post_categories->slug;
 
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $video_posts     =   array( 
-	'post_type' => 'video_posts',
+	// 'post_type' => 'video_posts',
 	'posts_per_page' => 10,
 	'paged' 		=> $paged,
-	'tax_query'			=> array(
-			array(
-				'taxonomy'	=> 'video_posts_category',
-				'field' => 'slug',
-				'terms' => array($current_cat)
-				),
-		),
+	
 	);
 $each_video_post  =   new WP_Query( $video_posts );
 

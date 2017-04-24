@@ -18,7 +18,7 @@ if( $posts ): ?>
                         <li style="background-image: url('<?php echo the_post_thumbnail_url(); ?>'); display: none;">
                             <a href="<?php the_permalink(); ?>" class="table">
                                 <div class="table-cell">
-                                    <?php echo trimText("<h2>" . get_the_title() . "</h2><br><p>" . get_the_excerpt() . "</p>", '', 198); ?>
+                                    <?php echo trimText("<h2>" . get_the_title() . "</h2><p>" . get_the_excerpt() . "</p>", '', 198); ?>
                                 </div>
                             </a>
                         </li>

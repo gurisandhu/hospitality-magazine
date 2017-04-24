@@ -51,7 +51,7 @@
 				<div class="ad-on-single-text">Advertisement</div>
 			</div>
 		</div>
-		<?php $posttags = get_the_tags();
+		<?php $posttags = get_terms( 'video_tags' );
 			if ($posttags) { 
 		 ?>
 			<!--++++++++++++++ 

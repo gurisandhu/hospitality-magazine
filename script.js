@@ -47,7 +47,7 @@ jQuery(document).ready(function() {
     jQuery(window).load(function(){
       jQuery('.flexslider-home').flexslider({
         animation: "fade",
-        slideshowSpeed: 1500,
+        slideshowSpeed: 188885500,
         start: function(slider){
           jQuery('body').removeClass('loading');
         }
@@ -63,7 +63,7 @@ jQuery(document).ready(function() {
       jQuery('#slider').flexslider({
         animation: "slide",
         controlNav: false,
-        slideshowSpeed: 1500,
+        slideshowSpeed: 5500,
         sync: "#carousel"
       });
     });

@@ -8,9 +8,11 @@ Recent News
 ++++++++++++++ -->
 
 <?php 
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $the_latest_post = new WP_Query( array(
 		'posts_per_page' => 1,
 		'cat'			=> $current_cat,
+		'paged' 		=> $paged
 	));
 if ($the_latest_post->have_posts()) { 
 	while($the_latest_post->have_posts()) { $the_latest_post->the_post(); ?>
@@ -23,14 +25,18 @@ if ($the_latest_post->have_posts()) {
 				</div>
 				
 				<div class="row">
-					<div class="col-2-archive-head" style="background-image:url('<?php the_post_thumbnail_url("medium", $the_latest_post->ID); ?>');">
-						
-					</div>
-					<div class="col-2-archive-head">
-						<?php echo trimText("<h2>" . get_the_title() . "</h2><br><p>" . get_the_excerpt() . "</p>", '', 178); ?>
+					<a href="<?php echo get_the_permalink(); ?>" class="row">
+						<div class="col-2-archive-head" style="background-image:url('<?php the_post_thumbnail_url("medium", $the_latest_post->ID); ?>');">
 							
-						<a href="<?php the_permalink(); ?>" class="medium-but">Read more</a>
-					</div>
+						</div>
+						<div class="col-2-archive-head">
+							<?php echo trimText("<h2>" . get_the_title() . "</h2><p>" . get_the_excerpt() . "</p>", '', 178); ?>
+								
+							<div class="row">
+								<button class="medium-but">Read more</button>
+							</div>
+						</div>
+					</a>
 				</div>
 			</div>
 		</section>
@@ -45,6 +51,7 @@ News Squares
 	$second_posts = new WP_Query( array(
 		'posts_per_page' => 6,
 		'cat'			=> $current_cat,
+		'paged' 		=> $paged
 		));
 	$count_second_posts = 1;
 
@@ -92,6 +99,7 @@ News Squares
 	$third_posts = new WP_Query( array(
 		'posts_per_page' => 10,
 		'cat'			=> $current_cat,
+		'paged' 		=> $paged
 		));
 	$count_third_posts = 1;
 	$count_posts = $count_third_posts;
@@ -130,9 +138,7 @@ News Squares
 			</div>
 		</div>
 	</section>
-<?php } ?>
-
-<!--++++++++++++++ 
+	<!--++++++++++++++ 
 Pagination
 ++++++++++++++ -->
 <section class="pagination-wrapper">
@@ -140,6 +146,9 @@ Pagination
 		<?php wpbeginner_numeric_posts_nav(); ?>
 	</div>
 </section>
+<?php } ?>
+
+
 
 <?php include (get_stylesheet_directory() . '/sub-footer.php'); ?>
 

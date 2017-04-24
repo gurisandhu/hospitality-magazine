@@ -12,11 +12,15 @@ function trimText($string, $repl, $limit){
         return $string;
     }
 }
+// *************************
+// Change Versions automatically
+// *************************
+$themecsspath = get_stylesheet_directory() . '/compressed/theme.css';
+$themescriptpath = get_stylesheet_directory() . '/compressed/script.js';
 
 // *************************
 // Deque parent Style Sheet
 // *************************
-
 
 add_action( 'wp_enqueue_scripts', 'remove_default_stylesheet', 200 );
 function remove_default_stylesheet() {
@@ -24,14 +28,13 @@ function remove_default_stylesheet() {
     wp_dequeue_style( 'parent-style' );
     wp_deregister_style( 'parent-style' );
 
-    wp_register_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', false, '3.3.0' ); 
+    wp_register_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array(), filemtime($themecsspath) ); 
     wp_enqueue_style( 'child-style' );
 
 }
 // *************************
 // Add links for stylesheet, fonts and scripts (Instead of inserting in <head> section or before </body>)
 // *************************
-
 function my_styles_scripts(){
     wp_enqueue_style('hospitality-font-awesome', 'http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css?ver=4.7.0');
 
@@ -45,7 +48,7 @@ function my_styles_scripts(){
 
     // wp_enqueue_script( 'flexslider-modernizr', get_stylesheet_directory_uri()  . '/flexslider/js/modernizr.js', array(), true, 'all');
 
-    wp_enqueue_script( 'hospitality-script', get_stylesheet_directory_uri()  . '/compressed/script.js', array(), '2.0.0', true, 'all');
+    wp_enqueue_script( 'hospitality-script', get_stylesheet_directory_uri()  . '/compressed/script.js', array(), filemtime($themescriptpath), true, 'all');
 
     wp_enqueue_script( 'hospitality-adthis', 'https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58dc3a2c46c34fc1', array(), true, 'all');
 
@@ -117,7 +120,7 @@ if (function_exists('acf_add_options_page')){
         ),
         'public'            =>  true,
         'menu_position'     =>  4,
-        'taxonomies'        =>  array('post_tag'),
+        // 'taxonomies'        =>  array('post_tag'),
         'menu_icon'         =>  'dashicons-video-alt3',
         'update_count_callback' => '_update_post_term_count',
         'query_var'             => true,
@@ -148,7 +151,7 @@ function create_video_post_taxonomies() {
             'video_posts',
             array(
                 'labels'   => array(
-                    'name'  => 'Video categories',
+                    'name'  => 'Video Categories',
                     'add_new_item' =>   'Add New Video Category',
                     'edit_item'    =>  'Edit Video Category',
                     'new_item_name' =>  'New Video Category',
@@ -171,9 +174,33 @@ function create_video_post_taxonomies() {
                 )
         );
 
+      $labels = array(
+        'name'              => _x( 'Video Tags', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Video Tag', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Video Tags' ),
+        'all_items'         => __( 'All Video Tags' ),
+        'parent_item'       => __( 'Parent Video Tags' ),
+        'parent_item_colon' => __( 'Parent Video Tags:' ),
+        'edit_item'         => __( 'Edit Video Tags' ),
+        'update_item'       => __( 'Update Video Tags' ),
+        'add_new_item'      => __( 'Add New Video Tags' ),
+        'new_item_name'     => __( 'New Video Tags Name' ),
+        'menu_name'         => __( 'Video Tags' ),
+    );
+
+    $args = array(
+        'hierarchical'      => false,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'video-tag' ),
+    );
+
+    register_taxonomy( 'video_tags', array( 'video_posts' ), $args );
+
+
  }
-
-
 
 
 // *************************

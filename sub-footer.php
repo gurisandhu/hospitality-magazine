@@ -31,8 +31,8 @@ Section: footer
 				<!-- <div class="internal-ad-content"> -->
 				<div class="row">
 					<h4>Hospitality Magazine</h4>
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/compressed/images/internal-ad.png" alt="">
-					<p>The leading source of news and business insights for Australia’s foodservice industry, Hospitality magazine brings you news, in-depth feature articles, management pointers and advice on how you can improve your business’ profitability.</p>
+					<!-- <img src="<?php echo get_stylesheet_directory_uri(); ?>/compressed/images/internal-ad.png" alt=""> -->
+					<p>The leading source of news and business insights for Australia’s foodservice businesses.</p>
 					<a href="#" class="small-but">Subscribe</a>
 				</div>
 			</div>

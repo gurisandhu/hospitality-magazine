@@ -27,10 +27,11 @@
 	</div>
 
 <?php 
-
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $args = array(
 	'post_type' 		=> 'video_posts',
 	'posts_per_page'	=> 	-1,
+	'paged' 		=> $paged,
 	'tax_query'			=> array(
 			array(
 				'taxonomy'	=> 'video_posts_category',

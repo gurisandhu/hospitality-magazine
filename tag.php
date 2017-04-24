@@ -23,14 +23,17 @@ if ($the_latest_post->have_posts()) {
 				</div>
 				
 				<div class="row">
-					<div class="col-2-archive-head" style="background-image:url('<?php the_post_thumbnail_url("medium", $the_latest_post->ID); ?>');">
-						
-					</div>
-					<div class="col-2-archive-head">
-						<?php echo trimText("<h2>" . get_the_title() . "</h2><br><p>" . get_the_excerpt() . "</p>", '', 198); ?>
+					<a href="<?php echo get_the_permalink(); ?>" class="row">
+						<div class="col-2-archive-head" style="background-image:url('<?php the_post_thumbnail_url("medium", $the_latest_post->ID); ?>');">
 							
-						<a href="<?php the_permalink(); ?>" class="medium-but">Read more</a>
-					</div>
+						</div>
+						<div class="col-2-archive-head">
+							<?php echo trimText("<h2>" . get_the_title() . "</h2><p>" . get_the_excerpt() . "</p>", '', 198); ?>
+							<div class="row">
+								<button class="medium-but">Read more</button>
+							</div>
+						</div>
+					</a>
 				</div>
 			</div>
 		</section>
