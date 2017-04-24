@@ -64,7 +64,7 @@ if ($current_post_num == 1){
 				</div>
 			</div>
 			<div class="video-heading">
-				<?php echo trimText(get_the_title(), '', 50); ?>
+				<?php echo trimText(get_the_title(), '', 100); ?>
 			</div>
 		</a>
 	</div>

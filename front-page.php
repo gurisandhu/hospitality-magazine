@@ -140,7 +140,7 @@ if ($current_post_num == 1){
                 </div>
             </div>
             <div class="video-heading">
-                <?php echo trimText(get_the_title(), '', 50); ?>
+                <?php echo trimText(get_the_title(), '', 100); ?>
             </div>
         </a>
     </div>
@@ -164,7 +164,7 @@ if (($current_post_num > 1) && ($current_post_num < 5)){
             </div>
         </div>
         <div class="related-video-text">
-            <?php echo trimText(get_the_title(), '', 45); ?>
+            <?php echo trimText(get_the_title(), '', 100); ?>
         </div>
     </a>
 <?php } ?> <!-- end of number 1 -->
@@ -226,7 +226,7 @@ In focus
                                 </div>
                                 <div class="news-content-2 full-width">
                                     <div class="news-heading-2 full-width">
-                                        <?php echo trimText( get_the_title(), '', 77); ?>
+                                        <?php echo trimText( get_the_title(), '', 100); ?>
                                     </div>
                                 </div>
                             </a>
@@ -244,7 +244,7 @@ In focus
                             <div class="related-news-text">
                                 <div class="table">
                                     <div class="table-cell">
-                                        <?php echo trimText( get_the_title(), '', 65); ?>
+                                        <?php echo trimText( get_the_title(), '', 100); ?>
                                     </div>
                                 </div>
                             </div>
@@ -295,7 +295,7 @@ Management
                                 </div>
                                 <div class="news-content-2 full-width">
                                     <div class="news-heading-2 full-width">
-                                        <?php echo trimText( get_the_title(), '', 65); ?>
+                                        <?php echo trimText( get_the_title(), '', 100); ?>
                                     </div>
                                 </div>
                             </a>

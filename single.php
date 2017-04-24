@@ -117,7 +117,7 @@ Related Stories
 							
 						</div>
 						<div class="related-story-content">
-							<?php echo trimText(get_the_title(), '', 45); ?>
+							<?php echo trimText(get_the_title(), '', 100); ?>
 						</div>
 					</a>
 			<?php } $total_related_post++; } ?>

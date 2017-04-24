@@ -79,7 +79,7 @@ News Squares
 								</div>
 							</div>
 							<div class="sub-video-heading">
-									<?php echo trimText(get_the_title(), '', 50); ?>
+									<?php echo trimText(get_the_title(), '', 100); ?>
 							</div>
 						</div>
 					</a>
@@ -124,7 +124,7 @@ News Squares
 								</div>
 							</div>
 							<div class="sub-video-heading">
-									<?php echo trimText(get_the_title(), '', 50); ?>
+									<?php echo trimText(get_the_title(), '', 100); ?>
 							</div>
 						</div>
 					</a>
