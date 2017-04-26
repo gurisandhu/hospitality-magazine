@@ -1,6 +1,11 @@
-<?php get_header(); ?>
+<!--++++++++++++++ 
+Archive Video Posts
+++++++++++++++ -->
 
-<?php 
+<?php get_header(); 
+
+	$home_page_thumbnail_id = get_option( 'page_on_front' );  
+
 	$all_terms = get_terms( 'video_posts_category' );
 	$terms_total = count($all_terms); 
 
@@ -52,11 +57,16 @@ $args = array(
 <?php
 while($each_video_post->have_posts()) { $each_video_post->the_post();
 	$current_post_num = $each_video_post->current_post + 1;
+	if (has_post_thumbnail()){
+		$feature_image = wp_get_attachment_image_src(get_post_thumbnail_id($each_video_post->ID), 'medium')[0];
+	} else {
+		$feature_image = wp_get_attachment_image_src(get_post_thumbnail_id($home_page_thumbnail_id), 'medium')[0];
+	}
 if ($current_post_num == 1){
 ?>
 	<div class="col-3">
 		<a href="<?php echo the_permalink(); ?>" class="video-container full-width">
-			<div class="video" style="background-image: url('<?php the_post_thumbnail_url("medium"); ?>')">
+			<div class="video" style="background-image: url('<?php echo $feature_image; ?>')">
 				<div class="table">
 					<div class="table-cell">
 						<div class="play-video-but"><i class="fa fa-play"></i></div>
@@ -77,10 +87,15 @@ if ($current_post_num == 1){
 <?php
 while($each_video_post->have_posts()) { $each_video_post->the_post();
 	$current_post_num = $each_video_post->current_post + 1;
+	if (has_post_thumbnail()){
+		$feature_image = wp_get_attachment_image_src(get_post_thumbnail_id($each_video_post->ID), 'thumbnail')[0];
+	} else {
+		$feature_image = wp_get_attachment_image_src(get_post_thumbnail_id($home_page_thumbnail_id), 'thumbnail')[0];
+	}
 if (($current_post_num > 1) && ($current_post_num < 5)){
 ?>
 	<a href="<?php echo the_permalink(); ?>" class="each-video">
-		<div class="related-video-image" style="background-image: url('<?php the_post_thumbnail_url("thumbnail"); ?>');">
+		<div class="related-video-image" style="background-image: url('<?php echo $feature_image; ?>');">
 			<div class="table">
 				<div class="table-cell">
 					<div class="small-video-but"><i class="fa fa-play"></i></div>

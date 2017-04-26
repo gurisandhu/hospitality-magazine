@@ -1,5 +1,5 @@
 <?php get_header(); 
-
+$home_page_thumbnail_id = get_option( 'page_on_front' );
 $post_categories = get_queried_object();
 $current_cat = $post_categories->term_id;
 ?>
@@ -16,37 +16,47 @@ $current_cat = $post_categories->term_id;
 		<div class="row">
 			<div class="addthis_inline_share_toolbox"></div>
 		</div>
-		<div class="row inner-banner">
-			<section class="slider">
+		
 				<?php 
                 	$images = get_field('post_images_slider');
                 	if($images) { ?>
-		            <div id="slider" class="flexslider">
-		                <ul class="slides">
-		                	<li>
-	                           	<img src="<?php the_post_thumbnail_url("medium");?>" alt="" title=""> 
-	                        </li>
-							<?php foreach($images as $image) { ?>
-	                        <li>
-	                           	<img src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt']; ?>" title="<?php echo $image['title']; ?>"> 
-	                        </li>
-	                        <?php } ?>
-		                </ul>
-		            </div>
-		            <div id="carousel" class="flexslider">
-		            	<ul class="slides">
-		            		<li style='background-image: url("<?php the_post_thumbnail_url("medium");?>");'></li>
-		                    <?php foreach($images as $image) { ?>
-		                    	<li style='background-image: url("<?php echo $image['sizes']['thumbnail']; ?>");'></li>
-		                    <?php } ?>
-		                </ul>
-		            </div>
-				<?php } else { ?> 
-					<div class="no-slider" style="background-image: url('<?php the_post_thumbnail_url("medium");?>');">
+                	<div class="row inner-banner">
+						<section class="slider">
+			            <div id="slider" class="flexslider">
+			                <ul class="slides">
+			                	<?php if (has_post_thumbnail()) {?>
+			                	<li>
+		                           	<img src="<?php the_post_thumbnail_url("medium");?>" alt="" title=""> 
+		                        </li>
+		                        <?php } ?>
+								<?php foreach($images as $image) { ?>
+		                        <li>
+		                           	<img src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt']; ?>" title="<?php echo $image['title']; ?>"> 
+		                        </li>
+		                        <?php } ?>
+			                </ul>
+			            </div>
+			            <div id="carousel" class="flexslider">
+			            	<ul class="slides">
+			            		<li style='background-image: url("<?php the_post_thumbnail_url("medium");?>");'></li>
+			                    <?php foreach($images as $image) { ?>
+			                    	<li style='background-image: url("<?php echo $image['sizes']['thumbnail']; ?>");'></li>
+			                    <?php } ?>
+			                </ul>
+			            </div>
+				    </section>
+				</div>
+				<?php } else { 
+						if (has_post_thumbnail()){
+					?> 
+					<div class="row inner-banner">
+						<section class="slider">
+							<div class="no-slider" style="background-image: url('<?php the_post_thumbnail_url("medium");?>');">
+							</div>
+						</section>
 					</div>
-				<?php } ?>
-	        </section>
-		</div>
+				<?php } } ?>
+	        
 		<?php if (have_posts()) {?> 
 			<div class="row">
 				<?php while(have_posts()) { the_post();  ?>

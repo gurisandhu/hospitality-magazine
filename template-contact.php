@@ -1,3 +1,6 @@
+<!--++++++++++++++ 
+Template Contact
+++++++++++++++ -->
 <?php 
 
 get_header(); ?>
@@ -9,7 +12,9 @@ get_header(); ?>
 			<div class="row">
 				<h1>Contact Us</h1>
 			</div>
-			<div id="form-validation" class="form-validation">
+			<div id="form-validation" class="form-validation"><div class="table"><div class="table-cell">
+				
+			</div></div>
 			</div>
 			<form class="contact-form row" name="contactForm" onsubmit="return validateForm()" method="POST">
 				<div class="form-input-area row">

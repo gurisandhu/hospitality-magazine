@@ -1,4 +1,5 @@
 <?php get_header();
+	$home_page_thumbnail_id = get_option( 'page_on_front' );
 	$post_categories = get_queried_object();
 	$current_cat = $post_categories->term_id;
 	$video_posts = array( 
@@ -93,10 +94,16 @@ Related Stories
 			<div class="related-stories-head"><span>Related Videos</span></div>
 		</div>
 		<div class="row">
-			<?php while($each_video_post->have_posts()) { $each_video_post->the_post(); ?>
+			<?php while($each_video_post->have_posts()) { $each_video_post->the_post(); 
+				if (has_post_thumbnail()){
+                    $feature_image = wp_get_attachment_image_src(get_post_thumbnail_id($each_video_post->ID), 'medium')[0];
+                } else {
+                    $feature_image = wp_get_attachment_image_src(get_post_thumbnail_id($home_page_thumbnail_id), 'medium')[0];
+                }
+				?>
 				<?php if ($total_each_video_post !== 1) { ?>
 			<a href="<?php the_permalink(); ?>" class="col-4 related-story">
-				<div class="related-story-image" style="background-image:url('<?php the_post_thumbnail_url("medium"); ?>');">
+				<div class="related-story-image" style="background-image:url('<?php echo $feature_image; ?>');">
 					<div class="table">
 						<div class="table-cell">
 							<div class="play-video-but"><i class="fa fa-play"></i></div>

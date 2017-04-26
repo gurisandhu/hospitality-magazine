@@ -202,6 +202,9 @@ form {
         border-color: transparent;
     }
     @include placeholder(white);
+    input[type="submit"]{
+        outline: none;
+    }
 }
 
 .error{
@@ -212,14 +215,7 @@ form {
         }
     }
 }
-.success{
-    background-color: $success;
-    p{
-        &:after{
-            content: "\f00c";
-        }
-    }
-}
+
 .error-input{
     @include transition-ease-out(.5);
     input, select, textarea{
@@ -308,6 +304,21 @@ form {
         font-family: $theme-font;
         &:first-child{
             margin-top: 0;
+        }
+    }
+    &.success{
+        background-color: $success;
+        bottom: 0;
+        padding: 5px 10px 5px 35px;
+        p{
+            font-size: 22px;
+            font-weight: 100;
+            &:after{
+                content: "\f00c";
+                left: -19px;
+                font-size: 36px;
+                top: 36px;
+            }
         }
     }
 }

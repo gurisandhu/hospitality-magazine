@@ -1,5 +1,8 @@
+<!--++++++++++++++ 
+Tags
+++++++++++++++ -->
 <?php get_header();
-
+$home_page_thumbnail_id = get_option( 'page_on_front' );
 $post_categories = get_queried_object();
 $current_cat = $post_categories->term_id;
  ?>
@@ -13,7 +16,13 @@ $the_latest_post = new WP_Query( array(
 		// 'cat'			=> $current_cat,
 	));
 if ($the_latest_post->have_posts()) { 
-	while($the_latest_post->have_posts()) { $the_latest_post->the_post(); ?>
+	while($the_latest_post->have_posts()) { $the_latest_post->the_post(); 
+		if (has_post_thumbnail()){
+			$feature_image = wp_get_attachment_image_src(get_post_thumbnail_id($the_latest_post->ID), 'medium')[0];
+		} else {
+			$feature_image = wp_get_attachment_image_src(get_post_thumbnail_id($home_page_thumbnail_id), 'medium')[0];
+		}
+		?>
 		<section class="marron-tag wrapper archive-head">
 			<div class="container">
 				<div class="row">
@@ -24,7 +33,7 @@ if ($the_latest_post->have_posts()) {
 				
 				<div class="row">
 					<a href="<?php echo get_the_permalink(); ?>" class="row">
-						<div class="col-2-archive-head" style="background-image:url('<?php the_post_thumbnail_url("medium", $the_latest_post->ID); ?>');">
+						<div class="col-2-archive-head" style="background-image:url('<?php echo $feature_image; ?>');">
 							
 						</div>
 						<div class="col-2-archive-head">
@@ -46,7 +55,7 @@ News Squares
 ++++++++++++++ -->
 <?php 
 	$second_posts = new WP_Query( array(
-		'posts_per_page' => 6,
+		'posts_per_page' => 7,
 		// 'cat'			=> $current_cat,
 		));
 	$count_second_posts = 1;
@@ -59,10 +68,16 @@ News Squares
 	<section class="wrapper tiles">
 		<div class="container">		
 	        <div class="row">
-				<?php while($news_square->have_posts()) { $news_square->the_post(); ?>
+				<?php while($news_square->have_posts()) { $news_square->the_post(); 
+					if (has_post_thumbnail()){
+						$feature_image = wp_get_attachment_image_src(get_post_thumbnail_id($news_square->ID), 'medium')[0];
+					} else {
+						$feature_image = wp_get_attachment_image_src(get_post_thumbnail_id($home_page_thumbnail_id), 'medium')[0];
+					}
+					?>
 					<?php if($count_posts !==1) { ?>
 						<a href="<?php the_permalink(); ?>" class="col-3">
-							<div class="news" style="background-image:url('<?php the_post_thumbnail_url("medium", $news_square->ID); ?>');">
+							<div class="news" style="background-image:url('<?php echo $feature_image; ?>');">
 							</div>
 							<div class="news-content full-width">
 								<div class="news-heading full-width">
@@ -93,7 +108,7 @@ News Squares
 ++++++++++++++ -->
 <?php 
 	$third_posts = new WP_Query( array(
-		'posts_per_page' => 10,
+		'posts_per_page' => 12,
 		// 'cat'			=> $current_cat,
 		));
 	$count_third_posts = 1;
@@ -105,10 +120,16 @@ News Squares
 	<section class="wrapper tiles">
 		<div class="container">		
 	        <div class="row">
-				<?php while($news_square->have_posts()) { $news_square->the_post(); ?>
+				<?php while($news_square->have_posts()) { $news_square->the_post(); 
+					if (has_post_thumbnail()){
+						$feature_image = wp_get_attachment_image_src(get_post_thumbnail_id($news_square->ID), 'medium')[0];
+					} else {
+						$feature_image = wp_get_attachment_image_src(get_post_thumbnail_id($home_page_thumbnail_id), 'medium')[0];
+					}
+					?>
 					<?php if($count_posts > 6) { ?>
 						<a href="<?php the_permalink(); ?>" class="col-3">
-							<div class="news" style="background-image:url('<?php the_post_thumbnail_url("medium", $news_square->ID); ?>');">
+							<div class="news" style="background-image:url('<?php echo $feature_image; ?>');">
 							</div>
 							<div class="news-content full-width">
 								<div class="news-heading full-width">

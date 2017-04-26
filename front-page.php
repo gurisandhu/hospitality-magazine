@@ -1,4 +1,9 @@
-<?php get_header(); ?>
+<!--++++++++++++++ 
+Front Page
+++++++++++++++ -->
+<?php get_header(); 
+$home_page_thumbnail_id = get_option( 'page_on_front' );
+?>
 
 <!--++++++++++++++ 
 Home Banner
@@ -36,8 +41,8 @@ News Square
 ++++++++++++++ -->
 <?php 
     $third_posts = new WP_Query( array(
-        'posts_per_page' => 5,
-        'cat'     => 3
+        'posts_per_page' => 6,
+        'category_name' => 'news'
         ));
     $count_third_posts = 1;
     $count_posts = $count_third_posts;
@@ -60,9 +65,15 @@ News Square
                 </a>
             </div>    
             <div class="row">
-                <?php while($news_square->have_posts()) { $news_square->the_post(); ?>
+                <?php while($news_square->have_posts()) { $news_square->the_post(); 
+                    if (has_post_thumbnail()){
+                        $feature_image = wp_get_attachment_image_src(get_post_thumbnail_id($news_square->ID), 'medium')[0];
+                    } else {
+                        $feature_image = wp_get_attachment_image_src(get_post_thumbnail_id($home_page_thumbnail_id), 'medium')[0];
+                    }
+                    ?>
                         <a href="<?php the_permalink(); ?>" class="col-3">
-                            <div class="news" style="background-image:url('<?php the_post_thumbnail_url("medium", $news_square->ID); ?>');">
+                            <div class="news" style="background-image:url('<?php echo $feature_image; ?>');">
                             </div>
                             <div class="news-content full-width">
                                 <div class="news-heading full-width">
@@ -128,11 +139,16 @@ $args = array(
 <?php
 while($each_video_post->have_posts()) { $each_video_post->the_post();
     $current_post_num = $each_video_post->current_post + 1;
+    if (has_post_thumbnail()){
+        $feature_image = wp_get_attachment_image_src(get_post_thumbnail_id($each_video_post->ID), 'medium')[0];
+    } else {
+        $feature_image = wp_get_attachment_image_src(get_post_thumbnail_id($home_page_thumbnail_id), 'medium')[0];
+    }
 if ($current_post_num == 1){
 ?>
     <div class="col-3">
         <a href="<?php echo the_permalink(); ?>" class="video-container full-width">
-            <div class="video" style="background-image: url('<?php the_post_thumbnail_url("medium"); ?>')">
+            <div class="video" style="background-image: url('<?php echo $feature_image; ?>')">
                 <div class="table">
                     <div class="table-cell">
                         <div class="play-video-but"><i class="fa fa-play"></i></div>
@@ -153,10 +169,15 @@ if ($current_post_num == 1){
 <?php
 while($each_video_post->have_posts()) { $each_video_post->the_post();
     $current_post_num = $each_video_post->current_post + 1;
+    if (has_post_thumbnail()){
+        $feature_image = wp_get_attachment_image_src(get_post_thumbnail_id($each_video_post->ID), 'medium')[0];
+    } else {
+        $feature_image = wp_get_attachment_image_src(get_post_thumbnail_id($home_page_thumbnail_id), 'medium')[0];
+    }
 if (($current_post_num > 1) && ($current_post_num < 5)){
 ?>
     <a href="<?php echo the_permalink(); ?>" class="each-video">
-        <div class="related-video-image" style="background-image: url('<?php the_post_thumbnail_url("thumbnail"); ?>');">
+        <div class="related-video-image" style="background-image: url('<?php echo $feature_image; ?>');">
             <div class="table">
                 <div class="table-cell">
                     <div class="small-video-but"><i class="fa fa-play"></i></div>
@@ -216,13 +237,18 @@ In focus
         </div>   
             <div class="row">
                 <?php while($news_square->have_posts()) { $news_square->the_post(); 
+                    if (has_post_thumbnail()){
+                        $feature_image = wp_get_attachment_image_src(get_post_thumbnail_id($news_square->ID), 'medium')[0];
+                    } else {
+                        $feature_image = wp_get_attachment_image_src(get_post_thumbnail_id($home_page_thumbnail_id), 'medium')[0];
+                    }
                     $current_post_num = $news_square->current_post + 1;
                     $cat_slug = get_the_category()[0]->slug;
                     ?>
                     <?php if($current_post_num == 1) { ?>
                         <div class="col-2">
                             <a href="<?php the_permalink(); ?>" class="full-width">
-                                <div class="news-2" style="background-image:url('<?php the_post_thumbnail_url("medium", $news_square->ID); ?>');">
+                                <div class="news-2" style="background-image:url('<?php echo $feature_image; ?>');">
                                 </div>
                                 <div class="news-content-2 full-width">
                                     <div class="news-heading-2 full-width">
@@ -236,10 +262,15 @@ In focus
                     <div class="related-content">
                 <?php while($news_square->have_posts()) { $news_square->the_post();
                         $current_post_num = $news_square->current_post + 1;
+                        if (has_post_thumbnail()){
+                        $feature_image = wp_get_attachment_image_src(get_post_thumbnail_id($news_square->ID), 'medium')[0];
+                        } else {
+                            $feature_image = wp_get_attachment_image_src(get_post_thumbnail_id($home_page_thumbnail_id), 'medium')[0];
+                        }
                  ?>
                     <?php if($current_post_num  > 1) { ?>
                         <a href="<?php the_permalink(); ?>" class="each-related-content row">
-                            <div class="related-news-image" style="background-image:url('<?php the_post_thumbnail_url("medium", $news_square->ID); ?>');">
+                            <div class="related-news-image" style="background-image:url('<?php echo $feature_image; ?>');">
                             </div>
                             <div class="related-news-text">
                                 <div class="table">
@@ -287,11 +318,16 @@ Management
             <div class="row">
                 <?php while($news_square->have_posts()) { $news_square->the_post(); 
                     $current_post_num = $news_square->current_post + 1;
+                    if (has_post_thumbnail()){
+                        $feature_image = wp_get_attachment_image_src(get_post_thumbnail_id($news_square->ID), 'medium')[0];
+                    } else {
+                        $feature_image = wp_get_attachment_image_src(get_post_thumbnail_id($home_page_thumbnail_id), 'medium')[0];
+                    }
                     ?>
                     <?php if($current_post_num == 1) { ?>
                         <div class="col-2">
                             <a href="<?php the_permalink(); ?>" class="full-width">
-                                <div class="news-2" style="background-image:url('<?php the_post_thumbnail_url("medium", $news_square->ID); ?>');">
+                                <div class="news-2" style="background-image:url('<?php echo $feature_image; ?>');">
                                 </div>
                                 <div class="news-content-2 full-width">
                                     <div class="news-heading-2 full-width">
@@ -305,10 +341,15 @@ Management
                     <div class="related-content">
                 <?php while($news_square->have_posts()) { $news_square->the_post();
                         $current_post_num = $news_square->current_post + 1;
+                        if (has_post_thumbnail()){
+                        $feature_image = wp_get_attachment_image_src(get_post_thumbnail_id($news_square->ID), 'medium')[0];
+                    } else {
+                        $feature_image = wp_get_attachment_image_src(get_post_thumbnail_id($home_page_thumbnail_id), 'medium')[0];
+                    }
                  ?>
                     <?php if($current_post_num > 1) { ?>
                         <a href="<?php the_permalink(); ?>" class="each-related-content row">
-                            <div class="related-news-image" style="background-image:url('<?php the_post_thumbnail_url("medium", $news_square->ID); ?>');">
+                            <div class="related-news-image" style="background-image:url('<?php echo $feature_image; ?>');">
                             </div>
                             <div class="related-news-text">
                                 <div class="table">

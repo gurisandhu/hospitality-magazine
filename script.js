@@ -178,10 +178,11 @@ jQuery(document).ready(function() {
     }
   });
 
-  var validation_report = document.getElementById('form-validation');
-  validation_report.innerHTML = '';
+  var validation_report = jQuery('#form-validation .table-cell');
+  validation_report.html();
 
   var success_message = "<p>Thank you for your inquiry <b>" + flname.value + "</b>, hospitality magazine staff member will contact you soon.</p>";
+
 
   if (totalError > 0){
     jQuery('.form-validation').show().delay(4000).queue( function(next){
@@ -194,11 +195,11 @@ jQuery(document).ready(function() {
       scrollTop: jQuery('.form-validation').offset().top - 66
     }, 1000);
     
-    // validation_report.innerHTML += flname_error +  email_error + inquiry_type_error + message_error;
+    // validation_report.html += flname_error +  email_error + inquiry_type_error + message_error;
     if (totalError == 1){
-      validation_report.innerHTML += '<p>Please check following 1 error</p>';
+      validation_report.html('<p>Please check following 1 error</p>');
     } else {
-      validation_report.innerHTML += '<p>Please check following ' + totalError + ' errors</p>'; 
+      validation_report.html('<p>Please check following ' + totalError + ' errors</p>'); 
     }
     return false;
   }
@@ -209,13 +210,11 @@ jQuery(document).ready(function() {
     url: formUrl,
     data: jQuery('form').serialize(),
     success: function(){
-      jQuery('.form-validation').show().delay(6000).queue( function(next){
-            jQuery(this).hide();
-            next();
-        });
-      validation_report.innerHTML += success_message;
+      jQuery('.form-validation').show();
       jQuery('.form-validation').removeClass('error-input');
       jQuery('.form-validation').addClass('success');
+      jQuery('.contact-form .small-but').addClass('no-outline');
+      validation_report.html(success_message);
     }
   });
   return false;

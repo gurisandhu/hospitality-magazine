@@ -1,4 +1,9 @@
+<!--++++++++++++++ 
+Taxonomy Video Tags
+++++++++++++++ -->
 <?php get_header(); 
+
+$home_page_thumbnail_id = get_option( 'page_on_front' );
 
 $post_categories = get_queried_object();
 $current_cat = $post_categories->slug;
@@ -6,7 +11,7 @@ $current_cat = $post_categories->slug;
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $video_posts     =   array( 
 	// 'post_type' => 'video_posts',
-	'posts_per_page' => 10,
+	'posts_per_page' => 13,
 	'paged' 		=> $paged,
 	
 	);
@@ -27,11 +32,16 @@ Recent News
 		<div class="row">
 			<?php if ($each_video_post->have_posts()) {?>
 				<?php while($each_video_post->have_posts()) { $each_video_post->the_post(); 
+					if (has_post_thumbnail()){
+						$feature_image = wp_get_attachment_image_src(get_post_thumbnail_id($each_video_post->ID), 'medium')[0];
+					} else {
+						$feature_image = wp_get_attachment_image_src(get_post_thumbnail_id($home_page_thumbnail_id), 'medium')[0];
+					}
 					$current_post_num = $each_video_post->current_post + 1;
 					if ($current_post_num == 1){
 					?>
 					<a href="<?php the_permalink(); ?>" class="row video-tile">
-						<div class="col-2-archive-head" style="background-image:url('<?php the_post_thumbnail_url("medium"); ?>');">
+						<div class="col-2-archive-head" style="background-image:url('<?php echo $feature_image; ?>');">
 							<div class="table">
 								<div class="table-cell">
 									<div class="play-video-but"><i class="fa fa-play"></i></div>
@@ -60,12 +70,17 @@ News Squares
 			<?php $counter = 1;
 				if ($each_video_post->have_posts()) {?>
 				<?php while($each_video_post->have_posts()) { $each_video_post->the_post(); 
+					if (has_post_thumbnail()){
+						$feature_image = wp_get_attachment_image_src(get_post_thumbnail_id($each_video_post->ID), 'medium')[0];
+					} else {
+						$feature_image = wp_get_attachment_image_src(get_post_thumbnail_id($home_page_thumbnail_id), 'medium')[0];
+					}
 					$current_post_num = $each_video_post->current_post + 1;
-					if (($current_post_num > 1)&&($current_post_num < 7)){
+					if (($current_post_num > 1)&&($current_post_num < 8)){
 					?>
 					<a href="<?php echo get_the_permalink(); ?>" class="col-3">
 						<div class="video-container full-width">
-							<div class="sub-video" style="background-image:url('<?php the_post_thumbnail_url("medium"); ?>');">
+							<div class="sub-video" style="background-image:url('<?php echo $feature_image; ?>');">
 								<div class="table">
 									<div class="table-cell">
 										<div class="play-video-but"><i class="fa fa-play"></i></div>
@@ -106,11 +121,16 @@ News Squares
 				if ($each_video_post->have_posts()) {?>
 				<?php while($each_video_post->have_posts()) { $each_video_post->the_post(); 
 					$current_post_num = $each_video_post->current_post + 1;
-					if (($current_post_num > 6)&&($current_post_num < 11)){
+					if (has_post_thumbnail()){
+						$feature_image = wp_get_attachment_image_src(get_post_thumbnail_id($each_video_post->ID), 'medium')[0];
+					} else {
+						$feature_image = wp_get_attachment_image_src(get_post_thumbnail_id($home_page_thumbnail_id), 'medium')[0];
+					}
+					if (($current_post_num > 7)&&($current_post_num < 14)){
 					?>
 					<a href="<?php echo get_the_permalink(); ?>" class="col-3">
 						<div class="video-container full-width">
-							<div class="sub-video" style="background-image:url('<?php the_post_thumbnail_url("medium"); ?>');">
+							<div class="sub-video" style="background-image:url('<?php echo $feature_image; ?>');">
 								<div class="table">
 									<div class="table-cell">
 										<div class="play-video-but"><i class="fa fa-play"></i></div>
@@ -122,7 +142,7 @@ News Squares
 							</div>
 						</div>
 					</a>
-					<?php if ($counter == 8) { ?>
+					<?php if ($counter == 9) { ?>
 						<a href="#" class="col-3">
 							<div class="ad-category" style="background-image:url('<?php echo get_stylesheet_directory_uri(); ?>/compressed/images/slider9.jpg');">
 								</div>

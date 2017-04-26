@@ -214,14 +214,14 @@ header {
     height: 573px;
     background-color: $light-grey;
     position: relative;
-    .full-container, p{
+    *{
         height: 100%;
         width: 100%;
     }
-    .wp-embedded-content{
-        height: 100%;
-        width: 100%;
-    }
+    // .full-container, p, .wp-embedded-content, iframe{
+    //     height: 100%;
+    //     width: 100%;
+    // }
 }
 .single_video_post{
     .wp-embedded-content{
@@ -276,27 +276,7 @@ header {
         }
     }
 }
-.flex-active-slide{
-    position: relative;
-    &:after {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, .5);
-        content: '';
-        z-index: 2;
-        @include transition(.3);
-    }
-    &:hover{
-        &:after{
-            background-color: rgba(0,0,0,.3);
-        }
-    }
-}
+
 .flexslider-home {
     border: none;
     position: relative;
@@ -352,6 +332,27 @@ header {
     .flex-control-nav {
         z-index: 3;
         bottom: 5px;
+    }
+    .flex-active-slide{
+        position: relative;
+        &:after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .5);
+            content: '';
+            z-index: 2;
+            @include transition(.3);
+        }
+        &:hover{
+            &:after{
+                background-color: rgba(0,0,0,.3);
+            }
+        }
     }
 }
 
@@ -553,6 +554,12 @@ header {
             .news-content, .sub-video-heading{
                 background-color: rgba(0,0,0,0.1);
             }
+        }
+        &:nth-child(7){
+            display: none;
+        }
+        &:nth-child(8){
+            display: none;
         }
     }
 }
@@ -840,16 +847,18 @@ a.full-width{
     border-right: 1px solid;
     border-bottom: 1px solid;
     border-color: $border-light;
-    padding: 8px;
     background-color: lighten($light-grey,3%);
     @include transition-ease-out(.3);
+    padding: 2px 8px;
+    height: 65px;
+    overflow: hidden;
+    line-height: 1.3;
 }
 
 .news-heading-2 {
     font-size: 24px;
     font-weight: 600;
     text-transform: capitalize;
-    line-height: 1;
 }
 .related-news{
     height: 337px;

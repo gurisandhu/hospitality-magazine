@@ -1,7 +1,7 @@
 /*****************
 Theme Name: Hospitality Magazine
 Template: canvas
-Description: New design created in April-May 2017 by The Intermedia Group
+Description: New design for Hospitality Magazine by The Intermedia Group
 Author: Guri Sandhu @ The Intermedia Group
 Author URI: http://www.gurisandhu.com.au
 Version: 1.0.0
@@ -10,19 +10,9 @@ Version: 1.0.0
 
 
 
-
-
-
-
 /*
 To EDIT the style sheet please use theme.scss file in root directory. Also needs to run Gulp to compress the style sheet to 'theme.css' file.
 */
-
-
-
-
-
-
 
 
 @import 'compressed/theme.css';
